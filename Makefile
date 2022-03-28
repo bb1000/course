@@ -1,0 +1,2 @@
+default:
+	jb build .
