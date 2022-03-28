@@ -1,6 +1,6 @@
 [submodule "introduction"]
 	path = introduction
-	url = git@github.com:bb1000/introduction.git
+	url = https://github.com/bb1000/introduction
 [submodule "git"]
 	path = git
-	url = git@github.com:bb1000/git
+	url = https://github.com/bb1000/git
