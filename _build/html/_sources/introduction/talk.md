@@ -1,0 +1,628 @@
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+# Introduction to Python
+
+## BB1000
+
+KTH
+
+---
+layout: false
+
+## Contents
+
+* [Introduction to Python](#1)
+  + [BB1000](#1)
+* [Contents](#2)
+* [What is Python](#3)
+* [How to run Python](#4)
+  + [Command-line](#4)
+  + [Creating Python scripts](#5)
+* [Python types](#10)
+  + [Numerical](#10)
+  + [String: `str`](#11)
+* [Variables](#12)
+* [Container types](#13)
+  + [Lists](#13)
+  + [Tuples](#14)
+  + [Dictionaries](#15)
+* [Program logic](#16)
+  + [Repetition (iteration, looping)](#16)
+  + [Branching](#18)
+* [Program units](#19)
+  + [Functions](#19)
+  + [Modules](#21)
+* [Summary](#27)
+* [Reference](#28)
+
+
+---
+
+## What is Python
+
+<a title="Daniel Stroud, CC BY-SA 4.0
+&lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons"
+href="https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg"><img
+width="256" alt="Guido-portrait-2014"
+src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Guido-portrait-2014.jpg/512px-Guido-portrait-2014.jpg"></a>
+
+Python is a scripting language written by Guido van Rossum 
+
+> *My original motivation for creating Python was the perceived need for a higher
+> level language in the Amoeba [Operating Systems] project. I realized that the
+> development of system administration utilities in C was taking too long.
+> Moreover, doing these things in the Bourne shell wouldn’t work for a variety of
+> reasons. … So, there was a need for a language that would bridge the gap
+> between C and the shell.*
+
+---
+
+## Who uses Python
+
+From small scripts to large applications
+<div class="row">
+<div class="col-md-6">
+<code class="hljs">
+print("Hello world!")
+</code>
+ 
+</div>
+<div class="col-md-6">
+ <img src="https://www.appsess.com/wp-content/uploads/2016/07/instagram-logo-150x150.png">
+ <img src="https://www.appsess.com/wp-content/uploads/2017/08/youtube-logo-150x150.png">
+</div>
+ 
+</div>
+
+## How to run Python
+
+### Command-line
+
+Many Python programs are run from the computer's command-line interface (CLI). 
+In the CLI you type commands that the computer interprets and acts upon.
+
+* The CLI on a mac/linux is a terminal program that reads commands in the bash
+scripting language (or equivalent)
+* The CLI on windows is the console program known as CMD.
+* The CLI prompt is a character string printed at the beginning of each line when 
+  waiting for a command
+
+In these slides we use the convention
+
+`$ `  is the bash prompt (mac/linux)
+
+`C> ` is the CMD prompt (windows)
+
+Typing `python` in the CLI starts an interactive Python session accepting
+Python commands 
+
+`>>> ` is the Python prompt
+
+* The Python interpreter reads lines one by one in the Python programming language and executes them
+
+~~~
+$ python
+>>> print("Hello world")
+Hello world
+>>>
+~~~
+
+* A read-evaluate-print-loop (REPL)
+    - reads a Python expression
+    - evaluates the expression
+    - prints the value to the screen
+    - starting over (loop)
+
+---
+
+## Creating Python scripts
+
+### Text editors
+
+To enter code into files you need to use a text editor (not a word processor
+like Microsoft Word). A text editor is good for programming if it automatically
+colors special keywords for the programming language of that file. A simple 
+editor that fulfills this is `nano`.
+
+<img src="/introduction/nano.png" height="250">
+
+Developers survey on 
+<a href="https://insights.stackoverflow.com/survey/2018/#development-environments-and-tools">
+most popular programming editor
+</a>: 
+normally lists editors like vim, emacs, atom, sublime.
+Spending time to learn one well is worth the investment.
+
+---
+
+### IDE:s
+
+IDE = Integrated development environment
+
+~~~
+$ pip install mu-editor
+$ mu-editor hello.py
+~~~
+
+<img src="/introduction/mu.png" height="350">
+
+---
+
+### Visual Studio Code
+
+* Microsoft open source project
+
+<img src="/introduction/vsc.png" height="400">
+
+---
+
+### Pycharm
+
+* Community and Professional editions from JetBrains
+
+<img src="/introduction/pycharm.png" height="400">
+
+* see https://www.jetbrains.com/student/
+
+---
+
+### Notebooks
+
+* work/develop in browser
+* mix documentation and code
+~~~
+$ jupyter notebook
+~~~
+<img src='/introduction/jupyter.png' height="350" >
+* good for exploration/experimentation/demonstration
+* not good for writing large structured programs
+
+
+---
+
+
+## Python types
+
+Values in Python have a type
+A type determines the range of possible values and operations that can be
+performed
+
+###  Numerical
+
+* whole numbers (`int`): e.g. `-1, 7, 2000`
+* decimal numbers (`float`): `3.14, 1.0 -7.25`
+* complex numbers (`complex`): `1j, 7+5j`
+* logical (`bool`): `True`, `False`
+
+---
+
+###  String: `str`
+
+- sequence of characters
+- literal strings are written within quotation marks
+- single `'` and double `"` quotation marks have the same status
+- three quotation marks limit strings that can span several lines
+- there is no single character type
+
+~~~
+>>> print("It's time")
+It's time
+
+~~~
+
+
+~~~
+>>> print('Our boss is "nice". 😀')
+Our boss is "nice". 😀
+
+~~~
+
+~~~
+>>> print("""Hello
+... world""")
+Hello
+world
+
+~~~
+
+---
+
+## Variables
+
+* To save the value of an object it is assigned to a *variable*
+* The assignment operator is `=`
+* Assignment is to bind a name to an object
+* Python has so called free typing 
+
+### Example
+~~~
+>>> x = 8*9
+>>> print(x)
+72
+
+~~~
+
+* Right-side is evaluated
+* An `int` object with value 72 is created in memory
+* An association is created with this object and the name `x`
+
+---
+
+## Container types
+
+The most important continer types are lists, tuples and dictionaries
+
+### Lists
+
+* A list is a ordered sequence of elements 
+* A literal list in code is defined by square brackets and comma-separated
+  elements `[0, 1, 2]`
+* List can have members of different types
+* List members are referenced with `[n]` where `n=0, 1, 2...`
+* A list can be empty, `[]`
+
+~~~
+>>> colours = ['hearts', 'spades', 'diamonds', 'clubs']
+>>> values = [2, 3, 4, 5, 6, 7, 8, 9, 10, 'knight', 'queen', 'king', 'ace']
+>>> colours[0]
+'hearts'
+
+~~~
+
+*Note that brackets are both used in the notation for a literal list and for
+getting a member from a list*
+
+---
+
+### Tuples
+
+* An immutable (unchangeable) sequence of objects
+* Similar to lists
+* () is the empty tuple
+* (1,)  contains 1 element -note the comma
+
+Handy packing and unpacking
+
+```
+>>> t = 1, 2 # packing
+>>> x, y = t # unpacking
+>>> x
+1
+>>> y
+2
+>>> x, y = y, x # swapping (packing and unpacking)
+>>> x
+2
+>>> y
+1
+
+```
+---
+
+### Dictionaries
+
+* The `dict` type define sets of key-value pairs
+* Curly braces with comma-separates pairs define a literal dict
+* Each pair is separated by a colon `:`
+* The key can be any immutable (unchangeable) object
+* Very useful for complex structures
+* Efficient and highly optimized
+
+```
+empty =  {} # empty dict
+newdict = {'a': 1, 'b': 2}
+```
+
+---
+
+## Program logic
+
+### Repetition (iteration, looping)
+
+* The `for ... in` statement is used repeat the same operation for all elements of a
+sequence
+
+* A loop variable will reference the elements of the sequence, one at a time
+
+### Looping over lists
+
+```python
+>>> for e in [1, 2, 3]: 
+...    print(e)
+1
+2
+3
+
+```
+---
+
+### Looping over strings
+
+```python
+>>> for c in 'hello':
+...     print(c)
+h
+e
+l
+l
+o
+
+```
+
+### Looping over dictionaries
+
+
+```python
+>>> d = {'a': 1, 'b': 2}
+>>> for k, v in d.items():
+...    print(k, v)
+a 1
+b 2
+
+```
+
+```python
+>>> for k in d:
+...    print(k, d[k])
+a 1
+b 2
+
+```
+
+
+---
+
+## Branching
+
+Conditional execution of code blocks depending on whether an expression
+evaluates to True or not:
+
+```
+>>> if True:
+...     print("Yes")
+... else:
+...     print("No")
+Yes
+
+```
+
+```
+>>> i = j = 0
+>>> if i > j:
+...     print(i, " is larger than ", j)
+... else:
+...     print(i, "is smaller than or equal to", j)
+0 is smaller than or equal to 0
+
+```
+
+Most object types have some truthiness. Empty lists in a logical context
+evaluate to False, non-empty to True
+
+```
+>>> if []:
+...     print("Non-empty list")
+... else:
+...     print("Empty list")
+Empty list
+
+```
+
+---
+
+## Program units
+
+### Functions
+
+* Functions are objects that can take some input and return some output.
+Functions are the primary way of grouping code into independent units, that can be tested and reused
+
+* Function definitions start `def`, a name,  parentheses with or without
+arguments (comma-separated) and a colon.
+The body of the function is indented with respect to the `def` keyword.
+The last line of a function definition is normally a `return` statement and determines the value of a function call
+
+
+```
+>>> def square(x):
+...    x2 = x * x
+...    return x2
+
+```
+
+---
+
+* Functions are called with function name and an actual parameter. 
+
+```
+>>> square(2)
+4
+
+```
+
+* Inside the function the formal parameter `x` becomes a reference to the actual
+parameter `2`.
+
+
+---
+
+### Modules
+
+
+* a file with python source 
+   - name is the filename without the ``.py`` extension
+* `import` modules to reuse code
+* members of module referenced with dot notation `module.member`
+
+Commonly used Python modules
+
+* ``sys``
+* ``os``
+* ``math``
+
+---
+
+#### `sys`
+
+* system modules
+* needed e.g. for arguments to a script
+* `sys.argv` is a list of string arguments
+* `sys.argv[0]` is the file name
+
+~~~
+import sys
+infile = sys.argv[1]
+~~~
+
+#### `os`
+
+* Interaction with operating system
+* Example: execute a unix command 
+
+```
+    import os
+    os.system('/bin/date')
+```
+
+---
+
+#### `math`
+
+* all basic elementary functions
+* fundamental constants
+
+```
+    import math
+    print(math.sin(math.pi/2))
+```
+
+
+#### Tip
+
+Many use the math modules as a desktop calculator
+
+    $ python
+    >>> from math import *
+    >>> print(pi/2)
+    1.5707963267948966
+    >>>
+
+---
+
+### Writing/using your own modules
+
+* Suppose you have written file ``hello.py`` with function ``say_hello``
+
+~~~
+#hello.py
+def say_hello():
+    return "Hello world!"
+~~~
+
+* To access the same function in other code, import the module
+
+~~~
+>>> import hello
+>>> message = hello.say_hello()
+>>> print(message)
+Hello world!
+
+~~~
+
+---
+
+### Sample code: multiplication table
+
+Version 1: if we only know print
+~~~
+print(1 * 7)
+print(2 * 7)
+print(3 * 7)
+~~~
+
+Version 2: extract the varying data to a variable
+~~~
+i = 1
+print(i * 7)
+i = 2
+print(i * 7)
+i = 3
+print(i * 7)
+~~~
+
+Version 3: introduction the for loop, indented blocks
+~~~
+for i in (1, 2, 3, 4, 5, 6, 7, 8 , 9, 10):
+    print(i * 7)
+~~~
+
+Version 4: the `range` function
+~~~
+n = 7
+for i in range(1, 11):
+    print(i * n)
+~~~
+
+---
+
+Version 5: define as a function
+~~~
+def print_mult_table(n):
+    for i in range(1, 11):
+        print(i * n)
+~~~
+
+Version 6: call the function from the command line
+~~~
+def print_mult_table(n):
+    for i in range(1, 11):
+        print(i * n)
+
+if __name__ == "__main__":
+    
+    import sys
+    print_mult_table(int(sys.argv[1]))
+~~~
+
+* the system variable `__name__` has the value `"__main__"` (double underscores)
+when the file is executed as a program
+* it has the value equal to the file name when it is imported as a module
+* command-line argments appear in the system variable `sys.argv`, a Python list
+which has the file name as the first member (of index zero)
+
+A common pattern when a file is used both as an independent script and as a
+module imported by other programs
+
+---
+
+## Summary
+
+* Basic syntax - indentation
+* Basic built-in types
+* Scalar and container types
+* Variables
+* Functions
+* Modules
+
+---
+
+## Reference
+
+### Standard documentation
+* https://docs.python.org/3
+
+### On-line books
+* Jake van der Plas: 
+<a href="http://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/Index.ipynb"> A Worldwind Tour of Python</a>
+* Jake van der Plas: <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Data Science Handbook</a>
+* Al Sweigart: <a href="https://automatetheboringstuff.com">Automate the Boring Stuff with Python</a>
+
+### Online tutorials
+* https://docs.python.org/3/tutorial/
+* https://realpython.com
+
+### Youtube
+* Variables in Python https://www.youtube.com/watch?v=_AEJHKGk9ns
+
+
