@@ -6,3 +6,9 @@ root: intro
 chapters:
 - file: introduction/talk
 - file: git/talk
+- file: testing/talk
+- file: classes/talk
+- file: decorators/talk
+- file: iterators/talk
+- file: profiling/talk
+- file: debugging/talk
