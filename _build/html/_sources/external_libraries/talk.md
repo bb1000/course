@@ -1,4 +1,8 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 # External libraries
+
+## 
 
 BB1000 Programming in Python
 KTH
@@ -135,7 +139,7 @@ import pandas (or numpy or matplotlib.pyplot) as pd (or np or plt)
 * Identify the coefficient matrix and right-hand side
 * Last line represents an expression of the solutions
 
-$$
+
 \begin{pmatrix}
 3 &0 &0 \\\
 1 &8 &0 \\\
@@ -148,10 +152,12 @@ a\\\ b \\\ c
 \begin{pmatrix}
 30\\\ 18 \\\ 2
 \end{pmatrix}
-$$
-$$
+
+
+\begin{equation}
 a + 3b + c = ?
-$$
+\end{equation}
+
 
 
 ---

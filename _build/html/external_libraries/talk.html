@@ -22,8 +22,8 @@
       
 
     
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -47,15 +47,15 @@
     
   <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script>let toggleHintShow = 'Click to show';</script>
-    <script>let toggleHintHide = 'Click to hide';</script>
-    <script>let toggleOpenOnPrint = 'true';</script>
+    <script >let toggleHintShow = 'Click to show';</script>
+    <script >let toggleHintHide = 'Click to hide';</script>
+    <script >let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/documentation_options.js"></script>
     <script src="../_static/language_data.js"></script>
@@ -72,14 +72,16 @@
     <script src="../_static/jquery-3.5.1.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Classes" href="../classes/talk.html" />
@@ -260,199 +262,181 @@ const thebe_selector_output = ".output, .cell_output"
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   External libraries
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-can-you-do-with-python-libraries">
-     What can you do with Python libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     What can you do with Python libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-a-library">
-     What is a library?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#builtins">
-     Builtins
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standard-library">
-     Standard library
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#external-python-libraries">
-     External Python libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#are-you-a-math-genius">
-     Are you a math genius?
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#begin-pmatrix-3-0-0-br-1-8-0-br-0-4-2-end-pmatrix-begin-pmatrix-a-b-c-end-pmatrix">
-   $$
-\begin{pmatrix}
-3 &amp;0 &amp;0 \
-   <br/>
-   1 &amp;8 &amp;0 \
-   <br/>
-   0 &amp;4 &amp;-2
-\end{pmatrix}
-\begin{pmatrix}
-a\ b \ c
-\end{pmatrix}
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-you-do-with-python-libraries">
+   What can you do with Python libraries
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   What can you do with Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-library">
+   What is a library?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#builtins">
+   Builtins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-library">
+   Standard library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#external-python-libraries">
+   External Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-you-a-math-genius">
+   Are you a math genius?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#linear-algebra-in-python-numpy">
      Linear Algebra in Python: NumPy
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-arrays">
      Creating arrays
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#copying-arrays">
      Copying arrays
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filling-arrays">
      Filling arrays
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arrays-from-list-objects">
      Arrays from list objects
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arrays-from-file-data">
      Arrays from file data:
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reshaping">
      Reshaping
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#views-of-same-data">
      Views of same data
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#array-indexing">
      Array indexing
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matrix-operations">
      Matrix operations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-vector-operations">
      More vector operations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vectorized-elementary-functions">
      Vectorized elementary functions
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-linear-algebra">
-     More linear algebra
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-linear-algebra">
+   More linear algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-example">
+   First example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-absolute-minimum-you-need-to-know">
+     The absolute minimum  you need to know
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next">
+     Next
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib">
-     Matplotlib
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-example">
-     First example
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Next?
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-absolute-minimum-you-need-to-know">
-       The absolute minimum  you need to know
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next">
-       Next
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Next?
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#refinement">
-         Refinement
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#in-practice">
-       In practice
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#refinement">
+       Refinement
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-pandas-module">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pandas
-      </span>
-     </code>
-     module
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-practice">
+     In practice
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#series">
-       Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframes">
-       DataFrames
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#features">
-       Features
-      </a>
-     </li>
-    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pandas-module">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   module
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframes">
+     DataFrames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
    </li>
   </ul>
  </li>
@@ -476,199 +460,181 @@ a\ b \ c
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   External libraries
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-can-you-do-with-python-libraries">
-     What can you do with Python libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     What can you do with Python libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-is-a-library">
-     What is a library?
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#builtins">
-     Builtins
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standard-library">
-     Standard library
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#external-python-libraries">
-     External Python libraries
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#are-you-a-math-genius">
-     Are you a math genius?
-    </a>
-   </li>
-  </ul>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#begin-pmatrix-3-0-0-br-1-8-0-br-0-4-2-end-pmatrix-begin-pmatrix-a-b-c-end-pmatrix">
-   $$
-\begin{pmatrix}
-3 &amp;0 &amp;0 \
-   <br/>
-   1 &amp;8 &amp;0 \
-   <br/>
-   0 &amp;4 &amp;-2
-\end{pmatrix}
-\begin{pmatrix}
-a\ b \ c
-\end{pmatrix}
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-you-do-with-python-libraries">
+   What can you do with Python libraries
   </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   What can you do with Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-library">
+   What is a library?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#builtins">
+   Builtins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-library">
+   Standard library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#external-python-libraries">
+   External Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-you-a-math-genius">
+   Are you a math genius?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#linear-algebra-in-python-numpy">
      Linear Algebra in Python: NumPy
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#creating-arrays">
      Creating arrays
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#copying-arrays">
      Copying arrays
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#filling-arrays">
      Filling arrays
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arrays-from-list-objects">
      Arrays from list objects
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#arrays-from-file-data">
      Arrays from file data:
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#reshaping">
      Reshaping
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#views-of-same-data">
      Views of same data
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#array-indexing">
      Array indexing
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#matrix-operations">
      Matrix operations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#more-vector-operations">
      More vector operations
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#vectorized-elementary-functions">
      Vectorized elementary functions
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-linear-algebra">
-     More linear algebra
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-linear-algebra">
+   More linear algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-example">
+   First example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-absolute-minimum-you-need-to-know">
+     The absolute minimum  you need to know
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#references">
-     References
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next">
+     Next
     </a>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#matplotlib">
-     Matplotlib
-    </a>
-   </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#first-example">
-     First example
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Next?
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-absolute-minimum-you-need-to-know">
-       The absolute minimum  you need to know
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#next">
-       Next
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
-       Next?
-      </a>
-      <ul class="nav section-nav flex-column">
-       <li class="toc-h4 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#refinement">
-         Refinement
-        </a>
-       </li>
-      </ul>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#in-practice">
-       In practice
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#refinement">
+       Refinement
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#the-pandas-module">
-     The
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       pandas
-      </span>
-     </code>
-     module
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-practice">
+     In practice
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#series">
-       Series
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#dataframes">
-       DataFrames
-      </a>
-     </li>
-     <li class="toc-h3 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#features">
-       Features
-      </a>
-     </li>
-    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pandas-module">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   module
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframes">
+     DataFrames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
    </li>
   </ul>
  </li>
@@ -681,8 +647,12 @@ a\ b \ c
             
               <div>
                 
-  <div class="tex2jax_ignore mathjax_ignore section" id="external-libraries">
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<div class="tex2jax_ignore mathjax_ignore section" id="external-libraries">
 <h1>External libraries<a class="headerlink" href="#external-libraries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>BB1000 Programming in Python
 KTH</p>
 <hr class="docutils" />
@@ -693,6 +663,7 @@ KTH</p>
 <li><p>pandas</p></li>
 <li><p>matplotlib</p></li>
 </ul>
+</div>
 <hr class="docutils" />
 <div class="section" id="what-can-you-do-with-python-libraries">
 <h2>What can you do with Python libraries<a class="headerlink" href="#what-can-you-do-with-python-libraries" title="Permalink to this headline">¶</a></h2>
@@ -707,8 +678,8 @@ written in dozens of programming languages. For his research, Romer used
 <mark>Python—the most popular language for data science and statistics.</mark></em></p>
 </div>
 <hr class="docutils" />
-<div class="section" id="id1">
-<h2>What can you do with Python libraries<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>What can you do with Python libraries<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p><em>Take a picture of a black hole</em></p>
 <a class="reference internal image-reference" href="https://static.projects.iq.harvard.edu/files/styles/os_files_xlarge/public/eht/files/20190410-78m-800x466.png?m=1554877319&amp;itok=fLnjP-iS"><img alt="https://static.projects.iq.harvard.edu/files/styles/os_files_xlarge/public/eht/files/20190410-78m-800x466.png?m=1554877319&amp;itok=fLnjP-iS" src="https://static.projects.iq.harvard.edu/files/styles/os_files_xlarge/public/eht/files/20190410-78m-800x466.png?m=1554877319&amp;itok=fLnjP-iS" style="height: 200px;" /></a>
 <p>https://doi.org/10.3847/2041-8213/ab0e85</p>
@@ -793,28 +764,28 @@ import pandas (or numpy or matplotlib.pyplot) as pd (or np or plt)
 <li><p>Identify the coefficient matrix and right-hand side</p></li>
 <li><p>Last line represents an expression of the solutions</p></li>
 </ul>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="begin-pmatrix-3-0-0-br-1-8-0-br-0-4-2-end-pmatrix-begin-pmatrix-a-b-c-end-pmatrix">
-<h1>$$
-\begin{pmatrix}
-3 &amp;0 &amp;0 \<br />
-1 &amp;8 &amp;0 \<br />
+<div class="amsmath math notranslate nohighlight" id="equation-379f2db1-f8f0-43a3-9882-06bde776bd39">
+<span class="eqno">(1)<a class="headerlink" href="#equation-379f2db1-f8f0-43a3-9882-06bde776bd39" title="Permalink to this equation">¶</a></span>\[\begin{pmatrix}
+3 &amp;0 &amp;0 \\\
+1 &amp;8 &amp;0 \\\
 0 &amp;4 &amp;-2
-\end{pmatrix}
-\begin{pmatrix}
-a\ b \ c
-\end{pmatrix}<a class="headerlink" href="#begin-pmatrix-3-0-0-br-1-8-0-br-0-4-2-end-pmatrix-begin-pmatrix-a-b-c-end-pmatrix" title="Permalink to this headline">¶</a></h1>
-<p>\begin{pmatrix}
-30\ 18 \ 2
-\end{pmatrix}
-$$
-$$
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7f301811-7244-4d7b-9737-c8802c5c27f5">
+<span class="eqno">(2)<a class="headerlink" href="#equation-7f301811-7244-4d7b-9737-c8802c5c27f5" title="Permalink to this equation">¶</a></span>\[\begin{pmatrix}
+a\\\ b \\\ c
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-19b2d0e7-03a2-41cb-953b-5ff1618afdf7">
+<span class="eqno">(3)<a class="headerlink" href="#equation-19b2d0e7-03a2-41cb-953b-5ff1618afdf7" title="Permalink to this equation">¶</a></span>\[\begin{pmatrix}
+30\\\ 18 \\\ 2
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b64f4076-f636-4742-9e8d-1190b47dd2f1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-b64f4076-f636-4742-9e8d-1190b47dd2f1" title="Permalink to this equation">¶</a></span>\[\begin{equation}
 a + 3b + c = ?
-$$</p>
+\end{equation}\]</div>
 <hr class="docutils" />
 <div class="section" id="linear-algebra-in-python-numpy">
-<h2>Linear Algebra in Python: NumPy<a class="headerlink" href="#linear-algebra-in-python-numpy" title="Permalink to this headline">¶</a></h2>
+<h3>Linear Algebra in Python: NumPy<a class="headerlink" href="#linear-algebra-in-python-numpy" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Libraries provided by <code class="docutils literal notranslate"><span class="pre">numpy</span></code> provide computational speeds close to compiled languages</p></li>
 <li><p>Generally written in C</p></li>
@@ -824,7 +795,7 @@ $$</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="creating-arrays">
-<h2>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h2>
+<h3>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>one- and two-dimensional</p></li>
 </ul>
@@ -843,7 +814,7 @@ $$</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="copying-arrays">
-<h2>Copying arrays<a class="headerlink" href="#copying-arrays" title="Permalink to this headline">¶</a></h2>
+<h3>Copying arrays<a class="headerlink" href="#copying-arrays" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -867,7 +838,7 @@ $$</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="filling-arrays">
-<h2>Filling arrays<a class="headerlink" href="#filling-arrays" title="Permalink to this headline">¶</a></h2>
+<h3>Filling arrays<a class="headerlink" href="#filling-arrays" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">linspace</span></code> returns an array with sequence data</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="go">[ 0.   0.2  0.4  0.6  0.8  1. ]</span>
@@ -881,7 +852,7 @@ $$</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="arrays-from-list-objects">
-<h2>Arrays from list objects<a class="headerlink" href="#arrays-from-list-objects" title="Permalink to this headline">¶</a></h2>
+<h3>Arrays from list objects<a class="headerlink" href="#arrays-from-list-objects" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">la</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">3.</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">la</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
@@ -898,7 +869,7 @@ $$</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="arrays-from-file-data">
-<h2>Arrays from file data:<a class="headerlink" href="#arrays-from-file-data" title="Permalink to this headline">¶</a></h2>
+<h3>Arrays from file data:<a class="headerlink" href="#arrays-from-file-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Using <code class="docutils literal notranslate"><span class="pre">numpy.loadtxt</span></code></p></li>
 </ul>
@@ -924,7 +895,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="reshaping">
-<h2>Reshaping<a class="headerlink" href="#reshaping" title="Permalink to this headline">¶</a></h2>
+<h3>Reshaping<a class="headerlink" href="#reshaping" title="Permalink to this headline">¶</a></h3>
 <p>by changing the shape attribute</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="go">(2, 3)</span>
@@ -946,7 +917,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="views-of-same-data">
-<h2>Views of same data<a class="headerlink" href="#views-of-same-data" title="Permalink to this headline">¶</a></h2>
+<h3>Views of same data<a class="headerlink" href="#views-of-same-data" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>ab and ba are different objects but represent different views  of the same data</p></li>
 </ul>
@@ -963,7 +934,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="array-indexing">
-<h2>Array indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h2>
+<h3>Array indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">¶</a></h3>
 <p>like lists</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">a[2:4]</span></code> is an array slice with elements <code class="docutils literal notranslate"><span class="pre">a[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">a[3]</span></code></p></li>
@@ -974,7 +945,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="matrix-operations">
-<h2>Matrix operations<a class="headerlink" href="#matrix-operations" title="Permalink to this headline">¶</a></h2>
+<h3>Matrix operations<a class="headerlink" href="#matrix-operations" title="Permalink to this headline">¶</a></h3>
 <p>From mathematics:</p>
 <p>
 \[C_{ij} = \sum_k A_{ik}B_{kj}\]
@@ -1021,7 +992,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="more-vector-operations">
-<h2>More vector operations<a class="headerlink" href="#more-vector-operations" title="Permalink to this headline">¶</a></h2>
+<h3>More vector operations<a class="headerlink" href="#more-vector-operations" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p>Scalar multiplication <code class="docutils literal notranslate"><span class="pre">a*2</span></code></p></li>
 <li><p>Scalar addition <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">2</span></code></p></li>
@@ -1031,7 +1002,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="vectorized-elementary-functions">
-<h2>Vectorized elementary functions<a class="headerlink" href="#vectorized-elementary-functions" title="Permalink to this headline">¶</a></h2>
+<h3>Vectorized elementary functions<a class="headerlink" href="#vectorized-elementary-functions" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span>
     <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
     <span class="p">[</span> <span class="mf">0.</span>   <span class="mf">0.2</span>  <span class="mf">0.4</span>  <span class="mf">0.6</span>  <span class="mf">0.8</span><span class="p">]</span>
@@ -1057,6 +1028,7 @@ arranged as a matrix: all rows have the same number of elements</p>
     <span class="p">[</span>       <span class="o">-</span><span class="n">inf</span> <span class="o">-</span><span class="mf">1.60943791</span> <span class="o">-</span><span class="mf">0.91629073</span> <span class="o">-</span><span class="mf">0.51082562</span> <span class="o">-</span><span class="mf">0.22314355</span><span class="p">]</span>
 
 </pre></div>
+</div>
 </div>
 </div>
 <hr class="docutils" />
@@ -1180,8 +1152,8 @@ $$A^{-1}$$</p></li>
 </div>
 </div>
 <hr class="docutils" />
-<div class="section" id="id2">
-<h3>Next?<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Next?<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="refinement">
 <h4>Refinement<a class="headerlink" href="#refinement" title="Permalink to this headline">¶</a></h4>
 <ul class="simple">

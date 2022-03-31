@@ -1,3 +1,6 @@
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 # Testing
 
 ## BB1000 Programming in Python
@@ -194,6 +197,7 @@ Testing a function
 Consider
 
 ```python
+#my_math.py
 def test_my_add():
    assert my_add(1, 1) == 2
 
@@ -589,7 +593,7 @@ OK
 * If your test code is larger that your production code, you are on the right track
 * This takes initially a little more time but the rewards in the long run are huge
 
-[###](###) Links
+### Links
 
 * http://pythontesting.net
 * http://mathieu.agopian.info/presentations/2015_06_djangocon_europe
