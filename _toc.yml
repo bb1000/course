@@ -7,6 +7,7 @@ chapters:
 - file: introduction/talk
 - file: git/talk
 - file: testing/talk
+- file: files/talk
 - file: external_libraries/talk
 - file: classes/talk
 - file: decorators/talk
