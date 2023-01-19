@@ -16,8 +16,5 @@ effectively in your own area of choice.
 The course will be given by tutors with many years of programming experience in
 various scientific areas.
 
-This course is given as lectures and computer labs. This year the lectures will
-be in hybrid format and the labs zoom-only.
-
 ```{tableofcontents}
 ```
