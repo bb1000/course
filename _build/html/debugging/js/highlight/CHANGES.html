@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Version 10.0.2 &#8212; BB1000 lecture notes</title>
     
-  <link href="../../../_static/css/theme.css" rel="stylesheet">
-  <link href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +20,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../../../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.css" />
@@ -42,20 +40,21 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../../../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/documentation_options.js"></script>
     <script src="../../../_static/language_data.js"></script>
@@ -72,9 +71,9 @@
     <script src="../../../_static/jquery-3.5.1.js"></script>
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -89,7 +88,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -98,9 +111,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -118,14 +132,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../intro.html">
+                    Lecture slides for Programming in Python BB1000
+                </a>
+            </li>
+        </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../../intro.html">
-   Lecture slides for Programming in Python BB1000
-  </a>
- </li>
-</ul>
-<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../../../introduction/talk.html">
    Introduction to Python
@@ -139,6 +154,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../../../testing/talk.html">
    Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../../files/talk.html">
+   File handling
   </a>
  </li>
  <li class="toctree-l1">
@@ -174,90 +194,180 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/debugging/js/highlight/CHANGES.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdebugging/js/highlight/CHANGES.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fdebugging/js/highlight/CHANGES.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../../../_sources/debugging/js/highlight/CHANGES.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
    Version 10.0.2
@@ -717,12 +827,11 @@ const thebe_selector_output = ".output, .cell_output"
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Version 10.0.2</h1>
@@ -1198,11 +1307,12 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
-  <div class="section" id="version-10-0-2">
-<h1>Version 10.0.2<a class="headerlink" href="#version-10-0-2" title="Permalink to this headline">¶</a></h1>
+  <section id="version-10-0-2">
+<h1>Version 10.0.2<a class="headerlink" href="#version-10-0-2" title="Permalink to this headline">#</a></h1>
 <p>Brower build:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/highlightjs/highlight.js/issues/2505">Issue</a> (bug) Fix: Version 10 fails to load as CommonJS module. (#2511) <a class="reference external" href="https://github.com/yyyc514">Josh Goebel</a></p></li>
@@ -1212,16 +1322,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/highlightjs/highlight.js/issues/2522">Issue</a> fix(parser) Fix freeze issue with illegal 0 width matches (#2524) <a class="reference external" href="https://github.com/yyyc514">Josh Goebel</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-10-0-1">
-<h1>Version 10.0.1<a class="headerlink" href="#version-10-0-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-10-0-1">
+<h1>Version 10.0.1<a class="headerlink" href="#version-10-0-1" title="Permalink to this headline">#</a></h1>
 <p>Parser Engine Changes:</p>
 <ul class="simple">
 <li><p>(bug) Fix sublanguage with no relevance score (#2506) <a class="reference external" href="https://github.com/yyyc514">Josh Goebel</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-10-0-0">
-<h1>Version 10.0.0<a class="headerlink" href="#version-10-0-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-10-0-0">
+<h1>Version 10.0.0<a class="headerlink" href="#version-10-0-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p>add(php-template) Explicit language to detect PHP templates (vs xml) <a class="reference external" href="https://github.com/yyyc514">Josh Goebel</a></p></li>
@@ -1284,16 +1394,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>added Dockerfile for optionally developing with a container</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-18-1">
-<h1>Version 9.18.1<a class="headerlink" href="#version-9-18-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-18-1">
+<h1>Version 9.18.1<a class="headerlink" href="#version-9-18-1" title="Permalink to this headline">#</a></h1>
 <p>Grammar Improvements:</p>
 <ul class="simple">
 <li><p>bug(coffeescript) fix freezing bug due to badly behaved regex (#2376) <a class="reference external" href="https://github.com/yyyc514">Josh Goebel</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-9-18-0">
-<h1>Version 9.18.0<a class="headerlink" href="#version-9-18-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-18-0">
+<h1>Version 9.18.0<a class="headerlink" href="#version-9-18-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p>none.</p></li>
@@ -1323,16 +1433,16 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="simple">
 <li><p>feat(developer): add button to show parsed structure (#2345) <a class="reference external" href="https://github.com/nknapp">Nils Knappmeier</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-9-17-1">
-<h1>Version 9.17.1<a class="headerlink" href="#version-9-17-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-17-1">
+<h1>Version 9.17.1<a class="headerlink" href="#version-9-17-1" title="Permalink to this headline">#</a></h1>
 <p>Fixes:</p>
 <ul class="simple">
 <li><p>fix(parser): resolve IE 11 issue with Object.freeze() (#2319) <a class="reference external" href="https://github.com/yyyc514">Josh Goebel</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-9-17-0">
-<h1>Version 9.17.0<a class="headerlink" href="#version-9-17-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-17-0">
+<h1>Version 9.17.0<a class="headerlink" href="#version-9-17-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p>none.</p></li>
@@ -1378,9 +1488,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>fix(objectivec): Handle multibyte character literals (#2268) <a class="reference external" href="https://github.com/davidben">David Benjamin</a></p></li>
 <li><p>enh(cpp): Add additional keywords (#2289) <a class="reference external" href="https://github.com/aostrowski">Adrian Ostrowski</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-9-16-2">
-<h1>Version 9.16.2<a class="headerlink" href="#version-9-16-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-16-2">
+<h1>Version 9.16.2<a class="headerlink" href="#version-9-16-2" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.</p>
 <p>New styles:
@@ -1389,9 +1499,9 @@ none.</p>
 <ul class="simple">
 <li><p>fix(arduino) Resolves issue with arduino.js not being “use strict” safe (#2247)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-16-1">
-<h1>Version 9.16.1<a class="headerlink" href="#version-9-16-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-16-1">
+<h1>Version 9.16.1<a class="headerlink" href="#version-9-16-1" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.</p>
 <p>New styles:</p>
@@ -1429,9 +1539,9 @@ none.</p>
 <li><p>fix(cpp): add <code class="docutils literal notranslate"><span class="pre">future</span></code> built-in (#1610)</p></li>
 <li><p>fix(python): support comments within function parameters (#2214)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15-10">
-<h1>Version 9.15.10<a class="headerlink" href="#version-9-15-10" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-10">
+<h1>Version 9.15.10<a class="headerlink" href="#version-9-15-10" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1450,9 +1560,9 @@ Improvements:</p>
 <li><p>feat(YAML): add YAML to common languages (#1952)</p></li>
 <li><p>feat(xml): Add support for Windows Script File (.wsf), inline VBScript in XML <code class="docutils literal notranslate"><span class="pre">script</span></code> tags (#1690)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15-9">
-<h1>Version 9.15.9<a class="headerlink" href="#version-9-15-9" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-9">
+<h1>Version 9.15.9<a class="headerlink" href="#version-9-15-9" title="Permalink to this headline">#</a></h1>
 <p>Improvements:</p>
 <ul class="simple">
 <li><p>fix(AutoHotkey): order and extended highlighting (#1579)</p></li>
@@ -1463,9 +1573,9 @@ Improvements:</p>
 <li><p>fix(Stata): Added keywords for the meta-analysis suite introduced in Stata 16 (#2081)</p></li>
 <li><p>fix(Bash): escape double quotes (#2048)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15-8">
-<h1>Version 9.15.8<a class="headerlink" href="#version-9-15-8" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-8">
+<h1>Version 9.15.8<a class="headerlink" href="#version-9-15-8" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1474,9 +1584,9 @@ Improvements:</p>
 <ul class="simple">
 <li><p>fix(bash): revert escaped double quotes - broke Firefox/Safari.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15-7">
-<h1>Version 9.15.7<a class="headerlink" href="#version-9-15-7" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-7">
+<h1>Version 9.15.7<a class="headerlink" href="#version-9-15-7" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1493,9 +1603,9 @@ Improvements:</p>
 <li><p>fix(styles/school-book): don’t style all the pre, use .hljs instead (#2034)</p></li>
 <li><p>fix(JSX): Modify JSX tag detection to use XML language regex in place of simplistic \w+</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15-6">
-<h1>Version 9.15.6<a class="headerlink" href="#version-9-15-6" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-6">
+<h1>Version 9.15.6<a class="headerlink" href="#version-9-15-6" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1505,45 +1615,45 @@ Improvements:</p>
 <li><p>Move dependencies to be devDependencies.</p></li>
 <li><p>Fixed security issues in dev dependencies.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15-5">
-<h1>Version 9.15.5<a class="headerlink" href="#version-9-15-5" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-5">
+<h1>Version 9.15.5<a class="headerlink" href="#version-9-15-5" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
 none.
 Improvements:
 🔥 Hot fix: updated build tool.</p>
-</div>
-<div class="section" id="version-9-15-4">
-<h1>Version 9.15.4<a class="headerlink" href="#version-9-15-4" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-4">
+<h1>Version 9.15.4<a class="headerlink" href="#version-9-15-4" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
 none.
 Improvements:
 🔥 Hot fix: reverted hljs cli build tool, as it was causing issues with install.</p>
-</div>
-<div class="section" id="version-9-15-3">
-<h1>Version 9.15.3<a class="headerlink" href="#version-9-15-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-3">
+<h1>Version 9.15.3<a class="headerlink" href="#version-9-15-3" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
 none.
 Improvements:
 🔥 Hot fix: reverted hljs cli build tool, as it was causing issues with install.</p>
-</div>
-<div class="section" id="version-9-15-2">
-<h1>Version 9.15.2<a class="headerlink" href="#version-9-15-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-2">
+<h1>Version 9.15.2<a class="headerlink" href="#version-9-15-2" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
 none.
 Improvements:
 🔥 Hot fix that was preventing highlight.js from installing.</p>
-</div>
-<div class="section" id="version-9-15-1">
-<h1>Version 9.15.1<a class="headerlink" href="#version-9-15-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15-1">
+<h1>Version 9.15.1<a class="headerlink" href="#version-9-15-1" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.</p>
 <p>New styles:
@@ -1553,9 +1663,9 @@ none.</p>
 <li><p>Pony: Fixed keywords without spaces at line ends, highlighting of <code class="docutils literal notranslate"><span class="pre">iso</span></code> in class definitions, and function heads without bodies in traits and interfaces. Removed FUNCTION and CLASS modes until they are found to be needed and to provide some of the fixes.</p></li>
 <li><p>Support external language files in minified version of highlight.js (#1888)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-15">
-<h1>Version 9.15<a class="headerlink" href="#version-9-15" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-15">
+<h1>Version 9.15<a class="headerlink" href="#version-9-15" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.</p>
 <p>New styles:
@@ -1566,9 +1676,9 @@ none.</p>
 <li><p>cpp: Fully support C++11 raw strings. (#1897)</p></li>
 <li><p>Python: Treat False None and True as literals (#1920)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-14-2">
-<h1>Version 9.14.2<a class="headerlink" href="#version-9-14-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-14-2">
+<h1>Version 9.14.2<a class="headerlink" href="#version-9-14-2" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1578,9 +1688,9 @@ Improvements:</p>
 <li><p><em>Gauss</em> fixed to stop global namespace pollution <a class="reference external" href="https://github.com/shyndman">Scott Hyndman</a>.</p></li>
 <li><p>fix(Tcl): removed apostrophe string delimiters (don’t exist)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-14-1">
-<h1>Version 9.14.1<a class="headerlink" href="#version-9-14-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-14-1">
+<h1>Version 9.14.1<a class="headerlink" href="#version-9-14-1" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1589,9 +1699,9 @@ Improvements:</p>
 <ul class="simple">
 <li><p>Pony: language improvements (#1958)</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-14-0">
-<h1>Version 9.14.0<a class="headerlink" href="#version-9-14-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-14-0">
+<h1>Version 9.14.0<a class="headerlink" href="#version-9-14-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:
 none.
 New styles:
@@ -1615,9 +1725,9 @@ Allow empty prompt text in clojure-repl, by <a class="reference external" href="
 <li><p>Fix filterByQualifiers: fileInfo can be null</p></li>
 <li><p>Fixed String interpolation in Dart, by <a class="reference external" href="https://github.com/shyndman">Scott Hyndman</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-13-1">
-<h1>Version 9.13.1<a class="headerlink" href="#version-9-13-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-13-1">
+<h1>Version 9.13.1<a class="headerlink" href="#version-9-13-1" title="Permalink to this headline">#</a></h1>
 <p>Improvements:</p>
 <ul class="simple">
 <li><p><em>C#</em> function declarations no longer include trailing whitespace, by <a class="reference external" href="https://github.com/JeremyTCD">JeremyTCD</a></p></li>
@@ -1627,9 +1737,9 @@ Allow empty prompt text in clojure-repl, by <a class="reference external" href="
 <li><p>Fixed issue that was causing some minifiers to fail.</p></li>
 <li><p>Fixed <code class="docutils literal notranslate"><span class="pre">autoDetection</span></code> to accept language aliases.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-13-0">
-<h1>Version 9.13.0<a class="headerlink" href="#version-9-13-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-13-0">
+<h1>Version 9.13.0<a class="headerlink" href="#version-9-13-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>ArcGIS Arcade</em> by <a class="reference external" href="https://github.com/jf990">John Foster</a></p></li>
@@ -1671,9 +1781,9 @@ by <a class="reference external" href="https://github.com/egor-rogov">Egor Rogov
 <li><p>Various documentation typos and improvemets by <a class="reference external" href="https://github.com/jimmywarting">Jimmy Wärting</a>, <a class="reference external" href="https://github.com/lutz-100worte">Lutz Büch</a>, <a class="reference external" href="https://github.com/bcleland">bcleland</a></p></li>
 <li><p><em>Cmake</em> updated with new keywords and commands by <a class="reference external" href="https://github.com/Bagira80">Deniz Bahadir</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-9-12-0">
-<h1>Version 9.12.0<a class="headerlink" href="#version-9-12-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-12-0">
+<h1>Version 9.12.0<a class="headerlink" href="#version-9-12-0" title="Permalink to this headline">#</a></h1>
 <p>New language:</p>
 <ul class="simple">
 <li><p><em>MikroTik</em> RouterOS Scripting language by <a class="reference external" href="https://github.com/DiVAN1x">Ivan Dementev</a>.</p></li>
@@ -1697,9 +1807,9 @@ titles detection and added highlighting of <code class="docutils literal notrans
 consistently with other kinds.</p></li>
 <li><p><a class="reference external" href="https://github.com/Azoy">Alejandro Alonso</a> updated <em>Swift</em> keywords.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-11-0">
-<h1>Version 9.11.0<a class="headerlink" href="#version-9-11-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-11-0">
+<h1>Version 9.11.0<a class="headerlink" href="#version-9-11-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Shell</em> by <a class="reference external" href="https://github.com/MakeNowJust">Tsuyusato Kitsune</a></p></li>
@@ -1712,9 +1822,9 @@ consistently with other kinds.</p></li>
 <li><p><a class="reference external" href="https://github.com/jordi-petit">Jordi Petit</a> added rarely used <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code> and <code class="docutils literal notranslate"><span class="pre">not</span></code> keywords to <em>C++</em>.</p></li>
 <li><p><a class="reference external" href="https://github.com/NuclearCookie">Pieter Vantorre</a> fixed highlighting of negative floating point values.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-10-0">
-<h1>Version 9.10.0<a class="headerlink" href="#version-9-10-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-10-0">
+<h1>Version 9.10.0<a class="headerlink" href="#version-9-10-0" title="Permalink to this headline">#</a></h1>
 <p>Apologies for missing the previous release cycle. Some thing just can’t be
 automated… Anyway, we’re back!</p>
 <p>New languages:</p>
@@ -1738,9 +1848,9 @@ Rust core team member!)</p></li>
 <li><p><em>Scheme</em> now correctly handles `-quoted lists thanks to <a class="reference external" href="https://github.com/Kraks">Guannan Wei</a>.</p></li>
 <li><p><a class="reference external" href="https://github.com/samsam2310">Sam Wu</a> fixed handling of <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> in <em>C++</em> defines.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-9-0">
-<h1>Version 9.9.0<a class="headerlink" href="#version-9-9-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-9-0">
+<h1>Version 9.9.0<a class="headerlink" href="#version-9-9-0" title="Permalink to this headline">#</a></h1>
 <p>New languages</p>
 <ul class="simple">
 <li><p><em>LLVM</em> by <a class="reference external" href="https://github.com/f0rki">Michael Rodler</a></p></li>
@@ -1753,9 +1863,9 @@ Rust core team member!)</p></li>
 in ```, thanks to thanks to <a class="reference external" href="https://github.com/GeoffreyBooth">Geoffrey Booth</a>.</p></li>
 <li><p>Compiler directives in <em>Delphi</em> are now correctly highlighted as “meta”.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-8-0-new-york">
-<h1>Version 9.8.0 “New York”<a class="headerlink" href="#version-9-8-0-new-york" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-8-0-new-york">
+<h1>Version 9.8.0 “New York”<a class="headerlink" href="#version-9-8-0-new-york" title="Permalink to this headline">#</a></h1>
 <p>This version is the second one that deserved a name. Because I’m in New York,
 and the release isn’t missing the deadline only because it’s still Tuesday on
 West Coast.</p>
@@ -1772,9 +1882,9 @@ West Coast.</p>
 <li><p><em>Java</em> and <em>Swift</em> support unicode characters in identifiers thanks to
 <a class="reference external" href="https://github.com/manniL">Alexander Lichter</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-7-0">
-<h1>Version 9.7.0<a class="headerlink" href="#version-9-7-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-7-0">
+<h1>Version 9.7.0<a class="headerlink" href="#version-9-7-0" title="Permalink to this headline">#</a></h1>
 <p>A comprehensive bugfix release. This is one of the best things about
 highlight.js: even boring things keep getting better (even if slow).</p>
 <ul class="simple">
@@ -1790,9 +1900,9 @@ parsing within template string substitution blocks (<code class="docutils litera
 generics <code class="docutils literal notranslate"><span class="pre">&lt;...&gt;</span></code>.</p></li>
 <li><p>Fixed another slow regex in Less.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-6-0">
-<h1>Version 9.6.0<a class="headerlink" href="#version-9-6-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-6-0">
+<h1>Version 9.6.0<a class="headerlink" href="#version-9-6-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>ABNF</em> and <em>EBNF</em> by <a class="reference external" href="https://github.com/mckibbenta">Alex McKibben</a></p></li>
@@ -1804,9 +1914,9 @@ generics <code class="docutils literal notranslate"><span class="pre">&lt;...&gt
 <li><p><em>Atom One</em> in both Dark and Light variants  by <a class="reference external" href="https://github.com/danielgamage">Daniel Gamage</a></p></li>
 </ul>
 <p>Plus, a few smaller updates for <em>Lasso</em>, <em>Elixir</em>, <em>C++</em> and <em>SQL</em>.</p>
-</div>
-<div class="section" id="version-9-5-0">
-<h1>Version 9.5.0<a class="headerlink" href="#version-9-5-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-5-0">
+<h1>Version 9.5.0<a class="headerlink" href="#version-9-5-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Excel</em> by <a class="reference external" href="https://github.com/OiCMudkips">Victor Zhou</a></p></li>
@@ -1827,9 +1937,9 @@ generics <code class="docutils literal notranslate"><span class="pre">&lt;...&gt
 comments.</p></li>
 <li><p><a class="reference external" href="https://github.com/OiCMudkips">Victor Zhou</a> added support for digit separators in C++ numbers.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-4-0">
-<h1>Version 9.4.0<a class="headerlink" href="#version-9-4-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-4-0">
+<h1>Version 9.4.0<a class="headerlink" href="#version-9-4-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>PureBASIC</em> by <a class="reference external" href="https://github.com/tajmone">Tristano Ajmone</a></p></li>
@@ -1854,9 +1964,9 @@ languages. Elm is now featured on the front page of <a class="reference external
 <li><p><code class="docutils literal notranslate"><span class="pre">usize</span></code> and <code class="docutils literal notranslate"><span class="pre">isize</span></code> are now highlighted in Rust.</p></li>
 <li><p>Fixed labels and directives in x86 assembler.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-3-0">
-<h1>Version 9.3.0<a class="headerlink" href="#version-9-3-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-3-0">
+<h1>Version 9.3.0<a class="headerlink" href="#version-9-3-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Tagger Script</em> by <a class="reference external" href="https://github.com/phw">Philipp Wolfer</a></p></li>
@@ -1879,9 +1989,9 @@ minor improvements</p></li>
 <li><p>Markdown now recognizes ```-fenced code blocks</p></li>
 <li><p>Improved detection of function declarations in C++ and C#</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-2-0">
-<h1>Version 9.2.0<a class="headerlink" href="#version-9-2-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-2-0">
+<h1>Version 9.2.0<a class="headerlink" href="#version-9-2-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>QML</em> by <a class="reference external" href="https://github.com/jf990">John Foster</a></p></li>
@@ -1906,9 +2016,9 @@ VimScript.</p></li>
 <li><p>We now use anonymous modules for AMD.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">macro_rules!</span></code> is now recognized as a built-in in Rust.</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-1-0">
-<h1>Version 9.1.0<a class="headerlink" href="#version-9-1-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-1-0">
+<h1>Version 9.1.0<a class="headerlink" href="#version-9-1-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Stan</em> by <a class="reference external" href="http://brendanrocks.com">Brendan Rocks</a></p></li>
@@ -1930,9 +2040,9 @@ VimScript.</p></li>
 <li><p>Recognize b-prefixed chars and strings in Rust</p></li>
 <li><p>Better numbers handling in Verilog</p></li>
 </ul>
-</div>
-<div class="section" id="version-9-0-0">
-<h1>Version 9.0.0<a class="headerlink" href="#version-9-0-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-9-0-0">
+<h1>Version 9.0.0<a class="headerlink" href="#version-9-0-0" title="Permalink to this headline">#</a></h1>
 <p>The new major version brings a reworked styling system. Highlight.js now defines
 a limited set of highlightable classes giving a consistent result across all the
 styles and languages. You can read a more detailed explanation and background in
@@ -1969,9 +2079,9 @@ some more in next releases. Please do give your feedback in our
 shamelessly uses ES6 features all over the place, courtesy of <a class="reference external" href="https://github.com/sourrust">Jeremy Hull</a>.</p></li>
 <li><p>License added to non-compressed browser build.</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-9-1">
-<h1>Version 8.9.1<a class="headerlink" href="#version-8-9-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-9-1">
+<h1>Version 8.9.1<a class="headerlink" href="#version-8-9-1" title="Permalink to this headline">#</a></h1>
 <p>Some last-minute changes reverted due to strange bug with minified browser build:</p>
 <ul class="simple">
 <li><p>Scala case classes params highlight fixed</p></li>
@@ -1980,9 +2090,9 @@ shamelessly uses ES6 features all over the place, courtesy of <a class="referenc
 <li><p>Template string support for Typescript, as for ECMAScript 6</p></li>
 <li><p>License added to not minified browser build</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-9-0">
-<h1>Version 8.9.0<a class="headerlink" href="#version-8-9-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-9-0">
+<h1>Version 8.9.0<a class="headerlink" href="#version-8-9-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>crmsh</em> by <a class="reference external" href="https://github.com/krig">Kristoffer Gronlund</a></p></li>
@@ -2004,9 +2114,9 @@ shamelessly uses ES6 features all over the place, courtesy of <a class="referenc
 <ul class="simple">
 <li><p>~~License added to not minified browser build~~</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-8-0">
-<h1>Version 8.8.0<a class="headerlink" href="#version-8-8-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-8-0">
+<h1>Version 8.8.0<a class="headerlink" href="#version-8-8-0" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Golo</em> by <a class="reference external" href="https://github.com/k33g">Philippe Charrière</a></p></li>
@@ -2027,9 +2137,9 @@ shamelessly uses ES6 features all over the place, courtesy of <a class="referenc
 <li><p>Change versions to X.Y.Z SemVer-compatible format</p></li>
 <li><p>Added ability to build all targets at once</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-7">
-<h1>Version 8.7<a class="headerlink" href="#version-8-7" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-7">
+<h1>Version 8.7<a class="headerlink" href="#version-8-7" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Zephir</em> by <a class="reference external" href="https://github.com/Sannis">Oleg Efimov</a></p></li>
@@ -2058,9 +2168,9 @@ shamelessly uses ES6 features all over the place, courtesy of <a class="referenc
 <li><p>Correctly highlight numbers and strings inside of C/C++ macros</p></li>
 <li><p>C/C++ functions now support pointer, reference, and move returns</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-6">
-<h1>Version 8.6<a class="headerlink" href="#version-8-6" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-6">
+<h1>Version 8.6<a class="headerlink" href="#version-8-6" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>C/AL</em> by <a class="reference external" href="https://github.com/kfuglsang">Kenneth Fuglsang</a></p></li>
@@ -2088,9 +2198,9 @@ shamelessly uses ES6 features all over the place, courtesy of <a class="referenc
 <li><p>Images is now included to CDN build</p></li>
 <li><p>Release process is now automated</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-5">
-<h1>Version 8.5<a class="headerlink" href="#version-8-5" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-5">
+<h1>Version 8.5<a class="headerlink" href="#version-8-5" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>pf.conf</em> by <a class="reference external" href="https://github.com/oldlaptop">Peter Piwowarski</a></p></li>
@@ -2117,9 +2227,9 @@ shamelessly uses ES6 features all over the place, courtesy of <a class="referenc
 <li><p>HTML <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code> tag now allows any language, not just JavaScript.</p></li>
 <li><p>Multi-line comments are supported now in MatLab.</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-4">
-<h1>Version 8.4<a class="headerlink" href="#version-8-4" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-4">
+<h1>Version 8.4<a class="headerlink" href="#version-8-4" title="Permalink to this headline">#</a></h1>
 <p>We’ve got the new <a class="reference external" href="https://highlightjs.org/static/demo/">demo page</a>! The obvious new feature is the new look, but
 apart from that it’s got smarter: by presenting languages in groups it avoids
 running 10000 highlighting attempts after first load which was slowing it down
@@ -2148,9 +2258,9 @@ and we can now highlight Clojure’s REPL sessions.</p></li>
 <li><p><em>Verilog</em> by <a class="reference external" href="https://github.com/craftyjon">Jon Evans</a></p></li>
 <li><p><em>Stata</em> by <a class="reference external" href="https://github.com/bquistorff">Brian Quistorff</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-8-3">
-<h1>Version 8.3<a class="headerlink" href="#version-8-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-3">
+<h1>Version 8.3<a class="headerlink" href="#version-8-3" title="Permalink to this headline">#</a></h1>
 <p>We streamlined our tool chain, it is now based entirely on node.js instead of
 being a mix of node.js, Python and Java. The build script options and arguments
 remained the same, and we’ve noted all the changes in the <a class="reference external" href="http://highlightjs.readthedocs.org/en/latest/building-testing.html">documentation</a>.
@@ -2179,9 +2289,9 @@ Kleshnin</a>.</p></li>
 <li><p><em>ERB</em> (Ruby in HTML) by <a class="reference external" href="https://github.com/lucasmazza">Lucas Mazza</a></p></li>
 <li><p><em>Roboconf</em> by <a class="reference external" href="https://github.com/vincent-zurczak">Vincent Zurczak</a></p></li>
 </ul>
-</div>
-<div class="section" id="version-8-2">
-<h1>Version 8.2<a class="headerlink" href="#version-8-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-2">
+<h1>Version 8.2<a class="headerlink" href="#version-8-2" title="Permalink to this headline">#</a></h1>
 <p>We’ve finally got <a class="reference external" href="https://github.com/isagalaev/highlight.js/tree/master/test">real tests</a> and <a class="reference external" href="https://travis-ci.org/isagalaev/highlight.js">continuous testing on Travis</a>
 thanks to <a class="reference external" href="https://github.com/sourrust">Jeremy Hull</a> and <a class="reference external" href="https://github.com/chriseidhof">Chris Eidhof</a>. The tests designed to cover
 everything: language detection, correct parsing of individual language features
@@ -2207,9 +2317,9 @@ help us with it, drop a comment into <a class="reference external" href="https:/
 the first symbol in parentheses: it’s “keyword” in general case and also
 “built_in” for built-in functions in Clojure and Scheme.</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-1">
-<h1>Version 8.1<a class="headerlink" href="#version-8-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-1">
+<h1>Version 8.1<a class="headerlink" href="#version-8-1" title="Permalink to this headline">#</a></h1>
 <p>New languages:</p>
 <ul class="simple">
 <li><p><em>Gherkin</em> by <a class="reference external" href="https://github.com/pikesley">Sam Pikesley</a></p></li>
@@ -2254,9 +2364,9 @@ Thanks to <a class="reference external" href="https://github.com/shmatov">Roman 
 <li><p>Various improvements to Objective-C definition by <a class="reference external" href="https://github.com/mdiep">Matt Diephouse</a>.</p></li>
 <li><p>Fixed highlighting of generics in Java.</p></li>
 </ul>
-</div>
-<div class="section" id="version-8-0">
-<h1>Version 8.0<a class="headerlink" href="#version-8-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-8-0">
+<h1>Version 8.0<a class="headerlink" href="#version-8-0" title="Permalink to this headline">#</a></h1>
 <p>This new major release is quite a big overhaul bringing both new features and
 some backwards incompatible changes. However, chances are that the majority of
 users won’t be affected by the latter: the basic scenario described in the
@@ -2268,9 +2378,9 @@ README is left intact.</p>
 people’s stylesheets. If you were using an older version, you might still want
 the previous behavior, but still want to upgrade. To suppress this new
 behavior, you would initialize like so:</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
-  <span class="nx">hljs</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span><span class="nx">classPrefix</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">});</span>
-  <span class="nx">hljs</span><span class="p">.</span><span class="nx">initHighlightingOnLoad</span><span class="p">();</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nx">hljs</span><span class="p">.</span><span class="nx">configure</span><span class="p">({</span><span class="nx">classPrefix</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">});</span><span class="w"></span>
+<span class="w">  </span><span class="nx">hljs</span><span class="p">.</span><span class="nx">initHighlightingOnLoad</span><span class="p">();</span><span class="w"></span>
 <span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 </div>
@@ -2328,9 +2438,9 @@ documented in the <a class="reference external" href="http://highlightjs.readthe
 <li><p>Big overhaul of relevance counting for a number of languages. Please do report
 bugs about mis-detection of non-trivial code snippets!</p></li>
 </ul>
-</div>
-<div class="section" id="version-7-5">
-<h1>Version 7.5<a class="headerlink" href="#version-7-5" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-7-5">
+<h1>Version 7.5<a class="headerlink" href="#version-7-5" title="Permalink to this headline">#</a></h1>
 <p>A catch-up release dealing with some of the accumulated contributions. This one
 is probably will be the last before the 8.0 which will be slightly backwards
 incompatible regarding some advanced use-cases.</p>
@@ -2355,9 +2465,9 @@ preprocessors, modules, containers, FFIs etc. Thanks to <a class="reference exte
 for the implementation and to <a class="reference external" href="https://github.com/sourrust">Jeremy Hull</a> for guiding it.</p></li>
 <li><p>Miscellaneous fixes in PHP, Brainfuck, SCSS, Asciidoc, CMake, Python and F#.</p></li>
 </ul>
-</div>
-<div class="section" id="new-core-developers">
-<h1>New core developers<a class="headerlink" href="#new-core-developers" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="new-core-developers">
+<h1>New core developers<a class="headerlink" href="#new-core-developers" title="Permalink to this headline">#</a></h1>
 <p>The latest long period of almost complete inactivity in the project coincided
 with growing interest to it led to a decision that now seems completely obvious:
 we need more core developers.</p>
@@ -2366,9 +2476,9 @@ contributors: <a class="reference external" href="https://github.com/sourrust">J
 Efimov</a>.</p>
 <p>Hope now we’ll be able to work through stuff faster!</p>
 <p>P.S. The historical commit is <a class="reference external" href="https://github.com/isagalaev/highlight.js/commit/f3056941bda56d2b72276b97bc0dd5f230f2473f">here</a> for the record.</p>
-</div>
-<div class="section" id="version-7-4">
-<h1>Version 7.4<a class="headerlink" href="#version-7-4" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-7-4">
+<h1>Version 7.4<a class="headerlink" href="#version-7-4" title="Permalink to this headline">#</a></h1>
 <p>This long overdue version is a snapshot of the current source tree with all the
 changes that happened during the past year. Sorry for taking so long!</p>
 <p>Along with the changes in code highlight.js has finally got its new home at
@@ -2406,9 +2516,9 @@ outgrew a long time ago. Be sure to report any bugs about the site to
 <li><p>CoffeeScript highlighting is now significantly more robust and rich due to
 input from <a class="reference external" href="https://github.com/abe33">Cédric Néhémie</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="version-7-3">
-<h1>Version 7.3<a class="headerlink" href="#version-7-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-7-3">
+<h1>Version 7.3<a class="headerlink" href="#version-7-3" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Since this version highlight.js no longer works in IE version 8 and older.
 It’s made it possible to reduce the library size and dramatically improve code
@@ -2430,13 +2540,13 @@ developers and contributors from the old wiki under the source code in the
 “docs” directory. Now these docs are nicely presented at
 <a class="reference external" href="http://highlightjs.readthedocs.org/">http://highlightjs.readthedocs.org/</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="version-7-2">
-<h1>Version 7.2<a class="headerlink" href="#version-7-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-7-2">
+<h1>Version 7.2<a class="headerlink" href="#version-7-2" title="Permalink to this headline">#</a></h1>
 <p>A regular bug-fix release without any significant new features. Enjoy!</p>
-</div>
-<div class="section" id="version-7-1">
-<h1>Version 7.1<a class="headerlink" href="#version-7-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-7-1">
+<h1>Version 7.1<a class="headerlink" href="#version-7-1" title="Permalink to this headline">#</a></h1>
 <p>A Summer crop:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/mfornos">Marc Fornos</a> made the definition for Clojure along with the matching
@@ -2450,9 +2560,9 @@ expressions.</p></li>
 <li><p>And last but not least, we’ve got a fair number of correctness and consistency
 fixes, including a pretty significant refactoring of Ruby.</p></li>
 </ul>
-</div>
-<div class="section" id="version-7-0">
-<h1>Version 7.0<a class="headerlink" href="#version-7-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-7-0">
+<h1>Version 7.0<a class="headerlink" href="#version-7-0" title="Permalink to this headline">#</a></h1>
 <p>The reason for the new major version update is a global change of keyword syntax
 which resulted in the library getting smaller once again. For example, the
 hosted build is 2K less than at the previous version while supporting two new
@@ -2480,9 +2590,9 @@ by their respective maintainers <a class="reference external" href="https://gith
 <p>And last but not least, many bugs have been fixed around correctness and
 language detection.</p>
 <p>Overall highlight.js currently supports 51 languages and 20 style themes.</p>
-</div>
-<div class="section" id="version-6-2">
-<h1>Version 6.2<a class="headerlink" href="#version-6-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-6-2">
+<h1>Version 6.2<a class="headerlink" href="#version-6-2" title="Permalink to this headline">#</a></h1>
 <p>A lot of things happened in highlight.js since the last version! We’ve got nine
 new contributors, the discussion group came alive, and the main branch on GitHub
 now counts more than 350 followers. Here are most significant results coming
@@ -2497,18 +2607,18 @@ another well-known highlighter Google Code Prettify by <a class="reference exter
 <li><p>A vast number of <a class="reference external" href="https://github.com/isagalaev/highlight.js/commits/">correctness fixes and code refactorings</a>, mostly made
 by <a class="reference external" href="https://github.com/Sannis">Oleg Efimov</a> and <a class="reference external" href="https://github.com/bolknote">Evgeny Stepanischev</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="version-6-1-solarized">
-<h1>Version 6.1 — Solarized<a class="headerlink" href="#version-6-1-solarized" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-6-1-solarized">
+<h1>Version 6.1 — Solarized<a class="headerlink" href="#version-6-1-solarized" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="https://github.com/sourrust">Jeremy Hull</a> has implemented my dream feature — a port of <a class="reference external" href="http://ethanschoonover.com/solarized">Solarized</a>
 style theme famous for being based on the intricate color theory to achieve
 correct contrast and color perception. It is now available for highlight.js in
 both variants — light and dark.</p>
 <p>This version also adds a new original style Arta. Its author pumbur maintains a
 <a class="reference external" href="https://github.com/pumbur/highlight.js">heavily modified fork of highlight.js</a> on GitHub.</p>
-</div>
-<div class="section" id="version-6-0">
-<h1>Version 6.0<a class="headerlink" href="#version-6-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-6-0">
+<h1>Version 6.0<a class="headerlink" href="#version-6-0" title="Permalink to this headline">#</a></h1>
 <p>New major version of the highlighter has been built on a significantly
 refactored syntax. Due to this it’s even smaller than the previous one while
 supporting more languages!</p>
@@ -2527,21 +2637,21 @@ bugs.</p>
 recent beta release</a>.</p>
 <p>P.S. New version is not yet available on a Yandex CDN, so for now you have to
 download <a class="reference external" href="http://highlightjs.org/download/">your own copy</a>.</p>
-</div>
-<div class="section" id="version-5-14">
-<h1>Version 5.14<a class="headerlink" href="#version-5-14" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-14">
+<h1>Version 5.14<a class="headerlink" href="#version-5-14" title="Permalink to this headline">#</a></h1>
 <p>Fixed bugs in HTML/XML detection and relevance introduced in previous
 refactoring.</p>
 <p>Also test.html now shows the second best result of language detection by
 relevance.</p>
-</div>
-<div class="section" id="version-5-13">
-<h1>Version 5.13<a class="headerlink" href="#version-5-13" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-13">
+<h1>Version 5.13<a class="headerlink" href="#version-5-13" title="Permalink to this headline">#</a></h1>
 <p>Past weekend began with a couple of simple additions for existing languages but
 ended up in a big code refactoring bringing along nice improvements for language
 developers.</p>
-<div class="section" id="for-users">
-<h2>For users<a class="headerlink" href="#for-users" title="Permalink to this headline">¶</a></h2>
+<section id="for-users">
+<h2>For users<a class="headerlink" href="#for-users" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Description of C++ has got new keywords from the upcoming <a class="reference external" href="http://ru.wikipedia.org/wiki/C%2B%2B0x">C++ 0x</a> standard.</p></li>
 <li><p>Description of HTML has got new tags from <a class="reference external" href="http://en.wikipedia.org/wiki/HTML5">HTML 5</a>.</p></li>
@@ -2558,9 +2668,9 @@ highlighter now doesn’t insist on replacing them with its own container and
 just replaces the contents.</p></li>
 <li><p>Small fixes in browser compatibility and heuristics.</p></li>
 </ul>
-</div>
-<div class="section" id="for-developers">
-<h2>For developers<a class="headerlink" href="#for-developers" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="for-developers">
+<h2>For developers<a class="headerlink" href="#for-developers" title="Permalink to this headline">#</a></h2>
 <p>The most significant change is the ability to include language submodes right
 under <code class="docutils literal notranslate"><span class="pre">contains</span></code> instead of defining explicit named submodes in the main array:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>contains: [
@@ -2577,15 +2687,15 @@ separate <code class="docutils literal notranslate"><span class="pre">&lt;span&g
 <p>Test file test.html has at last become a real test. Now it not only puts the
 detected language name under the code snippet but also tests if it matches the
 expected one. Test summary is displayed right above all language snippets.</p>
-</div>
-</div>
-<div class="section" id="cdn">
-<h1>CDN<a class="headerlink" href="#cdn" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section id="cdn">
+<h1>CDN<a class="headerlink" href="#cdn" title="Permalink to this headline">#</a></h1>
 <p>Fine people at <a class="reference external" href="http://yandex.com/">Yandex</a> agreed to host highlight.js on their big fast servers.
 <a class="reference external" href="http://softwaremaniacs.org/soft/highlight/en/download/">Link up</a>!</p>
-</div>
-<div class="section" id="version-5-10-paris">
-<h1>Version 5.10 — “Paris”.<a class="headerlink" href="#version-5-10-paris" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-10-paris">
+<h1>Version 5.10 — “Paris”.<a class="headerlink" href="#version-5-10-paris" title="Permalink to this headline">#</a></h1>
 <p>Though I’m on a vacation in Paris, I decided to release a new version with a
 couple of small fixes:</p>
 <ul class="simple">
@@ -2593,9 +2703,9 @@ couple of small fixes:</p>
 with custom markup in code</p></li>
 <li><p>SQL parsing is even more rigid now and doesn’t step over SmallTalk in tests</p></li>
 </ul>
-</div>
-<div class="section" id="version-5-9">
-<h1>Version 5.9<a class="headerlink" href="#version-5-9" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-9">
+<h1>Version 5.9<a class="headerlink" href="#version-5-9" title="Permalink to this headline">#</a></h1>
 <p>A long-awaited version is finally released.</p>
 <p>New languages:</p>
 <ul class="simple">
@@ -2616,32 +2726,32 @@ from initialization code of JS frameworks and in ajax methods (see.
 readme.eng.txt).</p>
 <p>Also this version drops support for the <a class="reference external" href="http://wordpress.org/">WordPress</a> plugin. Everyone is
 welcome to <a class="reference external" href="http://softwaremaniacs.org/blog/2012/05/10/http-and-json-in-highlight-js/en/">pick up its maintenance</a> if needed.</p>
-</div>
-<div class="section" id="version-5-8">
-<h1>Version 5.8<a class="headerlink" href="#version-5-8" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-8">
+<h1>Version 5.8<a class="headerlink" href="#version-5-8" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Jan Berkel has contributed a definition for Scala. +1 to hotness!</p></li>
 <li><p>All CSS-styles are rewritten to work only inside <code class="docutils literal notranslate"><span class="pre">&lt;pre&gt;</span></code> tags to avoid
 conflicts with host site styles.</p></li>
 </ul>
-</div>
-<div class="section" id="version-5-7">
-<h1>Version 5.7.<a class="headerlink" href="#version-5-7" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-7">
+<h1>Version 5.7.<a class="headerlink" href="#version-5-7" title="Permalink to this headline">#</a></h1>
 <p>Fixed escaping of quotes in VBScript strings.</p>
-</div>
-<div class="section" id="version-5-5">
-<h1>Version 5.5<a class="headerlink" href="#version-5-5" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-5">
+<h1>Version 5.5<a class="headerlink" href="#version-5-5" title="Permalink to this headline">#</a></h1>
 <p>This version brings a small change: now .ini-files allow digits, underscores and
 square brackets in key names.</p>
-</div>
-<div class="section" id="version-5-4">
-<h1>Version 5.4<a class="headerlink" href="#version-5-4" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-4">
+<h1>Version 5.4<a class="headerlink" href="#version-5-4" title="Permalink to this headline">#</a></h1>
 <p>Fixed small but upsetting bug in the packer which caused incorrect highlighting
 of explicitly specified languages. Thanks to Andrew Fedorov for precise
 diagnostics!</p>
-</div>
-<div class="section" id="version-5-3">
-<h1>Version 5.3<a class="headerlink" href="#version-5-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-3">
+<h1>Version 5.3<a class="headerlink" href="#version-5-3" title="Permalink to this headline">#</a></h1>
 <p>The version to fulfil old promises.</p>
 <p>The most significant change is that highlight.js now preserves custom user
 markup in code along with its own highlighting markup. This means that now it’s
@@ -2654,18 +2764,18 @@ support for CSS &#64;-rules and Ruby symbols.</p></li>
 <li><p>Yura Zaripov has sent two styles: Brown Paper and School Book.</p></li>
 <li><p>Oleg Volchkov has sent a definition for <a class="reference external" href="http://www.parser.ru/">Parser 3</a>.</p></li>
 </ul>
-</div>
-<div class="section" id="version-5-2">
-<h1>Version 5.2<a class="headerlink" href="#version-5-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-2">
+<h1>Version 5.2<a class="headerlink" href="#version-5-2" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>at last it’s possible to replace indentation TABs with something sensible
 (e.g. 2 or 4 spaces)</p></li>
 <li><p>new keywords and built-ins for 1C by Sergey Baranov</p></li>
 <li><p>a couple of small fixes to Apache highlighting</p></li>
 </ul>
-</div>
-<div class="section" id="version-5-1">
-<h1>Version 5.1<a class="headerlink" href="#version-5-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-1">
+<h1>Version 5.1<a class="headerlink" href="#version-5-1" title="Permalink to this headline">#</a></h1>
 <p>This is one of those nice version consisting entirely of new and shiny
 contributions!</p>
 <ul class="simple">
@@ -2677,9 +2787,9 @@ under the name “Magula”.</p></li>
 languages. Also thanks go to <a class="reference external" href="http://k-evdokimenko.moikrug.ru/">Konstantin Evdokimenko</a> for his advice on
 the matter.</p></li>
 </ul>
-</div>
-<div class="section" id="version-5-0">
-<h1>Version 5.0<a class="headerlink" href="#version-5-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-5-0">
+<h1>Version 5.0<a class="headerlink" href="#version-5-0" title="Permalink to this headline">#</a></h1>
 <p>The main change in the new major version of highlight.js is a mechanism for
 packing several languages along with the library itself into a single compressed
 file. Now sites using several languages will load considerably faster because
@@ -2688,18 +2798,18 @@ the library won’t dynamically include additional files while loading.</p>
 couldn’t distinguish between regular expressions and division operations.</p>
 <p>And as usually there were a couple of minor correctness fixes.</p>
 <p>Great thanks to all contributors! Keep using highlight.js.</p>
-</div>
-<div class="section" id="version-4-3">
-<h1>Version 4.3<a class="headerlink" href="#version-4-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-4-3">
+<h1>Version 4.3<a class="headerlink" href="#version-4-3" title="Permalink to this headline">#</a></h1>
 <p>This version comes with two contributions from <a class="reference external" href="http://jason.diamond.name/weblog/">Jason Diamond</a>:</p>
 <ul class="simple">
 <li><p>language definition for C# (yes! it was a long-missed thing!)</p></li>
 <li><p>Visual Studio-like highlighting style</p></li>
 </ul>
 <p>Plus there are a couple of minor bug fixes for parsing HTML and XML attributes.</p>
-</div>
-<div class="section" id="version-4-2">
-<h1>Version 4.2<a class="headerlink" href="#version-4-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-4-2">
+<h1>Version 4.2<a class="headerlink" href="#version-4-2" title="Permalink to this headline">#</a></h1>
 <p>The biggest news is highlighting for Lisp, courtesy of Vasily Polovnyov. It’s
 somewhat experimental meaning that for highlighting “keywords” it doesn’t use
 any pre-defined set of a Lisp dialect. Instead it tries to highlight first word
@@ -2716,9 +2826,9 @@ test.html</p></li>
 <li><p>better auto-detection of C++ and PHP</p></li>
 <li><p>HTML allows embedded VBScript (<code class="docutils literal notranslate"><span class="pre">&lt;%</span> <span class="pre">..</span> <span class="pre">%&gt;</span></code>)</p></li>
 </ul>
-</div>
-<div class="section" id="version-4-1">
-<h1>Version 4.1<a class="headerlink" href="#version-4-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-4-1">
+<h1>Version 4.1<a class="headerlink" href="#version-4-1" title="Permalink to this headline">#</a></h1>
 <p>Languages:</p>
 <ul class="simple">
 <li><p>Bash from Vah</p></li>
@@ -2738,9 +2848,9 @@ Python and C++ which improved auto-detection for the latter (it was shame that
 <a class="reference external" href="http://alenacpp.blogspot.com/">my wife’s blog</a> had issues with it from time to time). And lastly
 thanks go to Sam for getting rid of my stylistic comments in code that were
 getting in the way of <a class="reference external" href="http://code.google.com/p/jsmin-php/">JSMin</a>.</p>
-</div>
-<div class="section" id="version-4-0">
-<h1>Version 4.0<a class="headerlink" href="#version-4-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-4-0">
+<h1>Version 4.0<a class="headerlink" href="#version-4-0" title="Permalink to this headline">#</a></h1>
 <p>New major version is a result of vast refactoring and of many contributions.</p>
 <p>Visible new features:</p>
 <ul class="simple">
@@ -2756,9 +2866,9 @@ function for backward compatibility.</p></li>
 </ul>
 <p>Changing of a major version number caused by a new format of language definition
 files. If you use some third-party language files they should be updated.</p>
-</div>
-<div class="section" id="version-3-5">
-<h1>Version 3.5<a class="headerlink" href="#version-3-5" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-3-5">
+<h1>Version 3.5<a class="headerlink" href="#version-3-5" title="Permalink to this headline">#</a></h1>
 <p>A very nice version in my opinion fixing a number of small bugs and slightly
 increased speed in a couple of corner cases. Thanks to everybody who reports
 bugs in he <a class="reference external" href="http://softwaremaniacs.org/forum/highlightjs/">forum</a> and by email!</p>
@@ -2766,16 +2876,16 @@ bugs in he <a class="reference external" href="http://softwaremaniacs.org/forum/
 and didn’t highlight custom tags. In this version I tried to make custom XML to
 be detected and highlighted by its own rules. Which by the way include such
 things as CDATA sections and processing instructions (<code class="docutils literal notranslate"><span class="pre">&lt;?</span> <span class="pre">...</span> <span class="pre">?&gt;</span></code>).</p>
-</div>
-<div class="section" id="version-3-3">
-<h1>Version 3.3<a class="headerlink" href="#version-3-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-3-3">
+<h1>Version 3.3<a class="headerlink" href="#version-3-3" title="Permalink to this headline">#</a></h1>
 <p><a class="reference external" href="http://xonixx.blogspot.com/">Vladimir Gubarkov</a> has provided an interesting and useful addition.
 File export.html contains a little program that shows and allows to copy and
 paste an HTML code generated by the highlighter for any code snippet. This can
 be useful in situations when one can’t use the script itself on a site.</p>
-</div>
-<div class="section" id="version-3-2-consists-completely-of-contributions">
-<h1>Version 3.2 consists completely of contributions:<a class="headerlink" href="#version-3-2-consists-completely-of-contributions" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-3-2-consists-completely-of-contributions">
+<h1>Version 3.2 consists completely of contributions:<a class="headerlink" href="#version-3-2-consists-completely-of-contributions" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Vladimir Gubarkov has described SmallTalk</p></li>
 <li><p>Yuri Ivanov has described 1C</p></li>
@@ -2783,17 +2893,17 @@ be useful in situations when one can’t use the script itself on a site.</p>
 <li><p>Vladimir Ermakov has compiled a mod for phpBB</p></li>
 </ul>
 <p>Many thanks to you all!</p>
-</div>
-<div class="section" id="version-3-1">
-<h1>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-3-1">
+<h1>Version 3.1<a class="headerlink" href="#version-3-1" title="Permalink to this headline">#</a></h1>
 <p>Three new languages are available: Django templates, SQL and Axapta. The latter
 two are sent by <a class="reference external" href="https://github.com/isagalaev/highlight.js/commit/f3056941bda56d2b72276b97bc0dd5f230f2473f">Dmitri Roudakov</a>. However I’ve almost entirely rewrote an
 SQL definition but I’d never started it be it from the ground up :-)</p>
 <p>The engine itself has got a long awaited feature of grouping keywords
 (“keyword”, “built-in function”, “literal”). No more hacks!</p>
-</div>
-<div class="section" id="version-3-0">
-<h1>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-3-0">
+<h1>Version 3.0<a class="headerlink" href="#version-3-0" title="Permalink to this headline">#</a></h1>
 <p>It is major mainly because now highlight.js has grown large and has become
 modular. Now when you pass it a list of languages to highlight it will
 dynamically load into a browser only those languages.</p>
@@ -2810,31 +2920,31 @@ languages.</p></li>
 function initHighlighting that was used to initialize highlighting instead of
 initHighlightingOnLoad a long time ago no longer works. If you by chance still
 use it — replace it with the new one.</p>
-</div>
-<div class="section" id="version-2-9">
-<h1>Version 2.9<a class="headerlink" href="#version-2-9" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-9">
+<h1>Version 2.9<a class="headerlink" href="#version-2-9" title="Permalink to this headline">#</a></h1>
 <p>Highlight.js is a parser, not just a couple of regular expressions. That said
 I’m glad to announce that in the new version 2.9 has support for:</p>
 <ul class="simple">
 <li><p>in-string substitutions for Ruby – <code class="docutils literal notranslate"><span class="pre">#{...}</span></code></p></li>
 <li><p>strings from from numeric symbol codes (like #XX) for Delphi</p></li>
 </ul>
-</div>
-<div class="section" id="version-2-8">
-<h1>Version 2.8<a class="headerlink" href="#version-2-8" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-8">
+<h1>Version 2.8<a class="headerlink" href="#version-2-8" title="Permalink to this headline">#</a></h1>
 <p>A maintenance release with more tuned heuristics. Fully backwards compatible.</p>
-</div>
-<div class="section" id="version-2-7">
-<h1>Version 2.7<a class="headerlink" href="#version-2-7" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-7">
+<h1>Version 2.7<a class="headerlink" href="#version-2-7" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Nikita Ledyaev presents highlighting for VBScript, yay!</p></li>
 <li><p>A couple of bugs with escaping in strings were fixed thanks to Mickle</p></li>
 <li><p>Ongoing tuning of heuristics</p></li>
 </ul>
 <p>Fixed bugs were rather unpleasant so I encourage everyone to upgrade!</p>
-</div>
-<div class="section" id="version-2-4">
-<h1>Version 2.4<a class="headerlink" href="#version-2-4" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-4">
+<h1>Version 2.4<a class="headerlink" href="#version-2-4" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Peter Leonov provides another improved highlighting for Perl</p></li>
 <li><p>Javascript gets a new kind of keywords — “literals”. These are the words
@@ -2843,37 +2953,37 @@ I’m glad to announce that in the new version 2.9 has support for:</p>
 <p>Also highlight.js homepage now lists sites that use the library. Feel free to
 add your site by <a class="reference external" href="mailto:Maniac&#37;&#52;&#48;SoftwareManiacs&#46;Org">dropping me a message</a> until I find the time to build a
 submit form.</p>
-</div>
-<div class="section" id="version-2-3">
-<h1>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-3">
+<h1>Version 2.3<a class="headerlink" href="#version-2-3" title="Permalink to this headline">#</a></h1>
 <p>This version fixes IE breakage in previous version. My apologies to all who have
 already downloaded that one!</p>
-</div>
-<div class="section" id="version-2-2">
-<h1>Version 2.2<a class="headerlink" href="#version-2-2" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-2">
+<h1>Version 2.2<a class="headerlink" href="#version-2-2" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>added highlighting for Javascript</p></li>
 <li><p>at last fixed parsing of Delphi’s escaped apostrophes in strings</p></li>
 <li><p>in Ruby fixed highlighting of keywords ‘def’ and ‘class’, same for ‘sub’ in
 Perl</p></li>
 </ul>
-</div>
-<div class="section" id="version-2-0">
-<h1>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-2-0">
+<h1>Version 2.0<a class="headerlink" href="#version-2-0" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
 <li><p>Ruby support by <a class="reference external" href="https://github.com/geekpanth3r">Anton Kovalyov</a></p></li>
 <li><p>speed increased by orders of magnitude due to new way of parsing</p></li>
 <li><p>this same way allows now correct highlighting of keywords in some tricky
 places (like keyword “End” at the end of Delphi classes)</p></li>
 </ul>
-</div>
-<div class="section" id="version-1-0">
-<h1>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="version-1-0">
+<h1>Version 1.0<a class="headerlink" href="#version-1-0" title="Permalink to this headline">#</a></h1>
 <p>Version 1.0 of javascript syntax highlighter is released!</p>
 <p>It’s the first version available with English description. Feel free to post
 your comments and question to <a class="reference external" href="http://softwaremaniacs.org/forum/viewforum.php?id=6">highlight.js forum</a>. And don’t be afraid
 if you find there some fancy Cyrillic letters – it’s for Russian users too :-)</p>
-</div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2897,28 +3007,34 @@ if you find there some fancy Cyrillic letters – it’s for Russian users too :
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
 <div class='prev-next-area'>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Olav Vahtras<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Olav Vahtras<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../../../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>

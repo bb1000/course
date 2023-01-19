@@ -4,11 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Introduction to Python &#8212; BB1000 lecture notes</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet">
-  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -18,12 +20,8 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    
-      
-
-    
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -42,20 +40,21 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script >let toggleHintShow = 'Click to show';</script>
-    <script >let toggleHintHide = 'Click to hide';</script>
-    <script >let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/documentation_options.js"></script>
     <script src="../_static/language_data.js"></script>
@@ -72,9 +71,9 @@
     <script src="../_static/jquery-3.5.1.js"></script>
     <script src="../_static/togglebutton.js"></script>
     <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
-    <script >const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
@@ -91,7 +90,21 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
     
     <div class="container-fluid" id="banner"></div>
 
@@ -100,9 +113,10 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
-    
-        <div class="navbar-brand-box">
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
@@ -120,14 +134,15 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../intro.html">
-   Lecture slides for Programming in Python BB1000
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture slides for Programming in Python BB1000
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Introduction to Python
@@ -141,6 +156,11 @@ const thebe_selector_output = ".output, .cell_output"
  <li class="toctree-l1">
   <a class="reference internal" href="../testing/talk.html">
    Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../files/talk.html">
+   File handling
   </a>
  </li>
  <li class="toctree-l1">
@@ -176,338 +196,459 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav> <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
-</div>
-
-
-          
-
-
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
             
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/introduction/talk.md"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-</div>
-
-            <!-- Source interaction buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
-    <div class="dropdown-buttons sourcebuttons">
-        <a class="repository-button"
-            href="https://github.com/executablebooks/jupyter-book"><button type="button" class="btn btn-secondary topbarbtn"
-                data-toggle="tooltip" data-placement="left" title="Source repository"><i
-                    class="fab fa-github"></i>repository</button></a>
-        <a class="issues-button"
-            href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintroduction/talk.html&body=Your%20issue%20content%20here."><button
-                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
-                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        
-    </div>
-</div>
-
-            <!-- Full screen (wrap in <a> to have style consistency -->
-
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
-
-            <!-- Launch buttons -->
-
-        </div>
-
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
             </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bb1000">
-   BB1000
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fintroduction/talk.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/introduction/talk.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-python">
-   What is Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#who-uses-python">
-   Who uses Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-run-python">
-   How to run Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#command-line">
-     Command-line
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bb1000">
+     BB1000
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-python-scripts">
-   Creating Python scripts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text-editors">
-     Text editors
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-python">
+     What is Python
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ide-s">
-     IDE:s
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#who-uses-python">
+     Who uses Python
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visual-studio-code">
-     Visual Studio Code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pycharm">
-     Pycharm
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notebooks">
-     Notebooks
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-types">
-   Python types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical">
-     Numerical
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string-str">
-     String:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       str
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables">
-   Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#container-types">
-   Container types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuples">
-     Tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dictionaries">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-logic">
-   Program logic
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#repetition-iteration-looping">
-     Repetition (iteration, looping)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-over-lists">
-     Looping over lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-over-strings">
-     Looping over strings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-over-dictionaries">
-     Looping over dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#branching">
-   Branching
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-units">
-   Program units
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-run-python">
+     How to run Python
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sys">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         sys
-        </span>
-       </code>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#command-line">
+       Command-line
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#os">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         os
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#math">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         math
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tip">
-       Tip
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-python-scripts">
+       Running Python scripts
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-using-your-own-modules">
-     Writing/using your own modules
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-python-scripts">
+     Creating Python scripts
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sample-code-multiplication-table">
-     Sample code: multiplication table
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#text-editors">
+       Text editors
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ide-s">
+       IDE:s
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visual-studio-code">
+       Visual Studio Code
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pycharm">
+       Pycharm
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notebooks">
+       Notebooks
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#language-fundamentals">
+   Language fundamentals
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reference">
-   Reference
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standard-documentation">
-     Standard documentation
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-names">
+     Python names
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-line-books">
-     On-line books
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-values-and-types">
+     Python values and types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-types">
+       Numerical types
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-operations">
+       Numerical operations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logical-operations">
+       Logical operations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#strings-str">
+       Strings:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-operations">
+       String operations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#common-methods">
+       Common methods
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#container-types">
+     Container types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lists">
+       Lists
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tuples">
+       Tuples
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dictionaries">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-logic">
+     Program logic
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#repetition-iteration-looping">
+       Repetition (iteration, looping)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looping-over-lists">
+       Looping over lists
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looping-over-strings">
+       Looping over strings
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looping-over-dictionaries">
+       Looping over dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branching">
+     Branching
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#online-tutorials">
-     Online tutorials
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-units">
+     Program units
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modules">
+       Modules
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sys">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           sys
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#os">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           os
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#math">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           math
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tip">
+         Tip
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writing-using-your-own-modules">
+       Writing/using your own modules
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample-code-multiplication-table">
+       Sample code: multiplication table
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#youtube">
-     Youtube
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reference">
+     Reference
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#standard-documentation">
+       Standard documentation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#on-line-books">
+       On-line books
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#online-tutorials">
+       Online tutorials
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#youtube">
+       Youtube
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
 </ul>
 
-            </nav>
-        </div>
-    </div>
+    </nav>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>Introduction to Python</h1>
@@ -520,243 +661,275 @@ const thebe_selector_output = ".output, .cell_output"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bb1000">
-   BB1000
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Introduction to Python
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-python">
-   What is Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#who-uses-python">
-   Who uses Python
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-run-python">
-   How to run Python
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#command-line">
-     Command-line
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bb1000">
+     BB1000
     </a>
    </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-python-scripts">
-   Creating Python scripts
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#text-editors">
-     Text editors
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-python">
+     What is Python
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ide-s">
-     IDE:s
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#who-uses-python">
+     Who uses Python
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#visual-studio-code">
-     Visual Studio Code
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#pycharm">
-     Pycharm
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#notebooks">
-     Notebooks
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#python-types">
-   Python types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#numerical">
-     Numerical
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#string-str">
-     String:
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       str
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#variables">
-   Variables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example">
-     Example
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#container-types">
-   Container types
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#lists">
-     Lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#tuples">
-     Tuples
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#dictionaries">
-     Dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-logic">
-   Program logic
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#repetition-iteration-looping">
-     Repetition (iteration, looping)
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-over-lists">
-     Looping over lists
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-over-strings">
-     Looping over strings
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#looping-over-dictionaries">
-     Looping over dictionaries
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#branching">
-   Branching
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-units">
-   Program units
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#functions">
-     Functions
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#modules">
-     Modules
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-to-run-python">
+     How to run Python
     </a>
     <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#sys">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         sys
-        </span>
-       </code>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#command-line">
+       Command-line
       </a>
      </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#os">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         os
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#math">
-       <code class="docutils literal notranslate">
-        <span class="pre">
-         math
-        </span>
-       </code>
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#tip">
-       Tip
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#running-python-scripts">
+       Running Python scripts
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#writing-using-your-own-modules">
-     Writing/using your own modules
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-python-scripts">
+     Creating Python scripts
     </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sample-code-multiplication-table">
-     Sample code: multiplication table
-    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#text-editors">
+       Text editors
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ide-s">
+       IDE:s
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#visual-studio-code">
+       Visual Studio Code
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pycharm">
+       Pycharm
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#notebooks">
+       Notebooks
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#summary">
-   Summary
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#language-fundamentals">
+   Language fundamentals
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reference">
-   Reference
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#standard-documentation">
-     Standard documentation
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-names">
+     Python names
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-line-books">
-     On-line books
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#python-values-and-types">
+     Python values and types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-types">
+       Numerical types
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#numerical-operations">
+       Numerical operations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logical-operations">
+       Logical operations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#strings-str">
+       Strings:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         str
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#string-operations">
+       String operations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#common-methods">
+       Common methods
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#container-types">
+     Container types
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#lists">
+       Lists
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#tuples">
+       Tuples
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#dictionaries">
+       Dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-logic">
+     Program logic
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#repetition-iteration-looping">
+       Repetition (iteration, looping)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looping-over-lists">
+       Looping over lists
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looping-over-strings">
+       Looping over strings
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#looping-over-dictionaries">
+       Looping over dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#branching">
+     Branching
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#online-tutorials">
-     Online tutorials
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#program-units">
+     Program units
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#functions">
+       Functions
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#modules">
+       Modules
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#sys">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           sys
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#os">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           os
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#math">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           math
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#tip">
+         Tip
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#writing-using-your-own-modules">
+       Writing/using your own modules
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sample-code-multiplication-table">
+       Sample code: multiplication table
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
     </a>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#youtube">
-     Youtube
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reference">
+     Reference
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#standard-documentation">
+       Standard documentation
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#on-line-books">
+       On-line books
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#online-tutorials">
+       Online tutorials
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#youtube">
+       Youtube
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -766,22 +939,23 @@ const thebe_selector_output = ".output, .cell_output"
                     </div>
                 </div>
             </div>
-            
+            <main id="main-content" role="main">
+                
               <div>
                 
   <script type="text/javascript"
   src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
-<div class="tex2jax_ignore mathjax_ignore section" id="introduction-to-python">
-<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="bb1000">
-<h2>BB1000<a class="headerlink" href="#bb1000" title="Permalink to this headline">¶</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction-to-python">
+<h1>Introduction to Python<a class="headerlink" href="#introduction-to-python" title="Permalink to this headline">#</a></h1>
+<section id="bb1000">
+<h2>BB1000<a class="headerlink" href="#bb1000" title="Permalink to this headline">#</a></h2>
 <p>KTH</p>
 <hr class="docutils" />
 <p>layout: false</p>
-</div>
-<div class="section" id="what-is-python">
-<h2>What is Python<a class="headerlink" href="#what-is-python" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="what-is-python">
+<h2>What is Python<a class="headerlink" href="#what-is-python" title="Permalink to this headline">#</a></h2>
 <p><a title="Daniel Stroud, CC BY-SA 4.0
 &lt;https://creativecommons.org/licenses/by-sa/4.0&gt;, via Wikimedia Commons"
 href="https://commons.wikimedia.org/wiki/File:Guido-portrait-2014.jpg"><a class="reference internal" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Guido-portrait-2014.jpg/512px-Guido-portrait-2014.jpg"><img alt="Guido-portrait-2014" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Guido-portrait-2014.jpg/512px-Guido-portrait-2014.jpg" style="width: 256px;" /></a></a></p>
@@ -794,10 +968,10 @@ Moreover, doing these things in the Bourne shell wouldn’t work for a variety o
 reasons. … So, there was a need for a language that would bridge the gap
 between C and the shell.</em></p>
 </div></blockquote>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="who-uses-python">
-<h2>Who uses Python<a class="headerlink" href="#who-uses-python" title="Permalink to this headline">¶</a></h2>
+<section id="who-uses-python">
+<h2>Who uses Python<a class="headerlink" href="#who-uses-python" title="Permalink to this headline">#</a></h2>
 <p>From small scripts to large applications</p>
 <div class="row">
 <div class="col-md-6">
@@ -810,11 +984,12 @@ print("Hello world!")
  <img src="https://www.appsess.com/wp-content/uploads/2017/08/youtube-logo-150x150.png">
 </div>
 </div>
-</div>
-<div class="section" id="how-to-run-python">
-<h2>How to run Python<a class="headerlink" href="#how-to-run-python" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="command-line">
-<h3>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">¶</a></h3>
+</section>
+<hr class="docutils" />
+<section id="how-to-run-python">
+<h2>How to run Python<a class="headerlink" href="#how-to-run-python" title="Permalink to this headline">#</a></h2>
+<section id="command-line">
+<h3>Command-line<a class="headerlink" href="#command-line" title="Permalink to this headline">#</a></h3>
 <p>Many Python programs are run from the computer’s command-line interface (CLI).
 In the CLI you type commands that the computer interprets and acts upon.</p>
 <ul class="simple">
@@ -825,13 +1000,25 @@ scripting language (or equivalent)</p></li>
 waiting for a command</p></li>
 </ul>
 <p>In these slides we use the convention</p>
-<p><code class="docutils literal notranslate"><span class="pre">$</span> </code>  is the bash prompt (mac/linux)</p>
-<p><code class="docutils literal notranslate"><span class="pre">C&gt;</span> </code> is the CMD prompt (windows)</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">$</span> </code>  is the bash prompt (mac/linux)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">C&gt;</span> </code> is the CMD prompt (windows)</p></li>
+</ul>
 <p>Typing <code class="docutils literal notranslate"><span class="pre">python</span></code> in the CLI starts an interactive Python session accepting
 Python commands</p>
-<p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> </code> is the Python prompt</p>
 <ul class="simple">
-<li><p>The Python interpreter reads lines one by one in the Python programming language and executes them</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span> </code> is the Python prompt</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>The Python interactive shell is also known as the REPL (read-evaluate-print-loop)</p>
+<ul>
+<li><p>R read a Python expression</p></li>
+<li><p>E evaluate the expression</p></li>
+<li><p>P print the value of the expressions to the screen</p></li>
+<li><p>L loop (start over)</p></li>
+</ul>
+</li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
 &gt;&gt;&gt; print(&quot;Hello world&quot;)
@@ -840,22 +1027,40 @@ Hello world
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>A read-evaluate-print-loop (REPL)</p>
-<ul>
-<li><p>reads a Python expression</p></li>
-<li><p>evaluates the expression</p></li>
-<li><p>prints the value to the screen</p></li>
-<li><p>starting over (loop)</p></li>
+<li><p>Use case: a desktop calculator</p></li>
 </ul>
-</li>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python
+&gt;&gt;&gt; 10 + 10*0.25
+12.5
+&gt;&gt;&gt; _  * 2
+25.0
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>in this context the underscore <code class="docutils literal notranslate"><span class="pre">_</span></code> means the value of the previous expression</p></li>
 </ul>
-</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="creating-python-scripts">
-<h2>Creating Python scripts<a class="headerlink" href="#creating-python-scripts" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="text-editors">
-<h3>Text editors<a class="headerlink" href="#text-editors" title="Permalink to this headline">¶</a></h3>
+<section id="running-python-scripts">
+<h3>Running Python scripts<a class="headerlink" href="#running-python-scripts" title="Permalink to this headline">#</a></h3>
+<p>Assuming you have a file with Python instructions:</p>
+<p><code class="docutils literal notranslate"><span class="pre">hello.py</span> </code></p>
+<a class="reference internal image-reference" href="../_images/hi.png"><img alt="../_images/hi.png" src="../_images/hi.png" style="width: 50%;" /></a>
+<p>you run the script by giving it as a command-line argument to the python
+interpreter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python hello.py
+Hello world
+Goodbye
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="creating-python-scripts">
+<h2>Creating Python scripts<a class="headerlink" href="#creating-python-scripts" title="Permalink to this headline">#</a></h2>
+<section id="text-editors">
+<h3>Text editors<a class="headerlink" href="#text-editors" title="Permalink to this headline">#</a></h3>
 <p>To enter code into files you need to use a text editor (not a word processor
 like Microsoft Word). A text editor is good for programming if it automatically
 colors special keywords for the programming language of that file. A simple
@@ -867,28 +1072,28 @@ most popular programming editor
 </a>:
 normally lists editors like vim, emacs, atom, sublime.
 Spending time to learn one well is worth the investment.</p>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="ide-s">
-<h3>IDE:s<a class="headerlink" href="#ide-s" title="Permalink to this headline">¶</a></h3>
+<section id="ide-s">
+<h3>IDE:s<a class="headerlink" href="#ide-s" title="Permalink to this headline">#</a></h3>
 <p>IDE = Integrated development environment</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install mu-editor
 $ mu-editor hello.py
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="../_images/mu.png"><img alt="../_images/mu.png" src="../_images/mu.png" style="height: 350px;" /></a>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="visual-studio-code">
-<h3>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">¶</a></h3>
+<section id="visual-studio-code">
+<h3>Visual Studio Code<a class="headerlink" href="#visual-studio-code" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Microsoft open source project</p></li>
 </ul>
 <a class="reference internal image-reference" href="../_images/vsc.png"><img alt="../_images/vsc.png" src="../_images/vsc.png" style="height: 400px;" /></a>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="pycharm">
-<h3>Pycharm<a class="headerlink" href="#pycharm" title="Permalink to this headline">¶</a></h3>
+<section id="pycharm">
+<h3>Pycharm<a class="headerlink" href="#pycharm" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Community and Professional editions from JetBrains</p></li>
 </ul>
@@ -896,10 +1101,10 @@ $ mu-editor hello.py
 <ul class="simple">
 <li><p>see https://www.jetbrains.com/student/</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="notebooks">
-<h3>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">¶</a></h3>
+<section id="notebooks">
+<h3>Notebooks<a class="headerlink" href="#notebooks" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>work/develop in browser</p></li>
 <li><p>mix documentation and code</p></li>
@@ -910,28 +1115,125 @@ $ mu-editor hello.py
 <img src='/introduction/jupyter.png' height="350" >
 * good for exploration/experimentation/demonstration
 * not good for writing large structured programs
-</div>
-</div>
+</section>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="python-types">
-<h2>Python types<a class="headerlink" href="#python-types" title="Permalink to this headline">¶</a></h2>
-<p>Values in Python have a type
-A type determines the range of possible values and operations that can be
-performed</p>
-<div class="section" id="numerical">
-<h3>Numerical<a class="headerlink" href="#numerical" title="Permalink to this headline">¶</a></h3>
+<section class="tex2jax_ignore mathjax_ignore" id="language-fundamentals">
+<h1>Language fundamentals<a class="headerlink" href="#language-fundamentals" title="Permalink to this headline">#</a></h1>
+<section id="python-names">
+<h2>Python names<a class="headerlink" href="#python-names" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Names in Python are what most languages refer to as variables, or variable names</p></li>
+<li><p>To save the value of an object a name can be assigned to it</p></li>
+<li><p>The assignment operator is <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
+<li><p>Assignment is to bind a name to an object</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span> <span class="o">*</span> <span class="mi">9</span>
+
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>The right-hand side is evaluated</p></li>
+<li><p>An <code class="docutils literal notranslate"><span class="pre">int</span></code> object with value 72 is created in memory</p></li>
+<li><p>An association is created with this object and the name <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+</ol>
+<pre style='background-color:#fbf1c7;'>
+                ┏━━┓
+                ┃ x┃
+    ┌─┐   ┌─┐   ┡━━┩ 
+    │8│ * │9│ → │72│
+    └─┘   └─┘   └──┘
+</pre> 
+<hr class="docutils" />
+<ul class="simple">
+<li><p>The name can be used in other expressions as an alias for that value</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="p">)</span>
+<span class="go">144</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="python-values-and-types">
+<h2>Python values and types<a class="headerlink" href="#python-values-and-types" title="Permalink to this headline">#</a></h2>
+<p>Objects and expressions in Python have a value of some type.
+A type determines the range of possible values and operations that are defined
+for objects of that type.</p>
+<section id="numerical-types">
+<h3>Numerical types<a class="headerlink" href="#numerical-types" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>whole numbers (<code class="docutils literal notranslate"><span class="pre">int</span></code>): e.g. <code class="docutils literal notranslate"><span class="pre">-1,</span> <span class="pre">7,</span> <span class="pre">2000</span></code></p></li>
 <li><p>decimal numbers (<code class="docutils literal notranslate"><span class="pre">float</span></code>): <code class="docutils literal notranslate"><span class="pre">3.14,</span> <span class="pre">1.0</span> <span class="pre">-7.25</span></code></p></li>
 <li><p>complex numbers (<code class="docutils literal notranslate"><span class="pre">complex</span></code>): <code class="docutils literal notranslate"><span class="pre">1j,</span> <span class="pre">7+5j</span></code></p></li>
 <li><p>logical (<code class="docutils literal notranslate"><span class="pre">bool</span></code>): <code class="docutils literal notranslate"><span class="pre">True</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
 </ul>
-</div>
-<hr class="docutils" />
-<div class="section" id="string-str">
-<h3>String: <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#string-str" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="numerical-operations">
+<h3>Numerical operations<a class="headerlink" href="#numerical-operations" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>sequence of characters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Addition</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Subtraction</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> Multiplication</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> Division (<code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">→</span> <span class="pre">3.5</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> Integer floor division (<code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">//</span> <span class="pre">2</span> <span class="pre">→</span> <span class="pre">3</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> Integer modulus (remainder) (<code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">%</span> <span class="pre">2</span> <span class="pre">→</span> <span class="pre">1</span></code>)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="logical-operations">
+<h3>Logical operations<a class="headerlink" href="#logical-operations" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">and</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">True</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">and</span> <span class="pre">False</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">and</span> <span class="pre">False</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">or</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">True</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">True</span> <span class="pre">or</span> <span class="pre">False</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span> <span class="pre">or</span> <span class="pre">False</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">True</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">False</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+<li><p>equality</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">1</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">==</span> <span class="pre">1.0</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">!=</span> <span class="pre">1</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>identity</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">is</span> <span class="pre">1</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">is</span> <span class="pre">1.0</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+</ul>
+</li>
+<li><p>relational</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> → <code class="docutils literal notranslate"><span class="pre">False</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&gt;=</span> <span class="pre">1.0</span></code> → <code class="docutils literal notranslate"><span class="pre">True</span></code></p></li>
+</ul>
+</li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="strings-str">
+<h3>Strings: <code class="docutils literal notranslate"><span class="pre">str</span></code><a class="headerlink" href="#strings-str" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>a string is a sequence of characters <a class="reference external" href="https://home.unicode.org/">(unicode)</a></p></li>
 <li><p>literal strings are written within quotation marks</p></li>
 <li><p>single <code class="docutils literal notranslate"><span class="pre">'</span></code> and double <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> quotation marks have the same status</p></li>
 <li><p>three quotation marks limit strings that can span several lines</p></li>
@@ -954,38 +1256,52 @@ performed</p>
 
 </pre></div>
 </div>
-</div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<section id="string-operations">
+<h3>String operations<a class="headerlink" href="#string-operations" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>To save the value of an object it is assigned to a <em>variable</em></p></li>
-<li><p>The assignment operator is <code class="docutils literal notranslate"><span class="pre">=</span></code></p></li>
-<li><p>Assignment is to bind a name to an object</p></li>
-<li><p>Python has so called free typing</p></li>
+<li><p>Concatenation</p></li>
 </ul>
-<div class="section" id="example">
-<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">8</span><span class="o">*</span><span class="mi">9</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">72</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello&#39;</span> <span class="o">+</span> <span class="s1">&#39;world&#39;</span>
+<span class="go">&#39;helloworld&#39;</span>
 
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Right-side is evaluated</p></li>
-<li><p>An <code class="docutils literal notranslate"><span class="pre">int</span></code> object with value 72 is created in memory</p></li>
-<li><p>An association is created with this object and the name <code class="docutils literal notranslate"><span class="pre">x</span></code></p></li>
+<li><p>Duplication</p></li>
 </ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;bye&#39;</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="go">&#39;byebye&#39;</span>
+
+</pre></div>
 </div>
+</section>
+<section id="common-methods">
+<h3>Common methods<a class="headerlink" href="#common-methods" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;FORTRAN&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="go">&#39;fortran&#39;</span>
+
+</pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;c++&#39;</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+<span class="go">&#39;C++&#39;</span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;jo&#39;</span><span class="o">.</span><span class="n">capitalize</span><span class="p">()</span>
+<span class="go">&#39;Jo&#39;</span>
+
+</pre></div>
+</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="container-types">
-<h2>Container types<a class="headerlink" href="#container-types" title="Permalink to this headline">¶</a></h2>
-<p>The most important continer types are lists, tuples and dictionaries</p>
-<div class="section" id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<section id="container-types">
+<h2>Container types<a class="headerlink" href="#container-types" title="Permalink to this headline">#</a></h2>
+<p>The most important container types are lists, tuples and dictionaries</p>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>A list is a ordered sequence of elements</p></li>
 <li><p>A literal list in code is defined by square brackets and comma-separated
@@ -1002,11 +1318,15 @@ elements <code class="docutils literal notranslate"><span class="pre">[0,</span>
 </pre></div>
 </div>
 <p><em>Note that brackets are both used in the notation for a literal list and for
-getting a member from a list</em></p>
+getting a member from a collection (not only for lists)</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a_member</span> <span class="o">=</span> <span class="n">a_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
 </div>
+</section>
 <hr class="docutils" />
-<div class="section" id="tuples">
-<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h3>
+<section id="tuples">
+<h3>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>An immutable (unchangeable) sequence of objects</p></li>
 <li><p>Similar to lists</p></li>
@@ -1028,10 +1348,10 @@ getting a member from a list</em></p>
 
 </pre></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="dictionaries">
-<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h3>
+<section id="dictionaries">
+<h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">dict</span></code> type define sets of key-value pairs</p></li>
 <li><p>Curly braces with comma-separates pairs define a literal dict</p></li>
@@ -1044,21 +1364,21 @@ getting a member from a list</em></p>
 <span class="n">newdict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="program-logic">
-<h2>Program logic<a class="headerlink" href="#program-logic" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="repetition-iteration-looping">
-<h3>Repetition (iteration, looping)<a class="headerlink" href="#repetition-iteration-looping" title="Permalink to this headline">¶</a></h3>
+<section id="program-logic">
+<h2>Program logic<a class="headerlink" href="#program-logic" title="Permalink to this headline">#</a></h2>
+<section id="repetition-iteration-looping">
+<h3>Repetition (iteration, looping)<a class="headerlink" href="#repetition-iteration-looping" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">...</span> <span class="pre">in</span></code> statement is used repeat the same operation for all elements of a
 sequence</p></li>
 <li><p>A loop variable will reference the elements of the sequence, one at a time</p></li>
 </ul>
-</div>
-<div class="section" id="looping-over-lists">
-<h3>Looping over lists<a class="headerlink" href="#looping-over-lists" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="looping-over-lists">
+<h3>Looping over lists<a class="headerlink" href="#looping-over-lists" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]:</span> 
 <span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 <span class="go">1</span>
@@ -1067,10 +1387,10 @@ sequence</p></li>
 
 </pre></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="looping-over-strings">
-<h3>Looping over strings<a class="headerlink" href="#looping-over-strings" title="Permalink to this headline">¶</a></h3>
+<section id="looping-over-strings">
+<h3>Looping over strings<a class="headerlink" href="#looping-over-strings" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s1">&#39;hello&#39;</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="go">h</span>
@@ -1081,9 +1401,9 @@ sequence</p></li>
 
 </pre></div>
 </div>
-</div>
-<div class="section" id="looping-over-dictionaries">
-<h3>Looping over dictionaries<a class="headerlink" href="#looping-over-dictionaries" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="looping-over-dictionaries">
+<h3>Looping over dictionaries<a class="headerlink" href="#looping-over-dictionaries" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
 <span class="gp">... </span>   <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span>
@@ -1099,11 +1419,11 @@ sequence</p></li>
 
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="branching">
-<h2>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">¶</a></h2>
+<section id="branching">
+<h2>Branching<a class="headerlink" href="#branching" title="Permalink to this headline">#</a></h2>
 <p>Conditional execution of code blocks depending on whether an expression
 evaluates to True or not:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="kc">True</span><span class="p">:</span>
@@ -1133,12 +1453,12 @@ evaluate to False, non-empty to True</p>
 
 </pre></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="program-units">
-<h2>Program units<a class="headerlink" href="#program-units" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<section id="program-units">
+<h2>Program units<a class="headerlink" href="#program-units" title="Permalink to this headline">#</a></h2>
+<section id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Functions are objects that can take some input and return some output.
 Functions are the primary way of grouping code into independent units, that can be tested and reused</p></li>
@@ -1166,10 +1486,10 @@ The last line of a function definition is normally a <code class="docutils liter
 <li><p>Inside the function the formal parameter <code class="docutils literal notranslate"><span class="pre">x</span></code> becomes a reference to the actual
 parameter <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="modules">
-<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h3>
+<section id="modules">
+<h3>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>a file with python source</p>
 <ul>
@@ -1186,21 +1506,21 @@ parameter <code class="docutils literal notranslate"><span class="pre">2</span><
 <li><p><code class="docutils literal notranslate"><span class="pre">math</span></code></p></li>
 </ul>
 <hr class="docutils" />
-<div class="section" id="sys">
-<h4><code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#sys" title="Permalink to this headline">¶</a></h4>
+<section id="sys">
+<h4><code class="docutils literal notranslate"><span class="pre">sys</span></code><a class="headerlink" href="#sys" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>system modules</p></li>
 <li><p>needed e.g. for arguments to a script</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is a list of string arguments</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">sys.argv[0]</span></code> is the file name</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> is a list containing command-line arguments</p></li>
+<li><p>The first element <code class="docutils literal notranslate"><span class="pre">sys.argv</span> <span class="pre">[0]</span></code> is the file name</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
 <span class="n">infile</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="os">
-<h4><code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="os">
+<h4><code class="docutils literal notranslate"><span class="pre">os</span></code><a class="headerlink" href="#os" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>Interaction with operating system</p></li>
 <li><p>Example: execute a unix command</p></li>
@@ -1209,10 +1529,10 @@ parameter <code class="docutils literal notranslate"><span class="pre">2</span><
     <span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;/bin/date&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="math">
-<h4><code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#math" title="Permalink to this headline">¶</a></h4>
+<section id="math">
+<h4><code class="docutils literal notranslate"><span class="pre">math</span></code><a class="headerlink" href="#math" title="Permalink to this headline">#</a></h4>
 <ul class="simple">
 <li><p>all basic elementary functions</p></li>
 <li><p>fundamental constants</p></li>
@@ -1221,9 +1541,9 @@ parameter <code class="docutils literal notranslate"><span class="pre">2</span><
     <span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tip">
-<h4>Tip<a class="headerlink" href="#tip" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tip">
+<h4>Tip<a class="headerlink" href="#tip" title="Permalink to this headline">#</a></h4>
 <p>Many use the math modules as a desktop calculator</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>$ python
 &gt;&gt;&gt; from math import *
@@ -1232,11 +1552,11 @@ parameter <code class="docutils literal notranslate"><span class="pre">2</span><
 &gt;&gt;&gt;
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="writing-using-your-own-modules">
-<h3>Writing/using your own modules<a class="headerlink" href="#writing-using-your-own-modules" title="Permalink to this headline">¶</a></h3>
+<section id="writing-using-your-own-modules">
+<h3>Writing/using your own modules<a class="headerlink" href="#writing-using-your-own-modules" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Suppose you have written file <code class="docutils literal notranslate"><span class="pre">hello.py</span></code> with function <code class="docutils literal notranslate"><span class="pre">say_hello</span></code></p></li>
 </ul>
@@ -1255,10 +1575,10 @@ parameter <code class="docutils literal notranslate"><span class="pre">2</span><
 
 </pre></div>
 </div>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="sample-code-multiplication-table">
-<h3>Sample code: multiplication table<a class="headerlink" href="#sample-code-multiplication-table" title="Permalink to this headline">¶</a></h3>
+<section id="sample-code-multiplication-table">
+<h3>Sample code: multiplication table<a class="headerlink" href="#sample-code-multiplication-table" title="Permalink to this headline">#</a></h3>
 <p>Version 1: if we only know print</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span> <span class="o">*</span> <span class="mi">7</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">7</span><span class="p">)</span>
@@ -1293,13 +1613,13 @@ parameter <code class="docutils literal notranslate"><span class="pre">2</span><
 </pre></div>
 </div>
 <p>Version 6: call the function from the command line</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_mult_table</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="k">def</span> <span class="nf">print_mult_table</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-    
-    <span class="kn">import</span> <span class="nn">sys</span>
     <span class="n">print_mult_table</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
 </pre></div>
 </div>
@@ -1312,11 +1632,11 @@ which has the file name as the first member (of index zero)</p></li>
 </ul>
 <p>A common pattern when a file is used both as an independent script and as a
 module imported by other programs</p>
-</div>
-</div>
+</section>
+</section>
 <hr class="docutils" />
-<div class="section" id="summary">
-<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Basic syntax - indentation</p></li>
 <li><p>Basic built-in types</p></li>
@@ -1325,40 +1645,41 @@ module imported by other programs</p>
 <li><p>Functions</p></li>
 <li><p>Modules</p></li>
 </ul>
-</div>
+</section>
 <hr class="docutils" />
-<div class="section" id="reference">
-<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="standard-documentation">
-<h3>Standard documentation<a class="headerlink" href="#standard-documentation" title="Permalink to this headline">¶</a></h3>
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">#</a></h2>
+<section id="standard-documentation">
+<h3>Standard documentation<a class="headerlink" href="#standard-documentation" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>https://docs.python.org/3</p></li>
 </ul>
-</div>
-<div class="section" id="on-line-books">
-<h3>On-line books<a class="headerlink" href="#on-line-books" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="on-line-books">
+<h3>On-line books<a class="headerlink" href="#on-line-books" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Jake van der Plas:
 <a href="http://nbviewer.jupyter.org/github/jakevdp/WhirlwindTourOfPython/blob/master/Index.ipynb"> A Worldwind Tour of Python</a></p></li>
 <li><p>Jake van der Plas: <a href="https://jakevdp.github.io/PythonDataScienceHandbook/">Data Science Handbook</a></p></li>
 <li><p>Al Sweigart: <a href="https://automatetheboringstuff.com">Automate the Boring Stuff with Python</a></p></li>
 </ul>
-</div>
-<div class="section" id="online-tutorials">
-<h3>Online tutorials<a class="headerlink" href="#online-tutorials" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="online-tutorials">
+<h3>Online tutorials<a class="headerlink" href="#online-tutorials" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>https://docs.python.org/3/tutorial/</p></li>
 <li><p>https://realpython.com</p></li>
+<li><p>https://dabeaz-course.github.io/practical-python</p></li>
 </ul>
-</div>
-<div class="section" id="youtube">
-<h3>Youtube<a class="headerlink" href="#youtube" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="youtube">
+<h3>Youtube<a class="headerlink" href="#youtube" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p>Variables in Python https://www.youtube.com/watch?v=_AEJHKGk9ns</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1382,9 +1703,11 @@ module imported by other programs</p>
 
               </div>
               
-            
-                <!-- Previous / next buttons -->
-<div class='prev-next-area'> 
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
     <a class='left-prev' id="prev-link" href="../intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -1400,24 +1723,28 @@ module imported by other programs</p>
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-  <p>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Olav Vahtras<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
     
-      By Olav Vahtras<br/>
-    
-        &copy; Copyright 2021.<br/>
-  </p>
-</footer>
-</main>
+</div>
 
 
       </div>
     </div>
   
-  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
 
   </body>
 </html>
