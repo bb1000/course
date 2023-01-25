@@ -28,3 +28,6 @@
 [submodule "profiling"]
 	path = profiling
 	url = http://github.com/bb1000/profiling
+[submodule "shell"]
+	path = shell
+	url = https://github.com/bb2441/shell

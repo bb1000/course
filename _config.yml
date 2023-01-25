@@ -37,6 +37,9 @@ parse:
     # including those that are enabled by default!
     - html_image
     - amsmath
+    - substitution
+  myst_substitutions:
+      base: ''
 
 sphinx:
   config:

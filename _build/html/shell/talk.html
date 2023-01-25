@@ -1,0 +1,1614 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>The Bash shell &#8212; BB1000 lecture notes</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/jquery-3.5.1.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BB1000 lecture notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture slides for Programming in Python BB1000
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/talk.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../git/talk.html">
+   Introduction to git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing/talk.html">
+   Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../files/talk.html">
+   File handling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../external_libraries/talk.html">
+   External libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../classes/talk.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../decorators/talk.html">
+   Decorators (Advanced topics)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../iterators/talk.html">
+   Iterators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../profiling/talk.html">
+   Profiling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../debugging/talk.html">
+   Debugging
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fshell/talk.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/shell/talk.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-terminal">
+   What is a terminal?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell">
+   Shell
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-cli">
+     What is a CLI?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#in-practice">
+       In practice
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphical-vs-command-line-interface">
+     Graphical vs command-line interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-start-a-cli">
+     How do I start a  CLI?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-help">
+     Getting help
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manual-pages">
+     Manual pages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-file-system">
+   The file system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigation">
+     Navigation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-tree-view-of-a-file-system">
+     A tree view of a file system
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-around">
+     Looking around
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-around">
+     Moving around
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-and-direcories">
+   Working with files and direcories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files">
+     Files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#saving-output-in-a-file">
+       Saving output in a file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-in-the-file">
+       What is in the file?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#edit-a-file-with-a-text-editor">
+       Edit a file with a text editor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remove-the-file">
+       Remove the file
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directories">
+     Directories
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-and-removing-dictionaries">
+       Creating and removing dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell-scripts">
+   Shell scripts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-bash-commands-in-a-file">
+     Save bash commands in a file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-the-file-executable">
+     make the file executable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#execute-file-with-bash-file-or-file">
+     execute file with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       bash
+      </span>
+      <span class="pre">
+       file
+      </span>
+     </code>
+     or
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ./file
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#put-it-in-a-directory-in-your-path">
+     put it in a directory in your
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PATH
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logic">
+     Logic
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#repetition">
+       Repetition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#branching-if-statements">
+       Branching:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+       statements
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shortcut-control-characters">
+       Shortcut control characters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-a-file-and-its-contents-if-it-exists">
+       List a file and its contents if it exists
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-new-directory-if-it-does-not-exist">
+       Create a new directory if it does not exist
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commands-used">
+     Commands used
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bash-reference">
+     Bash reference
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>The Bash shell</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#learning-objectives">
+   Learning objectives
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-terminal">
+   What is a terminal?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell">
+   Shell
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-a-cli">
+     What is a CLI?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#in-practice">
+       In practice
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#graphical-vs-command-line-interface">
+     Graphical vs command-line interface
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-do-i-start-a-cli">
+     How do I start a  CLI?
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#getting-help">
+     Getting help
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#manual-pages">
+     Manual pages
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-file-system">
+   The file system
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#navigation">
+     Navigation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-tree-view-of-a-file-system">
+     A tree view of a file system
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#looking-around">
+     Looking around
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#moving-around">
+     Moving around
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#working-with-files-and-direcories">
+   Working with files and direcories
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#files">
+     Files
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#saving-output-in-a-file">
+       Saving output in a file
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-is-in-the-file">
+       What is in the file?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#edit-a-file-with-a-text-editor">
+       Edit a file with a text editor
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#remove-the-file">
+       Remove the file
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directories">
+     Directories
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-and-removing-dictionaries">
+       Creating and removing dictionaries
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#shell-scripts">
+   Shell scripts
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#save-bash-commands-in-a-file">
+     Save bash commands in a file
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#make-the-file-executable">
+     make the file executable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#execute-file-with-bash-file-or-file">
+     execute file with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       bash
+      </span>
+      <span class="pre">
+       file
+      </span>
+     </code>
+     or
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       ./file
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#put-it-in-a-directory-in-your-path">
+     put it in a directory in your
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       PATH
+      </span>
+     </code>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variables">
+     Variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logic">
+     Logic
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#repetition">
+       Repetition
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#branching-if-statements">
+       Branching:
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         if
+        </span>
+       </code>
+       statements
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example">
+       Example
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shortcut-control-characters">
+       Shortcut control characters
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#list-a-file-and-its-contents-if-it-exists">
+       List a file and its contents if it exists
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#create-a-new-directory-if-it-does-not-exist">
+       Create a new directory if it does not exist
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#commands-used">
+     Commands used
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bash-reference">
+     Bash reference
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <p>name: cover</p>
+<style>
+    body {
+        background: white }
+    section {
+        background: white;
+        color: black;
+        border-radius: 1em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%) }
+</style>
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<section class="tex2jax_ignore mathjax_ignore" id="the-bash-shell">
+<h1>The Bash shell<a class="headerlink" href="#the-bash-shell" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>BB2441 The shell</p>
+<hr class="docutils" />
+<p>layout: false</p>
+<ul class="simple">
+<li><p><a class="reference external" href="#cover">The Bash shell</a></p>
+<ul>
+<li><p><a class="reference external" href="#goals">Learning objectives</a></p></li>
+<li><p><a class="reference external" href="#terminal">What is a terminal</a></p></li>
+<li><p><a class="reference external" href="#shell">Shell</a></p>
+<ul>
+<li><p><a class="reference external" href="#cli">What is a CLI</a></p></li>
+<li><p><a class="reference external" href="#cli">Graphical vs command-line interface</a></p></li>
+<li><p><a class="reference external" href="#startcli">How do I start a  CLI</a></p></li>
+<li><p><a class="reference external" href="#startcli">Getting help</a></p></li>
+<li><p><a class="reference external" href="#man">Manual pages</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#navigation">The file system</a></p>
+<ul>
+<li><p><a class="reference external" href="#navigation">Navigation</a></p></li>
+<li><p><a class="reference external" href="#navigation">A tree view of a file system</a></p></li>
+<li><p><a class="reference external" href="#looking">Looking around</a></p></li>
+<li><p><a class="reference external" href="#moving">Moving around</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#files">Working with files and direcories</a></p>
+<ul>
+<li><p><a class="reference external" href="#files">Files</a></p></li>
+<li><p><a class="reference external" href="#directories">Directories</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#scripts">Shell scripts</a></p>
+<ul>
+<li><p><a class="reference external" href="#scripts">Variables</a></p></li>
+<li><p><a class="reference external" href="#logic">Logic</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="#summary">Summary</a></p>
+<ul>
+<li><p><a class="reference external" href="#summary">Commands used</a></p></li>
+<li><p><a class="reference external" href="#summary">Bash reference </a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>name: goals</p>
+</section>
+<section id="learning-objectives">
+<h2>Learning objectives<a class="headerlink" href="#learning-objectives" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Navigation in the file system</p></li>
+<li><p>Working with files</p></li>
+<li><p>Combining commands</p></li>
+<li><p>Repeating commands (looping)</p></li>
+<li><p>Choosing commands (branching)</p></li>
+<li><p>Finding stuff</p></li>
+</ul>
+<hr class="docutils" />
+<section>
+<h2>What is a terminal?</h2>
+</section>
+<hr class="docutils" />
+<p>name: terminal</p>
+</section>
+<section id="what-is-a-terminal">
+<h2>What is a terminal?<a class="headerlink" href="#what-is-a-terminal" title="Permalink to this headline">#</a></h2>
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/DEC_VT100_terminal.jpg/1013px-DEC_VT100_terminal.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/DEC_VT100_terminal.jpg/1013px-DEC_VT100_terminal.jpg" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/DEC_VT100_terminal.jpg/1013px-DEC_VT100_terminal.jpg" style="height: 200px;" /></a>
+<p>–</p>
+<a class="reference internal image-reference" href="https://c2.staticflickr.com/4/3029/2627291590_66060a771b_o.jpg"><img alt="https://c2.staticflickr.com/4/3029/2627291590_66060a771b_o.jpg" src="https://c2.staticflickr.com/4/3029/2627291590_66060a771b_o.jpg" style="height: 200px;" /></a>
+<p>???</p>
+<p>If you google for terminal you may get images like this</p>
+<p>A terminal is an end point of a computer facing the user</p>
+<p>At the other end one could have the real computer filling a room like this</p>
+<p>Now all of this is combined into this (laptop) and much more powerful</p>
+<hr class="docutils" />
+<section>
+<h2>What is a shell?</h2>
+</section>
+---
+name: shell
+</section>
+<section id="shell">
+<h2>Shell<a class="headerlink" href="#shell" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><em>In computing, a shell is a user interface for access to an operating system’s
+services.</em></p></li>
+<li><p><em>It is named a shell because it is a layer around the operating system
+kernel (Wikipedia)</em></p></li>
+</ul>
+<img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrJeHObbV2Y-Drb7P3vXFHnYoO-bU3Ii7haw5vqT-2wTUE3yfMg" class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQrJeHObbV2Y-Drb7P3vXFHnYoO-bU3Ii7haw5vqT-2wTUE3yfMg" />
+<ul class="simple">
+<li><p><em>It is a program running on the computer accepting user input</em></p></li>
+<li><p><em>A handful of different shell programs (dialects) exist</em></p>
+<ul>
+<li><p>Bourne shell (<code class="docutils literal notranslate"><span class="pre">/bin/sh</span></code>)</p></li>
+<li><p>Bourne again shell (<code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>) - often default/de facto standard</p></li>
+<li><p>C-shell (<code class="docutils literal notranslate"><span class="pre">/bin/csh</span></code>)</p></li>
+<li><p>T-C-shell (<code class="docutils literal notranslate"><span class="pre">/bin/tcsh</span></code>)</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<section>
+<h2>What is a CLI?</h2>
+</section>
+<hr class="docutils" />
+<p>name: cli</p>
+<section id="what-is-a-cli">
+<h3>What is a CLI?<a class="headerlink" href="#what-is-a-cli" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>CLI = command-line interface</p></li>
+<li><p>GUI = graphical user interface</p></li>
+</ul>
+<section id="in-practice">
+<h4>In practice<a class="headerlink" href="#in-practice" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>terminal</p></li>
+<li><p>shell</p></li>
+<li><p>CLI</p></li>
+</ul>
+<p>different names for the same thing</p>
+<hr class="docutils" />
+<p>name: gui-cli</p>
+</section>
+</section>
+<section id="graphical-vs-command-line-interface">
+<h3>Graphical vs command-line interface<a class="headerlink" href="#graphical-vs-command-line-interface" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>you want the computer to do stuff for you</p></li>
+<li><p>you need to communicate with the computer somehow</p>
+<ul>
+<li><p>sign language: point-and-click (graphical user interface)</p></li>
+<li><p>words: small set of commands the computer understands (command line * interface, aka terminal aka shell)</p></li>
+</ul>
+</li>
+</ul>
+<ul class="simple">
+<li><p>Cryptic</p></li>
+</ul>
+<ul class="simple">
+<li><p>Powerful</p></li>
+<li><p>Remote access</p></li>
+<li><p>Combinations of programs</p></li>
+</ul>
+<ul class="simple">
+<li><p>A collection of well defined programs that does one thing well</p></li>
+<li><p>Can be combined in many ways</p></li>
+<li><p>Piping command means chaining output from to input to another</p></li>
+</ul>
+<hr class="docutils" />
+<section>
+<h2>How do I start a  CLI?</h2>
+</section>
+<hr class="docutils" />
+<p>name: startcli</p>
+</section>
+<section id="how-do-i-start-a-cli">
+<h3>How do I start a  CLI?<a class="headerlink" href="#how-do-i-start-a-cli" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Search for a program with the <code class="docutils literal notranslate"><span class="pre">terminal</span></code> (or similar)</p></li>
+<li><p>Start a terminal session in jupyter (see lab instruction)</p></li>
+</ul>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ █
+
+
+
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>prompt (<code class="docutils literal notranslate"><span class="pre">$</span></code>): computer asking for input</p></li>
+<li><p>cursor ( <code class="docutils literal notranslate"><span class="pre">▒</span></code> ): where characters you type go in</p></li>
+</ul>
+<hr class="docutils" />
+<section>
+<h2>How do I find help?</h2>
+</section>
+---
+</section>
+<section id="getting-help">
+<h3>Getting help<a class="headerlink" href="#getting-help" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">help</span></code> command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ help
+GNU bash, version 4.4.7(1)-release (x86_64-pc-linux-gnu)
+These shell commands are defined internally.  Type `help&#39; to see this list.
+Type `help name&#39; to find out more about the function `name&#39;.
+Use `info bash&#39; to find out more about the shell in general.
+Use `man -k&#39; or `info&#39; to find out more about commands not in this list.
+
+A star (*) next to a name means that the command is disabled.
+
+ job_spec [&amp;]                            history [-c] [-d offset] [n] or hist&gt;
+ (( expression ))                        if COMMANDS; then COMMANDS; [ elif C&gt;
+ . filename [arguments]                  jobs [-lnprs] [jobspec ...] or jobs &gt;
+ :                                       kill [-s sigspec | -n signum | -sigs&gt;
+ [ arg... ]                              let arg [arg ...]
+ [[ expression ]]                        local [option] name[=value] ...
+ alias [-p] [name[=value] ... ]          logout [n]
+ bg [job_spec ...]                       mapfile [-d delim] [-n count] [-O or&gt;
+ bind [-lpsvPSVX] [-m keymap] [-f file&gt;  popd [-n] [+N | -N]
+ break [n]                               printf [-v var] format [arguments]
+ builtin [shell-builtin [arg ...]]       pushd [-n] [+N | -N | dir]
+ caller [expr]                           pwd [-LP]
+ case WORD in [PATTERN [| PATTERN]...)&gt;  read [-ers] [-a array] [-d delim] [-&gt;
+ cd [-L|[-P [-e]] [-@]] [dir]            readarray [-n count] [-O origin] [-s&gt;
+ command [-pVv] command [arg ...]        readonly [-aAf] [name[=value] ...] o&gt;
+...
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: man</p>
+</section>
+<section id="manual-pages">
+<h3>Manual pages<a class="headerlink" href="#manual-pages" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">man</span></code> command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ man echo
+ECHO(1)                          User Commands                         ECHO(1)
+
+NAME
+       echo - display a line of text
+
+SYNOPSIS
+       echo [SHORT-OPTION]... [STRING]...
+       echo LONG-OPTION
+
+DESCRIPTION
+       Echo the STRING(s) to standard output.
+
+       -n     do not output the trailing newline
+
+       -e     enable interpretation of backslash escapes
+
+       -E     disable interpretation of backslash escapes (default)
+
+       --help display this help and exit
+
+       --version
+              output version information and exit
+
+...
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo Hello world!
+Hello world!
+$ echo &quot;Hello world!&quot;
+Hello world!
+$ echo &#39;Hello world!&#39;
+Hello world!
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: navigation</p>
+</section>
+</section>
+<section id="the-file-system">
+<h2>The file system<a class="headerlink" href="#the-file-system" title="Permalink to this headline">#</a></h2>
+<section id="navigation">
+<h3>Navigation<a class="headerlink" href="#navigation" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>The <em>file system</em> organizes data into files and directories (folders)</p></li>
+<li><p>Directories are special files that are contains of other files</p></li>
+<li><p>Often called a file tree</p></li>
+<li><p>The beginning of the tree is called the root “/”</p></li>
+</ul>
+<img alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajiMVifhNZj_GfkJ53S7AfxQIm330z6hIiYi19hKt6jMWTNgyzg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRajiMVifhNZj_GfkJ53S7AfxQIm330z6hIiYi19hKt6jMWTNgyzg" />
+<ul class="simple">
+<li><p>Directories are branches</p></li>
+<li><p>Files are leaves</p></li>
+</ul>
+<hr class="docutils" />
+<p>name: file-tree</p>
+</section>
+<section id="a-tree-view-of-a-file-system">
+<h3>A tree view of a file system<a class="headerlink" href="#a-tree-view-of-a-file-system" title="Permalink to this headline">#</a></h3>
+<img alt="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" />
+<p>???</p>
+<ul class="simple">
+<li><p>Files names often have a dot, the latter part is the extension</p></li>
+<li><p>signifies type of file</p></li>
+<li><p>convention not requirement</p></li>
+</ul>
+<hr class="docutils" />
+<section>
+<h2>Where am I?</h2>
+</section>
+<hr class="docutils" />
+<p>name: looking</p>
+</section>
+<section id="looking-around">
+<h3>Looking around<a class="headerlink" href="#looking-around" title="Permalink to this headline">#</a></h3>
+<p>Concept of location: current/working directory</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pwd 
+/home/jane
+$ ls
+file1  file1.bak  file1.tmp  tmp
+$ ls /home/pablo
+file1 file1.bak file2
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif"><img alt="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" style="height: 300px;" /></a>
+<hr class="docutils" />
+<p>name: example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo ~
+/home/jane
+$ echo ~pablo
+/home/pablo
+$ ls ../pablo
+file1 file1.bak file2
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif"><img alt="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" style="height: 250px;" /></a>
+<p>Directory shortcuts</p>
+<ul class="simple">
+<li><p>~ (home)</p></li>
+<li><p>. (current directory)</p></li>
+<li><p>.. (parent directory)</p></li>
+</ul>
+<hr class="docutils" />
+<p>name: moving</p>
+</section>
+<section id="moving-around">
+<h3>Moving around<a class="headerlink" href="#moving-around" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span></code> - change directory</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ~pablo
+$ pwd
+/home/pablo
+$ ls 
+file1 file1.bak file2
+</pre></div>
+</div>
+<img src="https://docs.oracle.com/cd/B19306_01/backup.102/b14236/img/obref001.gif" height=250> 
+---
+<section>
+<h2>How do I view/change/save text in files?</h2>
+</section>
+---
+name: files
+</section>
+</section>
+<section id="working-with-files-and-direcories">
+<h2>Working with files and direcories<a class="headerlink" href="#working-with-files-and-direcories" title="Permalink to this headline">#</a></h2>
+<section id="files">
+<h3>Files<a class="headerlink" href="#files" title="Permalink to this headline">#</a></h3>
+<section id="saving-output-in-a-file">
+<h4>Saving output in a file<a class="headerlink" href="#saving-output-in-a-file" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>redirection (&gt;)</p></li>
+<li><p>redirection with append (&gt;&gt;)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo &quot;Hello&quot; &gt;  /tmp/saved
+$ ls  &gt;&gt;  /tmp/saved
+</pre></div>
+</div>
+</section>
+<section id="what-is-in-the-file">
+<h4>What is in the file?<a class="headerlink" href="#what-is-in-the-file" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cat /tmp/saved
+Hello
+file1
+file1.bak
+file2
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: edit</p>
+</section>
+<section id="edit-a-file-with-a-text-editor">
+<h4>Edit a file with a text editor<a class="headerlink" href="#edit-a-file-with-a-text-editor" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ nano /tmp/saved
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">GNU</span> <span class="n">nano</span> <span class="mf">2.9.8</span>                      <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">saved</span>                                
+<span class="n">____________________________________________________________________________</span>
+
+<span class="n">file1</span> <span class="n">file1</span><span class="o">.</span><span class="n">bak</span> <span class="n">file2</span>
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="o">^</span><span class="n">G</span> <span class="n">Get</span> <span class="n">Help</span>  <span class="o">^</span><span class="n">O</span> <span class="n">Write</span> <span class="n">Out</span> <span class="o">^</span><span class="n">W</span> <span class="n">Where</span> <span class="n">Is</span>  <span class="o">^</span><span class="n">K</span> <span class="n">Cut</span> <span class="n">Text</span>  <span class="o">^</span><span class="n">J</span> <span class="n">Justify</span>   <span class="o">^</span><span class="n">C</span> <span class="n">Cur</span> <span class="n">Pos</span>
+<span class="o">^</span><span class="n">X</span> <span class="n">Exit</span>      <span class="o">^</span><span class="n">R</span> <span class="n">Read</span> <span class="n">File</span> <span class="o">^</span>\ <span class="n">Replace</span>   <span class="o">^</span><span class="n">U</span> <span class="n">Uncut</span> <span class="n">Text</span><span class="o">^</span><span class="n">T</span> <span class="n">To</span> <span class="n">Spell</span>  <span class="o">^</span><span class="n">_</span> <span class="n">Go</span> <span class="n">To</span> <span class="n">Line</span>
+
+
+
+
+</pre></div>
+</div>
+</section>
+<section id="remove-the-file">
+<h4>Remove the file<a class="headerlink" href="#remove-the-file" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ rm /tmp/saved
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: directories</p>
+</section>
+</section>
+<section id="directories">
+<h3>Directories<a class="headerlink" href="#directories" title="Permalink to this headline">#</a></h3>
+<section id="creating-and-removing-dictionaries">
+<h4>Creating and removing dictionaries<a class="headerlink" href="#creating-and-removing-dictionaries" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> create directory</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rmdir</span></code> remove directory</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ mkdir thesis
+$ cd thesis
+$ nano thesis.tex
+...
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cd ..
+$ rmdir thesis
+rmdir: failed to remove &#39;thesis&#39;: Directory not empty
+$ rm -r thesis
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>be careful with this command!</p></li>
+</ul>
+<hr class="docutils" />
+<section>
+<h2>I want to rerun a set of commands many times. How?</h2>
+</section>
+<hr class="docutils" />
+<p>name: scripts</p>
+</section>
+</section>
+</section>
+<section id="shell-scripts">
+<h2>Shell scripts<a class="headerlink" href="#shell-scripts" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Save bash commands in a file</p></li>
+<li><p>make the file executable</p></li>
+<li><p>execute file with  <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">file</span></code> or <code class="docutils literal notranslate"><span class="pre">./file</span></code></p></li>
+<li><p>put it in a directory in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code></p></li>
+</ul>
+<hr class="docutils" />
+<section id="save-bash-commands-in-a-file">
+<h3>Save bash commands in a file<a class="headerlink" href="#save-bash-commands-in-a-file" title="Permalink to this headline">#</a></h3>
+<p>You use a text editor of your choice to write bash statements that are to be
+executed together</p>
+</section>
+<section id="make-the-file-executable">
+<h3>make the file executable<a class="headerlink" href="#make-the-file-executable" title="Permalink to this headline">#</a></h3>
+<p>On a Linux system you can set different file permissions for different user
+categories; the
+permissions are readable (r), writeable (w) and executable (x),  and can be
+defined for the owner, a user group, or for others. The output of an <code class="docutils literal notranslate"><span class="pre">ls</span></code>
+command of an ordinary file looks typically like</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l document.md
+-rw-r--r-- 1 user user 11224 aug 26 12:10 document.md
+</pre></div>
+</div>
+<p>where the initial string shows the permissions for owner, group and others
+respectively</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> <span class="n">r</span> <span class="n">w</span> <span class="n">x</span>   <span class="n">r</span> <span class="n">w</span> <span class="n">x</span>   <span class="n">r</span> <span class="n">w</span> <span class="n">x</span>
+<span class="p">(</span><span class="n">owner</span><span class="p">)</span> <span class="p">(</span><span class="n">group</span><span class="p">)</span> <span class="p">(</span><span class="n">others</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="execute-file-with-bash-file-or-file">
+<h3>execute file with  <code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">file</span></code> or <code class="docutils literal notranslate"><span class="pre">./file</span></code><a class="headerlink" href="#execute-file-with-bash-file-or-file" title="Permalink to this headline">#</a></h3>
+<p>A bash script in the current directory may be executed with the file as an
+argument to the bash interpreter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ bash script
+</pre></div>
+</div>
+<p>To execute a script in the current directory directly from the command line (i.e. typing only its name)
+it has to be executable, and have an ‘x’ in the file permissions. You can set
+the file permissions with the <code class="docutils literal notranslate"><span class="pre">chmod</span></code> command</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l script
+-rw-r--r-- 1 user user 11224 aug 26 12:10 script
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ chmod +x script
+$ ls -l script
+-rwxr-xr-x 1 user user 11224 aug 26 12:10 script
+$ ./script
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="put-it-in-a-directory-in-your-path">
+<h3>put it in a directory in your <code class="docutils literal notranslate"><span class="pre">PATH</span></code><a class="headerlink" href="#put-it-in-a-directory-in-your-path" title="Permalink to this headline">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">./script</span></code> notation specifies that you intend to run a script from the
+current directory. You may type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ script
+</pre></div>
+</div>
+<p>without the directory part, without really knowing where it is, as long as it
+is in a folder that is in the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> shell environment variable</p>
+<ul class="simple">
+<li><p><strong>In the command line interface you run programs by typing the name of the program.</strong></p></li>
+<li><p><strong>When typing a program name the computer will go through a sequence of
+directories defined by <code class="docutils literal notranslate"><span class="pre">PATH</span></code> to look for an executable file by that name</strong></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ echo $PATH
+/home/user/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Scripts often make use of shell variables</p></li>
+<li><p>They are created on the fly by assignment</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span><span class="o">=</span><span class="s2">&quot;some value&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>They are referenced with a dollar sign</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>echo $var 
+</pre></div>
+</div>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>- prints `some value` to the screen
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: logic</p>
+</section>
+<section id="logic">
+<h3>Logic<a class="headerlink" href="#logic" title="Permalink to this headline">#</a></h3>
+<section id="repetition">
+<h4>Repetition<a class="headerlink" href="#repetition" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>execute same code several times with small variations</p></li>
+<li><p>loop (for-loop, do-loop)</p></li>
+</ul>
+<p>from</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">goostats</span> <span class="n">NENE01729A</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01729A</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">goostats</span> <span class="n">NENE01729B</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01729B</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">goostats</span> <span class="n">NENE01736A</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01736A</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">goostats</span> <span class="n">NENE01751A</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01751A</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">goostats</span> <span class="n">NENE01751B</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01751B</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">goostats</span> <span class="n">NENE01812A</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01812A</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">goostats</span> <span class="n">NENE01843A</span><span class="o">.</span><span class="n">txt</span> <span class="n">stats</span><span class="o">-</span><span class="n">NENE01843A</span><span class="o">.</span><span class="n">txt</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p>to</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>for txt in NE*[AB].txt
+do
+goostats $txt stats-$txt
+done
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: branching</p>
+</section>
+<section id="branching-if-statements">
+<h4>Branching: <code class="docutils literal notranslate"><span class="pre">if</span></code> statements<a class="headerlink" href="#branching-if-statements" title="Permalink to this headline">#</a></h4>
+<p>Control characters</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code>: equality</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">!=</span></code>: inequality</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-r</span></code> existing (about files)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-x</span></code> executable (about files)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-d</span></code> existing directory</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ if [ $a == &quot;b&quot; ]
+$ then
+$ echo yes
+$ else
+$ echo no
+$ fi
+yes
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: example</p>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>#backup.sh
+for i in $(ls *$1*|grep -v bkp)
+do
+    if [ -f $i.bkp ]
+    then
+        mv $i.bkp $i.bkp2
+    fi
+    cp -v $i $i.bkp
+done
+</pre></div>
+</div>
+<p>What is happening?</p>
+<p>–</p>
+<ul class="simple">
+<li><p>command line arguments enter the script as numeric variables (<code class="docutils literal notranslate"><span class="pre">$1</span></code>, <code class="docutils literal notranslate"><span class="pre">$2</span></code>, <code class="docutils literal notranslate"><span class="pre">$3</span></code>…,)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">$0</span></code> is the name of the running script</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">*$1*</span></code> lists all files whose name contain the first argument</p></li>
+<li><p>the output is <em>piped</em> to <code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-v</span> <span class="pre">bkp</span></code> which excludes all files with <code class="docutils literal notranslate"><span class="pre">bkp</span></code></p></li>
+<li><p>indentation is for readability but not required</p></li>
+<li><p>each matching file is copied (<code class="docutils literal notranslate"><span class="pre">cp</span></code>) to a new file with added extension <code class="docutils literal notranslate"><span class="pre">.bkp</span></code></p></li>
+<li><p>in case that already exists the <code class="docutils literal notranslate"><span class="pre">bkp</span></code> file is moved (<code class="docutils literal notranslate"><span class="pre">mv</span></code>) to <code class="docutils literal notranslate"><span class="pre">.bkp2</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="shortcut-control-characters">
+<h4>Shortcut control characters<a class="headerlink" href="#shortcut-control-characters" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code> continue if ok (exit status zero)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">||</span></code> continue if not ok (exit status non-zero)</p></li>
+</ul>
+</section>
+<section id="list-a-file-and-its-contents-if-it-exists">
+<h4>List a file and its contents if it exists<a class="headerlink" href="#list-a-file-and-its-contents-if-it-exists" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls /tmp/saved &amp;&amp; cat /tmp/saved
+/tmp/saved
+file1 file1.bak file2
+</pre></div>
+</div>
+</section>
+<section id="create-a-new-directory-if-it-does-not-exist">
+<h4>Create a new directory if it does not exist<a class="headerlink" href="#create-a-new-directory-if-it-does-not-exist" title="Permalink to this headline">#</a></h4>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls /tmp/newdir || mkdir /tmp/newdir
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>name: summary</p>
+</section>
+</section>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<section id="commands-used">
+<h3>Commands used<a class="headerlink" href="#commands-used" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>help</p></li>
+<li><p>man</p></li>
+<li><p>echo</p></li>
+<li><p>pwd</p></li>
+<li><p>ls</p></li>
+<li><p>for</p></li>
+<li><p>if</p></li>
+<li><p>cat</p></li>
+<li><p>rm</p></li>
+<li><p>mkdir</p></li>
+<li><p>rmdir</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="bash-reference">
+<h3>Bash reference<a class="headerlink" href="#bash-reference" title="Permalink to this headline">#</a></h3>
+<p>http://swcarpentry.github.io/shell-novice/reference.html</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./shell"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Olav Vahtras<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
