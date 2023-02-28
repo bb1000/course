@@ -452,8 +452,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-indexing">
-     Array indexing
+    <a class="reference internal nav-link" href="#array-indexing-and-slicing">
+     Array indexing and slicing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -649,8 +649,8 @@ title="Print to PDF"
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-indexing">
-     Array indexing
+    <a class="reference internal nav-link" href="#array-indexing-and-slicing">
+     Array indexing and slicing
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
@@ -809,15 +809,7 @@ written in dozens of programming languages. For his research, Romer used
 <hr class="docutils" />
 <section id="builtins">
 <h2>Builtins<a class="headerlink" href="#builtins" title="Permalink to this headline">#</a></h2>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">()</span>
-<span class="go">[&#39;__annotations__&#39;, &#39;__builtins__&#39;, &#39;__doc__&#39;, &#39;__loader__&#39;, &#39;__name__&#39;, &#39;__package__&#39;, &#39;__spec__&#39;]</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">__builtins__</span>
-<span class="go">&lt;module &#39;builtins&#39; (built-in)&gt;</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span> 
 <span class="go">[</span>
 <span class="gp">...</span>
 <span class="go"> &#39;abs&#39;, &#39;all&#39;, &#39;a</span>
@@ -830,6 +822,7 @@ written in dozens of programming languages. For his research, Romer used
 <span class="go"> &#39;property&#39;, &#39;quit&#39;, &#39;range&#39;, &#39;repr&#39;, &#39;reversed&#39;, &#39;round&#39;, &#39;set&#39;, &#39;setattr&#39;, &#39;sli</span>
 <span class="go">ce&#39;, &#39;sorted&#39;, &#39;staticmethod&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;super&#39;, &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;z</span>
 <span class="go">ip&#39;]                            </span>
+
 </pre></div>
 </div>
 </section>
@@ -838,8 +831,9 @@ written in dozens of programming languages. For his research, Romer used
 <h2>Standard library<a class="headerlink" href="#standard-library" title="Permalink to this headline">#</a></h2>
 <p>Included in all distributions, but requires an import statement for access</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
 <span class="go">3.141592653589793</span>
+
 </pre></div>
 </div>
 <p>https://docs.python.org/3/library/</p>
@@ -875,19 +869,19 @@ import pandas (or numpy or matplotlib.pyplot) as pd (or np or plt)
 <li><p>Last line represents an expression of the solutions</p></li>
 </ul>
 <p>$$</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cf9310a-25c2-4bc9-b3df-6567151621a8">
-<span class="eqno">(1)<a class="headerlink" href="#equation-8cf9310a-25c2-4bc9-b3df-6567151621a8" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-e03992b0-3043-47a5-b6c1-17d267583193">
+<span class="eqno">(1)<a class="headerlink" href="#equation-e03992b0-3043-47a5-b6c1-17d267583193" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 3 &amp;0 &amp;0 \\\
 1 &amp;8 &amp;0 \\\
 0 &amp;4 &amp;-2
 \end{pmatrix}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-75d4ae18-8766-4be1-b686-2be6a96bbcb4">
-<span class="eqno">(2)<a class="headerlink" href="#equation-75d4ae18-8766-4be1-b686-2be6a96bbcb4" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-47e7a335-a81b-4e5e-bce1-acaaf76a94fb">
+<span class="eqno">(2)<a class="headerlink" href="#equation-47e7a335-a81b-4e5e-bce1-acaaf76a94fb" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 a\\\ b \\\ c
 \end{pmatrix}\]</div>
 <p>=</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ff46c27f-0e27-41b1-ab82-841e6ead7899">
-<span class="eqno">(3)<a class="headerlink" href="#equation-ff46c27f-0e27-41b1-ab82-841e6ead7899" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+<div class="amsmath math notranslate nohighlight" id="equation-2227a585-8bdf-4d82-9a43-e5470d8088d6">
+<span class="eqno">(3)<a class="headerlink" href="#equation-2227a585-8bdf-4d82-9a43-e5470d8088d6" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
 30\\\ 18 \\\ 2
 \end{pmatrix}\]</div>
 <p>$$
@@ -912,13 +906,13 @@ $$</p>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">a</span><span class="p">)</span>
-<span class="go">&lt;class &#39;numpy.ndarray&#39;&gt; [ 0.  0.  0.]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>  
+<span class="go">array([0., 0., 0.])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
-<span class="go">[[ 0.  0.  0.]</span>
-<span class="go"> [ 0.  0.  0.]</span>
-<span class="go"> [ 0.  0.  0.]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>  
+<span class="go">array([[0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.]])</span>
 
 </pre></div>
 </div>
@@ -929,21 +923,24 @@ $$</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="go">[ 1.  0.]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-<span class="go">[ 1.  0.]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">array([1., 0.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
+<span class="go">array([1., 0.])</span>
+
 </pre></div>
 </div>
 <p>Note that assignment (like lists) here is by reference</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
 <span class="go">True</span>
+
 </pre></div>
 </div>
 <p>Numpy array copy method</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
 <span class="go">False</span>
+
 </pre></div>
 </div>
 </section>
@@ -951,30 +948,34 @@ $$</p>
 <section id="filling-arrays">
 <h3>Filling arrays<a class="headerlink" href="#filling-arrays" title="Permalink to this headline">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">linspace</span></code> returns an array with sequence data</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-<span class="go">[ 0.   0.2  0.4  0.6  0.8  1. ]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> 
+<span class="go">array([0. , 0.2, 0.4, 0.6, 0.8, 1. ])</span>
+
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">arange</span></code> is a similar function</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
-<span class="go">[ 0.   0.2  0.4  0.6  0.8]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> 
+<span class="go">array([0. , 0.2, 0.4, 0.6, 0.8])</span>
+
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
 <section id="arrays-from-list-objects">
 <h3>Arrays from list objects<a class="headerlink" href="#arrays-from-list-objects" title="Permalink to this headline">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">la</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">2.</span><span class="p">,</span><span class="mf">3.</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">la</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">la</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="go">[ 1.  2.  3.]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([1., 2., 3.])</span>
+
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lb</span><span class="o">=</span><span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">la</span><span class="p">,</span><span class="n">lb</span><span class="p">])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
-<span class="go">[[ 1.  2.  3.]</span>
-<span class="go"> [ 4.  5.  6.]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span>
+<span class="go">array([[1., 2., 3.],</span>
+<span class="go">       [4., 5., 6.]])</span>
+
 </pre></div>
 </div>
 </section>
@@ -994,10 +995,10 @@ $$</p>
 ...     n = adat.write('1 2 3\n4 5 6\n')
 
 -->
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;a.dat&#39;</span><span class="p">)</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-    <span class="p">[[</span> <span class="mf">1.</span>  <span class="mf">2.</span>  <span class="mf">3.</span><span class="p">]</span>
-     <span class="p">[</span> <span class="mf">4.</span>  <span class="mf">5.</span>  <span class="mf">6.</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;a.dat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[1., 2., 3.],</span>
+<span class="go">       [4., 5., 6.]])</span>
 
 </pre></div>
 </div>
@@ -1008,20 +1009,20 @@ arranged as a matrix: all rows have the same number of elements</p>
 <section id="reshaping">
 <h3>Reshaping<a class="headerlink" href="#reshaping" title="Permalink to this headline">#</a></h3>
 <p>by changing the shape attribute</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(2, 3)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
-<span class="go">[ 1.  2.  3.  4.  5.  6.]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">6</span><span class="p">,))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(6,)</span>
 
 </pre></div>
 </div>
 <p>with the reshape method</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="n">ba</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">ba</span><span class="p">)</span>
-    <span class="p">[[</span> <span class="mf">1.</span>  <span class="mf">2.</span><span class="p">]</span>
-     <span class="p">[</span> <span class="mf">3.</span>  <span class="mf">4.</span><span class="p">]</span>
-     <span class="p">[</span> <span class="mf">5.</span>  <span class="mf">6.</span><span class="p">]]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span>
+<span class="go">array([[1., 2.],</span>
+<span class="go">       [3., 4.],</span>
+<span class="go">       [5., 6.]])</span>
 
 </pre></div>
 </div>
@@ -1033,23 +1034,23 @@ arranged as a matrix: all rows have the same number of elements</p>
 <li><p>ab and ba are different objects but represent different views  of the same data</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
-<span class="go">[ 0.  2.  3.  4.  5.  6.]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">ba</span><span class="p">)</span>
-<span class="go">[[ 0.  2.]</span>
-<span class="go"> [ 3.  4.]</span>
-<span class="go"> [ 5.  6.]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span>
+<span class="go">array([0., 2., 3., 4., 5., 6.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span>
+<span class="go">array([[0., 2.],</span>
+<span class="go">       [3., 4.],</span>
+<span class="go">       [5., 6.]])</span>
 
 </pre></div>
 </div>
 </section>
 <hr class="docutils" />
-<section id="array-indexing">
-<h3>Array indexing<a class="headerlink" href="#array-indexing" title="Permalink to this headline">#</a></h3>
+<section id="array-indexing-and-slicing">
+<h3>Array indexing and slicing<a class="headerlink" href="#array-indexing-and-slicing" title="Permalink to this headline">#</a></h3>
 <p>like lists</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a[2:4]</span></code> is an array slice with elements <code class="docutils literal notranslate"><span class="pre">a[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">a[3]</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">a[n:m]</span></code> has size <code class="docutils literal notranslate"><span class="pre">m-n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a[2:</span> <span class="pre">4]</span></code> is an array slice with elements <code class="docutils literal notranslate"><span class="pre">a[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">a[3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a[n:</span> <span class="pre">m]</span></code> has size <code class="docutils literal notranslate"><span class="pre">m-n</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">a[-1]</span></code> is the last element of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">a[:]</span></code> are all elements of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
 </ul>
@@ -1070,12 +1071,12 @@ arranged as a matrix: all rows have the same number of elements</p>
 <span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
-<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
             <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop timing&quot;</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1105,7 +1106,7 @@ arranged as a matrix: all rows have the same number of elements</p>
 <section id="more-vector-operations">
 <h3>More vector operations<a class="headerlink" href="#more-vector-operations" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>Scalar multiplication <code class="docutils literal notranslate"><span class="pre">a*2</span></code></p></li>
+<li><p>Scalar multiplication <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
 <li><p>Scalar addition <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">2</span></code></p></li>
 <li><p>Power (elementwise) <code class="docutils literal notranslate"><span class="pre">a**2</span></code></p></li>
 </ul>
@@ -1114,29 +1115,28 @@ arranged as a matrix: all rows have the same number of elements</p>
 <hr class="docutils" />
 <section id="vectorized-elementary-functions">
 <h3>Vectorized elementary functions<a class="headerlink" href="#vectorized-elementary-functions" title="Permalink to this headline">#</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span>
-    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
-    <span class="p">[</span> <span class="mf">0.</span>   <span class="mf">0.2</span>  <span class="mf">0.4</span>  <span class="mf">0.6</span>  <span class="mf">0.8</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">array([0. , 0.2, 0.4, 0.6, 0.8])</span>
 
 </pre></div>
 </div>
 <p>–</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
-    <span class="p">[</span> <span class="mf">1.</span>          <span class="mf">0.98006658</span>  <span class="mf">0.92106099</span>  <span class="mf">0.82533561</span>  <span class="mf">0.69670671</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">array([1.        , 0.98006658, 0.92106099, 0.82533561, 0.69670671])</span>
 
 </pre></div>
 </div>
 <p>–</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
-    <span class="p">[</span> <span class="mf">0.</span>          <span class="mf">0.4472136</span>   <span class="mf">0.63245553</span>  <span class="mf">0.77459667</span>  <span class="mf">0.89442719</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">array([0.        , 0.4472136 , 0.63245553, 0.77459667, 0.89442719])</span>
 
 </pre></div>
 </div>
 <p>–</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
-    <span class="o">./</span><span class="n">linalg</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">98</span><span class="p">:</span> <span class="ne">RuntimeWarning</span><span class="p">:</span> <span class="n">divide</span> <span class="n">by</span> <span class="n">zero</span> <span class="n">encountered</span> <span class="ow">in</span> <span class="n">log</span>
-      <span class="nb">print</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">v</span><span class="p">))</span>
-    <span class="p">[</span>       <span class="o">-</span><span class="n">inf</span> <span class="o">-</span><span class="mf">1.60943791</span> <span class="o">-</span><span class="mf">0.91629073</span> <span class="o">-</span><span class="mf">0.51082562</span> <span class="o">-</span><span class="mf">0.22314355</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> 
+<span class="gp">...</span>
+<span class="go">array([       -inf, -1.60943791, -0.91629073, -0.51082562, -0.22314355])</span>
 
 </pre></div>
 </div>
@@ -1211,7 +1211,7 @@ $$A^{-1}$$</p></li>
 <section id="the-absolute-minimum-you-need-to-know">
 <h3>The absolute minimum  you need to know<a class="headerlink" href="#the-absolute-minimum-you-need-to-know" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p>You have a set of points (x,y) on file</p></li>
+<li><p>You have a set of points (x,y) on file <code class="docutils literal notranslate"><span class="pre">data.txt</span></code></p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">3.141593</span> <span class="o">-</span><span class="mf">0.000000</span>
 <span class="o">-</span><span class="mf">3.013364</span> <span class="o">-</span><span class="mf">0.127877</span>
@@ -1232,33 +1232,33 @@ $$A^{-1}$$</p></li>
 <ul class="simple">
 <li><p>Import the plotting library</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <ul class="simple">
 <li><p>Load the data from file</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;filename&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">)</span> 
+
 </pre></div>
 </div>
 <p>–</p>
 <ul class="simple">
 <li><p>Call the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> 
+
 </pre></div>
 </div>
 <p>–</p>
 <ul class="simple">
 <li><p>Show the result</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p><em>Note:</em> in Jupyter notebook you may want to do</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+
 </pre></div>
 </div>
 </section>
@@ -1323,14 +1323,14 @@ $$A^{-1}$$</p></li>
 </pre></div>
 </div>
 <p>–</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-<span class="go">Int64Index([0, 1, 2, 3], dtype=&#39;int64&#39;)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">index</span>
+<span class="go">RangeIndex(start=0, stop=4, step=1)</span>
 
 </pre></div>
 </div>
 <p>–</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
-<span class="go">[ 0.1  0.2  0.3  0.4]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">values</span>
+<span class="go">array([0.1, 0.2, 0.3, 0.4])</span>
 
 </pre></div>
 </div>
@@ -1361,7 +1361,7 @@ $$A^{-1}$$</p></li>
 <span class="go">c    3</span>
 <span class="go">d    4</span>
 <span class="go">dtype: int64</span>
-<span class="go">&gt;&gt;&gt;</span>
+
 </pre></div>
 </div>
 <p>–</p>
@@ -1377,7 +1377,7 @@ $$A^{-1}$$</p></li>
 <ul class="simple">
 <li><p>Elementwise operations</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span> <span class="o">*</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">*</span> <span class="mi">100</span>
 <span class="go">a    100</span>
 <span class="go">b    200</span>
 <span class="go">c    300</span>
@@ -1391,8 +1391,8 @@ $$A^{-1}$$</p></li>
 <li><p>Slicing</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="go">b    200</span>
-<span class="go">c    300</span>
+<span class="go">b    2</span>
+<span class="go">c    3</span>
 <span class="go">dtype: int64</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
@@ -1432,12 +1432,12 @@ $$A^{-1}$$</p></li>
 <ul class="simple">
 <li><p>Alignment on indices</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>  
 <span class="go">a   NaN</span>
-<span class="go">b     4</span>
+<span class="go">b   4.0</span>
 <span class="go">c   NaN</span>
 <span class="go">dtype: float64</span>
-<span class="go">&gt;&gt;&gt;</span>
+
 </pre></div>
 </div>
 </section>
@@ -1457,14 +1457,14 @@ $$A^{-1}$$</p></li>
 </div>
 <p>–</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
-<span class="go">     area    capital         country  population</span>
-<span class="go">0   30510   Brussels         Belgium        11.3</span>
-<span class="go">1  671308      Paris          France        64.3</span>
-<span class="go">2  357050     Berlin         Germany        81.3</span>
-<span class="go">3   41526  Amsterdam     Netherlands        16.9</span>
-<span class="go">4  244820     London  United Kingdom        64.9</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">          country  population    area    capital</span>
+<span class="go">0         Belgium        11.3   30510   Brussels</span>
+<span class="go">1          France        64.3  671308      Paris</span>
+<span class="go">2         Germany        81.3  357050     Berlin</span>
+<span class="go">3     Netherlands        16.9   41526  Amsterdam</span>
+<span class="go">4  United Kingdom        64.9  244820     London</span>
+
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1472,34 +1472,34 @@ $$A^{-1}$$</p></li>
 <li><p>Attributes: index, columns, dtypes, values</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">index</span>
-<span class="go">Int64Index([0, 1, 2, 3, 4], dtype=&#39;int64&#39;)</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="go">RangeIndex(start=0, stop=5, step=1)</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">columns</span>
-<span class="go">Index([&#39;area&#39;, &#39;capital&#39;, &#39;country&#39;, &#39;population&#39;], dtype=&#39;object&#39;)</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="go">Index([&#39;country&#39;, &#39;population&#39;, &#39;area&#39;, &#39;capital&#39;], dtype=&#39;object&#39;)</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">dtypes</span>
-<span class="go">area            int64</span>
-<span class="go">capital        object</span>
 <span class="go">country        object</span>
 <span class="go">population    float64</span>
+<span class="go">area            int64</span>
+<span class="go">capital        object</span>
 <span class="go">dtype: object</span>
 <span class="go">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
 <p>–</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">values</span>
-<span class="go">array([[30510, &#39;Brussels&#39;, &#39;Belgium&#39;, 11.3],</span>
-<span class="go">       [671308, &#39;Paris&#39;, &#39;France&#39;, 64.3],</span>
-<span class="go">       [357050, &#39;Berlin&#39;, &#39;Germany&#39;, 81.3],</span>
-<span class="go">       [41526, &#39;Amsterdam&#39;, &#39;Netherlands&#39;, 16.9],</span>
-<span class="go">       [244820, &#39;London&#39;, &#39;United Kingdom&#39;, 64.9]], dtype=object)</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="go">array([[&#39;Belgium&#39;, 11.3, 30510, &#39;Brussels&#39;],</span>
+<span class="go">       [&#39;France&#39;, 64.3, 671308, &#39;Paris&#39;],</span>
+<span class="go">       [&#39;Germany&#39;, 81.3, 357050, &#39;Berlin&#39;],</span>
+<span class="go">       [&#39;Netherlands&#39;, 16.9, 41526, &#39;Amsterdam&#39;],</span>
+<span class="go">       [&#39;United Kingdom&#39;, 64.9, 244820, &#39;London&#39;]], dtype=object)</span>
+
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1508,7 +1508,18 @@ $$A^{-1}$$</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="go">&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;</span>
-<span class="go">Int64Index: 5 entries, 0 to 4</span>
+<span class="go">RangeIndex: 5 entries, 0 to 4</span>
+<span class="go">Data columns (total 4 columns):</span>
+<span class="go"> #   Column      Non-Null Count  Dtype  </span>
+<span class="go">---  ------      --------------  -----  </span>
+<span class="go"> 0   country     5 non-null      object </span>
+<span class="go"> 1   population  5 non-null      float64</span>
+<span class="go"> 2   area        5 non-null      int64  </span>
+<span class="go"> 3   capital     5 non-null      object </span>
+<span class="go">dtypes: float64(1), int64(1), object(2)</span>
+<span class="go">memory usage: 288.0+ bytes</span>
+
+<span class="go">RangeInde: 5 entries, 0 to 4</span>
 <span class="go">Data columns (total 4 columns):</span>
 <span class="go">area          5 non-null int64</span>
 <span class="go">capital       5 non-null object</span>
@@ -1523,31 +1534,31 @@ $$A^{-1}$$</p></li>
 <ul class="simple">
 <li><p>Set a column as index</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
-<span class="go">     area    capital         country  population</span>
-<span class="go">0   30510   Brussels         Belgium        11.3</span>
-<span class="go">1  671308      Paris          France        64.3</span>
-<span class="go">2  357050     Berlin         Germany        81.3</span>
-<span class="go">3   41526  Amsterdam     Netherlands        16.9</span>
-<span class="go">4  244820     London  United Kingdom        64.9</span>
-<span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">          country  population    area    capital</span>
+<span class="go">0         Belgium        11.3   30510   Brussels</span>
+<span class="go">1          France        64.3  671308      Paris</span>
+<span class="go">2         Germany        81.3  357050     Berlin</span>
+<span class="go">3     Netherlands        16.9   41526  Amsterdam</span>
+<span class="go">4  United Kingdom        64.9  244820     London</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
-<span class="go">&gt;&gt;&gt;</span>
+
 </pre></div>
 </div>
 <p>–</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
-<span class="go">                  area    capital  population</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">                population    area    capital</span>
 <span class="go">country                                      </span>
-<span class="go">Belgium          30510   Brussels        11.3</span>
-<span class="go">France          671308      Paris        64.3</span>
-<span class="go">Germany         357050     Berlin        81.3</span>
-<span class="go">Netherlands      41526  Amsterdam        16.9</span>
-<span class="go">United Kingdom  244820     London        64.9</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="go">Belgium               11.3   30510   Brussels</span>
+<span class="go">France                64.3  671308      Paris</span>
+<span class="go">Germany               81.3  357050     Berlin</span>
+<span class="go">Netherlands           16.9   41526  Amsterdam</span>
+<span class="go">United Kingdom        64.9  244820     London</span>
+
 </pre></div>
 </div>
 <hr class="docutils" />
@@ -1562,18 +1573,18 @@ $$A^{-1}$$</p></li>
 <span class="go">Netherlands        41526</span>
 <span class="go">United Kingdom    244820</span>
 <span class="go">Name: area, dtype: int64</span>
-<span class="go">&gt;&gt;&gt;</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;capital&#39;</span><span class="p">][</span><span class="s1">&#39;France&#39;</span><span class="p">])</span>
 <span class="go">Paris</span>
-<span class="go">&gt;&gt;&gt;</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <ul class="simple">
-<li><p>Arithmetic (population density)</p></li>
+<li><p>Arithmetic expressions (population density)</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
 <span class="go">country</span>
@@ -1591,79 +1602,82 @@ $$A^{-1}$$</p></li>
 <li><p>Add new column</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
-<span class="go">                  area    capital  population     density</span>
-<span class="go">country                                                  </span>
-<span class="go">Belgium          30510   Brussels        11.3  370.370370</span>
-<span class="go">France          671308      Paris        64.3   95.783158</span>
-<span class="go">Germany         357050     Berlin        81.3  227.699202</span>
-<span class="go">Netherlands      41526  Amsterdam        16.9  406.973944</span>
-<span class="go">United Kingdom  244820     London        64.9  265.092721</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> 
+<span class="go">                    population    area    capital     density</span>
+<span class="go">    country</span>
+<span class="go">    Belgium               11.3   30510   Brussels  370.370370</span>
+<span class="go">    France                64.3  671308      Paris   95.783158</span>
+<span class="go">    Germany               81.3  357050     Berlin  227.699202</span>
+<span class="go">    Netherlands           16.9   41526  Amsterdam  406.973944</span>
+<span class="go">    United Kingdom        64.9  244820     London  265.092721</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <ul class="simple">
 <li><p>Filter data</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">])</span>
-<span class="go">              area    capital  population     density</span>
-<span class="go">country                                              </span>
-<span class="go">Belgium      30510   Brussels        11.3  370.370370</span>
-<span class="go">Netherlands  41526  Amsterdam        16.9  406.973944</span>
-<span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">]</span> 
+<span class="go">                 population   area    capital     density</span>
+<span class="go">    country</span>
+<span class="go">    Belgium            11.3  30510   Brussels  370.370370</span>
+<span class="go">    Netherlands        16.9  41526  Amsterdam  406.973944</span>
+
 </pre></div>
 </div>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>Sort data</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
-<span class="go">                  area    capital  population     density</span>
-<span class="go">country                                                  </span>
-<span class="go">Netherlands      41526  Amsterdam        16.9  406.973944</span>
-<span class="go">Belgium          30510   Brussels        11.3  370.370370</span>
-<span class="go">United Kingdom  244820     London        64.9  265.092721</span>
-<span class="go">Germany         357050     Berlin        81.3  227.699202</span>
-<span class="go">France          671308      Paris        64.3   95.783158</span>
-<span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="go">                    population    area    capital     density</span>
+<span class="go">    country</span>
+<span class="go">    Netherlands           16.9   41526  Amsterdam  406.973944</span>
+<span class="go">    Belgium               11.3   30510   Brussels  370.370370</span>
+<span class="go">    United Kingdom        64.9  244820     London  265.092721</span>
+<span class="go">    Germany               81.3  357050     Berlin  227.699202</span>
+<span class="go">    France                64.3  671308      Paris   95.783158</span>
+
 </pre></div>
 </div>
 <p>–</p>
 <ul class="simple">
 <li><p>Statistics</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="o">.</span><span class="n">describe</span><span class="p">())</span>
-<span class="go">                area  population     density</span>
-<span class="go">count       5.000000    5.000000    5.000000</span>
-<span class="go">mean   269042.800000   47.740000  273.183879</span>
-<span class="go">std    264012.827994   31.519645  123.440607</span>
-<span class="go">min     30510.000000   11.300000   95.783158</span>
-<span class="go">25%     41526.000000   16.900000  227.699202</span>
-<span class="go">50%    244820.000000   64.300000  265.092721</span>
-<span class="go">75%    357050.000000   64.900000  370.370370</span>
-<span class="go">max    671308.000000   81.300000  406.973944</span>
-<span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+<span class="go">           population           area     density</span>
+<span class="go">    count    5.000000       5.000000    5.000000</span>
+<span class="go">    mean    47.740000  269042.800000  273.183879</span>
+<span class="go">    std     31.519645  264012.827994  123.440607</span>
+<span class="go">    min     11.300000   30510.000000   95.783158</span>
+<span class="go">    25%     16.900000   41526.000000  227.699202</span>
+<span class="go">    50%     64.300000  244820.000000  265.092721</span>
+<span class="go">    75%     64.900000  357050.000000  370.370370</span>
+<span class="go">    max     81.300000  671308.000000  406.973944</span>
+
 </pre></div>
 </div>
 <hr class="docutils" />
 <ul class="simple">
 <li><p>Plotting</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
-<span class="go">&gt;&gt;&gt;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  
+
 </pre></div>
 </div>
-<img src="/external_libraries/figure_1.png" height="300"/>
----
-* Plotting barchart
-```
->>> countries.plot(kind='bar')
->>>
-```
-<img src="/external_libraries/figure_2.png" height="300"/>
----
+<a class="reference internal image-reference" href="../_images/figure_1.png"><img alt="../_images/figure_1.png" src="../_images/figure_1.png" style="height: 300px;" /></a>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Plotting barchart</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>  
+
+
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/figure_2.png"><img alt="../_images/figure_2.png" src="../_images/figure_2.png" style="height: 300px;" /></a>
 </section>
+<hr class="docutils" />
 <section id="features">
 <h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
