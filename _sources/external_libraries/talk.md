@@ -1,5 +1,3 @@
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 # External libraries
 
 ## 
@@ -529,14 +527,17 @@ $$Ax = x\lambda$$
 ### Next
 
 * Import the plotting library
+
 ~~~
 >>> import matplotlib.pyplot as plt
 >>> import numpy as np
 
 ~~~
+
 --
 
 * Load the data from file
+
 ~~~
 >>> data = np.loadtxt('data.txt') # doctest: +SKIP 
 
@@ -544,6 +545,7 @@ $$Ax = x\lambda$$
 --
 
 * Call the `plot` function
+
 ~~~
 >>> plt.plot(data[:, 0], data[:, 1]) # doctest: +SKIP 
 
@@ -551,6 +553,7 @@ $$Ax = x\lambda$$
 --
 
 * Show the result
+
 ~~~
 >>> plt.show() # doctest: +SKIP 
 
@@ -975,7 +978,7 @@ dtype: float64
 
 ~~~
 
-<img src="/external_libraries/figure_1.png" height="300"/>
+<img src="img/figure_1.png" height="300"/>
 
 ---
 
@@ -986,7 +989,7 @@ dtype: float64
 
 
 ~~~
-<img src="/external_libraries/figure_2.png" height="300"/>
+<img src="img/figure_2.png" height="300"/>
 
 ---
 
