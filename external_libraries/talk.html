@@ -1,0 +1,1760 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>External libraries &#8212; BB1000 lecture notes</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/blank.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/jquery-3.5.1.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Classes" href="../classes/talk.html" />
+    <link rel="prev" title="File handling" href="../files/talk.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">BB1000 lecture notes</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Lecture slides for Programming in Python BB1000
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/talk.html">
+   Introduction to Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../git/talk.html">
+   Introduction to git
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../testing/talk.html">
+   Testing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../files/talk.html">
+   File handling
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   External libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../classes/talk.html">
+   Classes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../decorators/talk.html">
+   Decorators (Advanced topics)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../iterators/talk.html">
+   Iterators
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../profiling/talk.html">
+   Profiling
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../debugging/talk.html">
+   Debugging
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-repository-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Source repositories">
+      <i class="fab fa-github"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="headerbtn__text-container">repository</span>
+</a>
+
+      </li>
+      
+      <li>
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexternal_libraries/talk.html&body=Your%20issue%20content%20here."
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Open an issue"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="headerbtn__text-container">open issue</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/external_libraries/talk.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-you-do-with-python-libraries">
+   What can you do with Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   What can you do with Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-library">
+   What is a library?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#builtins">
+   Builtins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-library">
+   Standard library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#external-python-libraries">
+   External Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-you-a-math-genius">
+   Are you a math genius?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra-in-python-numpy">
+     Linear Algebra in Python: NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-arrays">
+     Creating arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copying-arrays">
+     Copying arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filling-arrays">
+     Filling arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrays-from-list-objects">
+     Arrays from list objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrays-from-file-data">
+     Arrays from file data:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshaping">
+     Reshaping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#views-of-same-data">
+     Views of same data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#array-indexing-and-slicing">
+     Array indexing and slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-operations">
+     Matrix operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-vector-operations">
+     More vector operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectorized-elementary-functions">
+     Vectorized elementary functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-linear-algebra">
+   More linear algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-example">
+   First example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-absolute-minimum-you-need-to-know">
+     The absolute minimum  you need to know
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next">
+     Next
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Next?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#refinement">
+       Refinement
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-practice">
+     In practice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pandas-module">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   module
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframes">
+     DataFrames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>External libraries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-can-you-do-with-python-libraries">
+   What can you do with Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   What can you do with Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-a-library">
+   What is a library?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#builtins">
+   Builtins
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#standard-library">
+   Standard library
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#external-python-libraries">
+   External Python libraries
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#are-you-a-math-genius">
+   Are you a math genius?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra-in-python-numpy">
+     Linear Algebra in Python: NumPy
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#creating-arrays">
+     Creating arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#copying-arrays">
+     Copying arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filling-arrays">
+     Filling arrays
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrays-from-list-objects">
+     Arrays from list objects
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#arrays-from-file-data">
+     Arrays from file data:
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#reshaping">
+     Reshaping
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#views-of-same-data">
+     Views of same data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#array-indexing-and-slicing">
+     Array indexing and slicing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#matrix-operations">
+     Matrix operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-vector-operations">
+     More vector operations
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#vectorized-elementary-functions">
+     Vectorized elementary functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#more-linear-algebra">
+   More linear algebra
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#first-example">
+   First example
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-absolute-minimum-you-need-to-know">
+     The absolute minimum  you need to know
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#next">
+     Next
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Next?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#refinement">
+       Refinement
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-practice">
+     In practice
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-pandas-module">
+   The
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     pandas
+    </span>
+   </code>
+   module
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#series">
+     Series
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataframes">
+     DataFrames
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#features">
+     Features
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="external-libraries">
+<h1>External libraries<a class="headerlink" href="#external-libraries" title="Permalink to this headline">#</a></h1>
+<section id="id1">
+<h2><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>BB1000 Programming in Python
+KTH</p>
+<hr class="docutils" />
+<p>layout: false</p>
+<p>Learning outcomes:</p>
+<ul class="simple">
+<li><p>numpy</p></li>
+<li><p>pandas</p></li>
+<li><p>matplotlib</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="what-can-you-do-with-python-libraries">
+<h2>What can you do with Python libraries<a class="headerlink" href="#what-can-you-do-with-python-libraries" title="Permalink to this headline">#</a></h2>
+<p><em>This year’s Nobel Prize in economics was awarded to a Python convert</em>
+<a class="reference internal" href="https://cms.qz.com/wp-content/uploads/2018/10/Paul-Romer-Jupyter.jpg?quality=75&amp;strip=all&amp;w=1600&amp;h=901"><img alt="https://cms.qz.com/wp-content/uploads/2018/10/Paul-Romer-Jupyter.jpg?quality=75&amp;strip=all&amp;w=1600&amp;h=901" src="https://cms.qz.com/wp-content/uploads/2018/10/Paul-Romer-Jupyter.jpg?quality=75&amp;strip=all&amp;w=1600&amp;h=901" style="height: 200px;" /></a></p>
+<p>https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/</p>
+<p><em>Instead of using Mathematica, Romer discovered that he could use a Jupyter
+notebook for sharing his research. <mark>Jupyter notebooks</mark> are web
+applications that allow programmers and researchers to share documents that
+include code, charts, equations, and data. Jupyter notebooks allow for code
+written in dozens of programming languages. For his research, Romer used
+<mark>Python—the most popular language for data science and statistics.</mark></em></p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2>What can you do with Python libraries<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p><em>Take a picture of a black hole</em></p>
+<a class="reference internal image-reference" href="https://static.projects.iq.harvard.edu/files/styles/os_files_xlarge/public/eht/files/20190410-78m-800x466.png?m=1554877319&amp;itok=fLnjP-iS"><img alt="https://static.projects.iq.harvard.edu/files/styles/os_files_xlarge/public/eht/files/20190410-78m-800x466.png?m=1554877319&amp;itok=fLnjP-iS" src="https://static.projects.iq.harvard.edu/files/styles/os_files_xlarge/public/eht/files/20190410-78m-800x466.png?m=1554877319&amp;itok=fLnjP-iS" style="height: 200px;" /></a>
+<p>https://doi.org/10.3847/2041-8213/ab0e85</p>
+<p><em>Software: DiFX (Deller et al. 2011), CALC, PolConvert (Martí-Vidal et al.  2016), HOPS (Whitney et al. 2004), CASA (McMullin et al. 2007), AIPS (Greisen 2003), ParselTongue (Kettenis et al. 2006), GNU Parallel (Tange 2011), GILDAS, eht-imaging (Chael et al. 2016, 2018), <mark>Numpy</mark> (van der Walt et al.  2011), <mark>Scipy</mark> (Jones et al. 2001), <mark>Pandas</mark> (McKinney 2010), Astropy (The Astropy Collaboration et al. 2013, 2018), <mark>Jupyter</mark> (Kluyver et al. 2016), <mark>Matplotlib</mark> (Hunter 2007).</em></p>
+</section>
+<hr class="docutils" />
+<section id="what-is-a-library">
+<h2>What is a library?<a class="headerlink" href="#what-is-a-library" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>A file</p></li>
+<li><p>A directory</p></li>
+<li><p>Builtin</p></li>
+<li><p>Standard library (requires import)</p></li>
+<li><p>External libraries (requires install)</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="builtins">
+<h2>Builtins<a class="headerlink" href="#builtins" title="Permalink to this headline">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">dir</span><span class="p">(</span><span class="n">__builtins__</span><span class="p">)</span> 
+<span class="go">[</span>
+<span class="gp">...</span>
+<span class="go"> &#39;abs&#39;, &#39;all&#39;, &#39;a</span>
+<span class="go">ny&#39;, &#39;ascii&#39;, &#39;bin&#39;, &#39;bool&#39;, &#39;bytearray&#39;, &#39;bytes&#39;, &#39;callable&#39;, &#39;chr&#39;, &#39;classmetho</span>
+<span class="go">d&#39;, &#39;compile&#39;, &#39;complex&#39;, &#39;copyright&#39;, &#39;credits&#39;, &#39;delattr&#39;, &#39;dict&#39;, &#39;dir&#39;, &#39;divm</span>
+<span class="go">od&#39;, &#39;enumerate&#39;, &#39;eval&#39;, &#39;exec&#39;, &#39;exit&#39;, &#39;filter&#39;, &#39;float&#39;, &#39;format&#39;, &#39;frozenset</span>
+<span class="go">&#39;, &#39;getattr&#39;, &#39;globals&#39;, &#39;hasattr&#39;, &#39;hash&#39;, &#39;help&#39;, &#39;hex&#39;, &#39;id&#39;, &#39;input&#39;, &#39;int&#39;, </span>
+<span class="go">&#39;isinstance&#39;, &#39;issubclass&#39;, &#39;iter&#39;, &#39;len&#39;, &#39;license&#39;, &#39;list&#39;, &#39;locals&#39;, &#39;map&#39;, &#39;m</span>
+<span class="go">ax&#39;, &#39;memoryview&#39;, &#39;min&#39;, &#39;next&#39;, &#39;object&#39;, &#39;oct&#39;, &#39;open&#39;, &#39;ord&#39;, &#39;pow&#39;, &#39;print&#39;,</span>
+<span class="go"> &#39;property&#39;, &#39;quit&#39;, &#39;range&#39;, &#39;repr&#39;, &#39;reversed&#39;, &#39;round&#39;, &#39;set&#39;, &#39;setattr&#39;, &#39;sli</span>
+<span class="go">ce&#39;, &#39;sorted&#39;, &#39;staticmethod&#39;, &#39;str&#39;, &#39;sum&#39;, &#39;super&#39;, &#39;tuple&#39;, &#39;type&#39;, &#39;vars&#39;, &#39;z</span>
+<span class="go">ip&#39;]                            </span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="standard-library">
+<h2>Standard library<a class="headerlink" href="#standard-library" title="Permalink to this headline">#</a></h2>
+<p>Included in all distributions, but requires an import statement for access</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">math</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="go">3.141592653589793</span>
+
+</pre></div>
+</div>
+<p>https://docs.python.org/3/library/</p>
+<img height="200" src="https://m.media-amazon.com/images/I/517+o9DVBqL._AC_UL436_.jpg">
+<img height="200" src="https://m.media-amazon.com/images/I/718xn9vrebL._AC_UL436_.jpg">
+<img height="200" src="https://m.media-amazon.com/images/I/513mJHxeseL._AC_UL436_.jpg">
+---
+</section>
+<section id="external-python-libraries">
+<h2>External Python libraries<a class="headerlink" href="#external-python-libraries" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>NumPy: ‘Numerical python’, linear algebra, https://www.numpy.org/</p></li>
+<li><p>Pandas: High-level library for tabular data, https://pandas.pydata.org/</p></li>
+<li><p>Matplotlib: fundamental plotting module, https://matplotlib.org/</p></li>
+</ul>
+<!--
+If ModuleNotFoundError, install first
+
+import sys
+!conda install --yes --prefix {sys.prefix} numpy (or pandas or matplotlib)
+
+import pandas (or numpy or matplotlib.pyplot) as pd (or np or plt)
+
+-->
+</section>
+<hr class="docutils" />
+<section id="are-you-a-math-genius">
+<h2>Are you a math genius?<a class="headerlink" href="#are-you-a-math-genius" title="Permalink to this headline">#</a></h2>
+<a class="reference internal image-reference" href="../_images/mathgenius.jpg"><img alt="../_images/mathgenius.jpg" src="../_images/mathgenius.jpg" style="height: 300px;" /></a>
+<ul class="simple">
+<li><p>First three rows a linear system of equations</p></li>
+<li><p>Identify the coefficient matrix and right-hand side</p></li>
+<li><p>Last line represents an expression of the solutions</p></li>
+</ul>
+<p>$$</p>
+<div class="amsmath math notranslate nohighlight" id="equation-399d6720-d50b-4fb5-a09b-42bce334d05a">
+<span class="eqno">(1)<a class="headerlink" href="#equation-399d6720-d50b-4fb5-a09b-42bce334d05a" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+3 &amp;0 &amp;0 \\\
+1 &amp;8 &amp;0 \\\
+0 &amp;4 &amp;-2
+\end{pmatrix}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f542b234-0808-4673-bea0-cafd0a7df851">
+<span class="eqno">(2)<a class="headerlink" href="#equation-f542b234-0808-4673-bea0-cafd0a7df851" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+a\\\ b \\\ c
+\end{pmatrix}\]</div>
+<p>=</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cd261611-69dd-4121-ae51-29daf25fc38d">
+<span class="eqno">(3)<a class="headerlink" href="#equation-cd261611-69dd-4121-ae51-29daf25fc38d" title="Permalink to this equation">#</a></span>\[\begin{pmatrix}
+30\\\ 18 \\\ 2
+\end{pmatrix}\]</div>
+<p>$$
+$$
+a + 3b + c = ?
+$$</p>
+<hr class="docutils" />
+<section id="linear-algebra-in-python-numpy">
+<h3>Linear Algebra in Python: NumPy<a class="headerlink" href="#linear-algebra-in-python-numpy" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Libraries provided by <code class="docutils literal notranslate"><span class="pre">numpy</span></code> provide computational speeds close to compiled languages</p></li>
+<li><p>Generally written in C</p></li>
+<li><p>From a user perspective they are imported as any python module</p></li>
+<li><p>http://www.numpy.org</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="creating-arrays">
+<h3>Creating arrays<a class="headerlink" href="#creating-arrays" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>one- and two-dimensional</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>  
+<span class="go">array([0., 0., 0.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span>  
+<span class="go">array([[0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.],</span>
+<span class="go">       [0., 0., 0.]])</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="copying-arrays">
+<h3>Copying arrays<a class="headerlink" href="#copying-arrays" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">array([1., 0.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">y</span>
+<span class="go">array([1., 0.])</span>
+
+</pre></div>
+</div>
+<p>Note that assignment (like lists) here is by reference</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="go">True</span>
+
+</pre></div>
+</div>
+<p>Numpy array copy method</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span>
+<span class="go">False</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="filling-arrays">
+<h3>Filling arrays<a class="headerlink" href="#filling-arrays" title="Permalink to this headline">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">linspace</span></code> returns an array with sequence data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> 
+<span class="go">array([0. , 0.2, 0.4, 0.6, 0.8, 1. ])</span>
+
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">arange</span></code> is a similar function</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span> 
+<span class="go">array([0. , 0.2, 0.4, 0.6, 0.8])</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="arrays-from-list-objects">
+<h3>Arrays from list objects<a class="headerlink" href="#arrays-from-list-objects" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">la</span><span class="o">=</span><span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">la</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([1., 2., 3.])</span>
+
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">lb</span><span class="o">=</span><span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">=</span><span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">la</span><span class="p">,</span><span class="n">lb</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span>
+<span class="go">array([[1., 2., 3.],</span>
+<span class="go">       [4., 5., 6.]])</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="arrays-from-file-data">
+<h3>Arrays from file data:<a class="headerlink" href="#arrays-from-file-data" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Using <code class="docutils literal notranslate"><span class="pre">numpy.loadtxt</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#a.dat</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span>
+<span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<!--
+>>> with open('a.dat', 'w') as adat:
+...     n = adat.write('1 2 3\n4 5 6\n')
+
+-->
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;a.dat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([[1., 2., 3.],</span>
+<span class="go">       [4., 5., 6.]])</span>
+
+</pre></div>
+</div>
+<p>If you have a text file with only numerical data
+arranged as a matrix: all rows have the same number of elements</p>
+</section>
+<hr class="docutils" />
+<section id="reshaping">
+<h3>Reshaping<a class="headerlink" href="#reshaping" title="Permalink to this headline">#</a></h3>
+<p>by changing the shape attribute</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(2, 3)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">6</span><span class="p">,))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(6,)</span>
+
+</pre></div>
+</div>
+<p>with the reshape method</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span> <span class="o">=</span> <span class="n">ab</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span>
+<span class="go">array([[1., 2.],</span>
+<span class="go">       [3., 4.],</span>
+<span class="go">       [5., 6.]])</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="views-of-same-data">
+<h3>Views of same data<a class="headerlink" href="#views-of-same-data" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>ab and ba are different objects but represent different views  of the same data</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ab</span>
+<span class="go">array([0., 2., 3., 4., 5., 6.])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ba</span>
+<span class="go">array([[0., 2.],</span>
+<span class="go">       [3., 4.],</span>
+<span class="go">       [5., 6.]])</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="array-indexing-and-slicing">
+<h3>Array indexing and slicing<a class="headerlink" href="#array-indexing-and-slicing" title="Permalink to this headline">#</a></h3>
+<p>like lists</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a[2:</span> <span class="pre">4]</span></code> is an array slice with elements <code class="docutils literal notranslate"><span class="pre">a[2]</span></code> and <code class="docutils literal notranslate"><span class="pre">a[3]</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a[n:</span> <span class="pre">m]</span></code> has size <code class="docutils literal notranslate"><span class="pre">m-n</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a[-1]</span></code> is the last element of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a[:]</span></code> are all elements of <code class="docutils literal notranslate"><span class="pre">a</span></code></p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="matrix-operations">
+<h3>Matrix operations<a class="headerlink" href="#matrix-operations" title="Permalink to this headline">#</a></h3>
+<p>From mathematics:</p>
+<p>
+\[C_{ij} = \sum_k A_{ik}B_{kj}\]
+</p>
+<p>explicit looping (slow):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+            <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span><span class="o">*</span><span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loop timing&quot;</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>using numpy</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">256</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">))</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">@</span> <span class="n">b</span>
+<span class="n">t2</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">clock</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;dot timing&quot;</span><span class="p">,</span> <span class="n">t2</span><span class="o">-</span><span class="n">t1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">&#64;</span></code> is a matrix multiplication operator, same as</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="more-vector-operations">
+<h3>More vector operations<a class="headerlink" href="#more-vector-operations" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Scalar multiplication <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">*</span> <span class="pre">2</span></code></p></li>
+<li><p>Scalar addition <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">2</span></code></p></li>
+<li><p>Power (elementwise) <code class="docutils literal notranslate"><span class="pre">a**2</span></code></p></li>
+</ul>
+<p>Note that for objects of <code class="docutils literal notranslate"><span class="pre">ndarray</span></code> type, multiplication means elementwise multplication and not matrix multiplication</p>
+</section>
+<hr class="docutils" />
+<section id="vectorized-elementary-functions">
+<h3>Vectorized elementary functions<a class="headerlink" href="#vectorized-elementary-functions" title="Permalink to this headline">#</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">.2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span>
+<span class="go">array([0. , 0.2, 0.4, 0.6, 0.8])</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">array([1.        , 0.98006658, 0.92106099, 0.82533561, 0.69670671])</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="go">array([0.        , 0.4472136 , 0.63245553, 0.77459667, 0.89442719])</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numpy</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> 
+<span class="gp">...</span>
+<span class="go">array([       -inf, -1.60943791, -0.91629073, -0.51082562, -0.22314355])</span>
+
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="more-linear-algebra">
+<h2>More linear algebra<a class="headerlink" href="#more-linear-algebra" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Solve a linear  system of equations
+$$Ax = b$$</p></li>
+</ul>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Determinant of a matrix</p></li>
+</ul>
+<p>$$det(A)$$</p>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Inverse of a matrix
+$$A^{-1}$$</p></li>
+</ul>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inverse</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Eigenvalues  of a matrix</p></li>
+</ul>
+<p>$$Ax = x\lambda$$</p>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="n">x</span><span class="p">,</span> <span class="n">l</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>http://www.numpy.org</p></li>
+<li><p>http://www.scipy-lectures.org/intro/numpy/index.html</p></li>
+<li><p>Videos: https://pyvideo.org/search.html?q=numpy</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="matplotlib">
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>The standard 2D-plotting library in Python</p></li>
+<li><p>Production-quality graphs</p></li>
+<li><p>Interactive and non-interactive use</p></li>
+<li><p>Many output formats</p></li>
+<li><p>Flexible and customizable</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="first-example">
+<h2>First example<a class="headerlink" href="#first-example" title="Permalink to this headline">#</a></h2>
+<section id="the-absolute-minimum-you-need-to-know">
+<h3>The absolute minimum  you need to know<a class="headerlink" href="#the-absolute-minimum-you-need-to-know" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>You have a set of points (x,y) on file <code class="docutils literal notranslate"><span class="pre">data.txt</span></code></p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mf">3.141593</span> <span class="o">-</span><span class="mf">0.000000</span>
+<span class="o">-</span><span class="mf">3.013364</span> <span class="o">-</span><span class="mf">0.127877</span>
+<span class="o">-</span><span class="mf">2.885136</span> <span class="o">-</span><span class="mf">0.253655</span>
+<span class="o">...</span>
+<span class="mf">3.141593</span> <span class="mf">0.000000</span>
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>How do you get to  this</p></li>
+</ul>
+<a class="reference internal image-reference" href="../_images/sin.png"><img alt="../_images/sin.png" src="../_images/sin.png" style="height: 250px;" /></a>
+</section>
+<hr class="docutils" />
+<section id="next">
+<h3>Next<a class="headerlink" href="#next" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Import the plotting library</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Load the data from file</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">)</span> 
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Call the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> 
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Show the result</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span> 
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h3>Next?<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<section id="refinement">
+<h4>Refinement<a class="headerlink" href="#refinement" title="Permalink to this headline">#</a></h4>
+<ul class="simple">
+<li><p>Change color, linestyle, linewidth
+–</p></li>
+<li><p>Change window size (ylim)
+–</p></li>
+<li><p>Change xticks
+–</p></li>
+<li><p>Set title
+–</p></li>
+<li><p>Multi-line plots
+–</p></li>
+<li><p>Legends</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="in-practice">
+<h3>In practice<a class="headerlink" href="#in-practice" title="Permalink to this headline">#</a></h3>
+<p>How do you do when need a particlar type of figure?</p>
+<ul class="simple">
+<li><p>Go to the matplotlib gallery: http://matplotlib.org/gallery</p></li>
+<li><p>Try some exercises at http://scipy-lectures.github.io/intro/matplotlib/matplotlib.html#other-types-of-plots-examples-and-exercises</p></li>
+<li><p>See also: https://realpython.com/python-matplotlib-guide/</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-pandas-module">
+<h2>The <code class="docutils literal notranslate"><span class="pre">pandas</span></code> module<a class="headerlink" href="#the-pandas-module" title="Permalink to this headline">#</a></h2>
+<p>Setup:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+</pre></div>
+</div>
+<p>Two main data structures</p>
+<ul class="simple">
+<li><p>Series</p></li>
+<li><p>Data frames</p></li>
+</ul>
+<hr class="docutils" />
+<section id="series">
+<h3>Series<a class="headerlink" href="#series" title="Permalink to this headline">#</a></h3>
+<p>One-dimensional labeled data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">0    0.1</span>
+<span class="go">1    0.2</span>
+<span class="go">2    0.3</span>
+<span class="go">3    0.4</span>
+<span class="go">dtype: float64</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">index</span>
+<span class="go">RangeIndex(start=0, stop=4, step=1)</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">values</span>
+<span class="go">array([0.1, 0.2, 0.3, 0.4])</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>indices can be labels (like a dict with order)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">a    0</span>
+<span class="go">b    1</span>
+<span class="go">c    2</span>
+<span class="go">d    3</span>
+<span class="go">dtype: int64</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;d&#39;</span><span class="p">])</span>
+<span class="go">3</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Initialize with dict</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">a    1</span>
+<span class="go">b    2</span>
+<span class="go">c    3</span>
+<span class="go">d    4</span>
+<span class="go">dtype: int64</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Indexing as a dict</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">])</span>
+<span class="go">1</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Elementwise operations</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="go">a    100</span>
+<span class="go">b    200</span>
+<span class="go">c    300</span>
+<span class="go">d    400</span>
+<span class="go">dtype: int64</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Slicing</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="go">b    2</span>
+<span class="go">c    3</span>
+<span class="go">dtype: int64</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>List indexing</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]])</span>
+<span class="go">b    2</span>
+<span class="go">c    3</span>
+<span class="go">dtype: int64</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Bool indexing</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">s</span><span class="o">&gt;</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">c    3</span>
+<span class="go">d    4</span>
+<span class="go">dtype: int64</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Other operations</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="go">2.5</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Alignment on indices</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>  
+<span class="go">a   NaN</span>
+<span class="go">b   4.0</span>
+<span class="go">c   NaN</span>
+<span class="go">dtype: float64</span>
+
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="dataframes">
+<h3>DataFrames<a class="headerlink" href="#dataframes" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>Tabular data structure (like spreadsheet, sql table)</p></li>
+<li><p>Multiple series with common index</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Belgium&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">,</span> <span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="s1">&#39;Netherlands&#39;</span><span class="p">,</span> <span class="s1">&#39;United Kingdom&#39;</span><span class="p">],</span>
+<span class="gp">... </span>       <span class="s1">&#39;population&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">11.3</span><span class="p">,</span> <span class="mf">64.3</span><span class="p">,</span> <span class="mf">81.3</span><span class="p">,</span> <span class="mf">16.9</span><span class="p">,</span> <span class="mf">64.9</span><span class="p">],</span>
+<span class="gp">... </span>       <span class="s1">&#39;area&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">30510</span><span class="p">,</span> <span class="mi">671308</span><span class="p">,</span> <span class="mi">357050</span><span class="p">,</span> <span class="mi">41526</span><span class="p">,</span> <span class="mi">244820</span><span class="p">],</span>
+<span class="gp">... </span>       <span class="s1">&#39;capital&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Brussels&#39;</span><span class="p">,</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Berlin&#39;</span><span class="p">,</span> <span class="s1">&#39;Amsterdam&#39;</span><span class="p">,</span> <span class="s1">&#39;London&#39;</span><span class="p">]}</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">          country  population    area    capital</span>
+<span class="go">0         Belgium        11.3   30510   Brussels</span>
+<span class="go">1          France        64.3  671308      Paris</span>
+<span class="go">2         Germany        81.3  357050     Berlin</span>
+<span class="go">3     Netherlands        16.9   41526  Amsterdam</span>
+<span class="go">4  United Kingdom        64.9  244820     London</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Attributes: index, columns, dtypes, values</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">index</span>
+<span class="go">RangeIndex(start=0, stop=5, step=1)</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">columns</span>
+<span class="go">Index([&#39;country&#39;, &#39;population&#39;, &#39;area&#39;, &#39;capital&#39;], dtype=&#39;object&#39;)</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="go">country        object</span>
+<span class="go">population    float64</span>
+<span class="go">area            int64</span>
+<span class="go">capital        object</span>
+<span class="go">dtype: object</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">values</span>
+<span class="go">array([[&#39;Belgium&#39;, 11.3, 30510, &#39;Brussels&#39;],</span>
+<span class="go">       [&#39;France&#39;, 64.3, 671308, &#39;Paris&#39;],</span>
+<span class="go">       [&#39;Germany&#39;, 81.3, 357050, &#39;Berlin&#39;],</span>
+<span class="go">       [&#39;Netherlands&#39;, 16.9, 41526, &#39;Amsterdam&#39;],</span>
+<span class="go">       [&#39;United Kingdom&#39;, 64.9, 244820, &#39;London&#39;]], dtype=object)</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Info</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+<span class="go">&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;</span>
+<span class="go">RangeIndex: 5 entries, 0 to 4</span>
+<span class="go">Data columns (total 4 columns):</span>
+<span class="go"> #   Column      Non-Null Count  Dtype  </span>
+<span class="go">---  ------      --------------  -----  </span>
+<span class="go"> 0   country     5 non-null      object </span>
+<span class="go"> 1   population  5 non-null      float64</span>
+<span class="go"> 2   area        5 non-null      int64  </span>
+<span class="go"> 3   capital     5 non-null      object </span>
+<span class="go">dtypes: float64(1), int64(1), object(2)</span>
+<span class="go">memory usage: 288.0+ bytes</span>
+
+<span class="go">RangeInde: 5 entries, 0 to 4</span>
+<span class="go">Data columns (total 4 columns):</span>
+<span class="go">area          5 non-null int64</span>
+<span class="go">capital       5 non-null object</span>
+<span class="go">country       5 non-null object</span>
+<span class="go">population    5 non-null float64</span>
+<span class="go">dtypes: float64(1), int64(1), object(2)</span>
+<span class="go">memory usage: 200.0 bytes</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Set a column as index</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">          country  population    area    capital</span>
+<span class="go">0         Belgium        11.3   30510   Brussels</span>
+<span class="go">1          France        64.3  671308      Paris</span>
+<span class="go">2         Germany        81.3  357050     Berlin</span>
+<span class="go">3     Netherlands        16.9   41526  Amsterdam</span>
+<span class="go">4  United Kingdom        64.9  244820     London</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="n">countries</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">                population    area    capital</span>
+<span class="go">country                                      </span>
+<span class="go">Belgium               11.3   30510   Brussels</span>
+<span class="go">France                64.3  671308      Paris</span>
+<span class="go">Germany               81.3  357050     Berlin</span>
+<span class="go">Netherlands           16.9   41526  Amsterdam</span>
+<span class="go">United Kingdom        64.9  244820     London</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Access a single series in a table</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">])</span>
+<span class="go">country</span>
+<span class="go">Belgium            30510</span>
+<span class="go">France            671308</span>
+<span class="go">Germany           357050</span>
+<span class="go">Netherlands        41526</span>
+<span class="go">United Kingdom    244820</span>
+<span class="go">Name: area, dtype: int64</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;capital&#39;</span><span class="p">][</span><span class="s1">&#39;France&#39;</span><span class="p">])</span>
+<span class="go">Paris</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Arithmetic expressions (population density)</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span>
+<span class="go">country</span>
+<span class="go">Belgium           370.370370</span>
+<span class="go">France             95.783158</span>
+<span class="go">Germany           227.699202</span>
+<span class="go">Netherlands       406.973944</span>
+<span class="go">United Kingdom    265.092721</span>
+<span class="go">dtype: float64</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Add new column</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">=</span>  <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;population&#39;</span><span class="p">]</span><span class="o">/</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;area&#39;</span><span class="p">]</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> 
+<span class="go">                    population    area    capital     density</span>
+<span class="go">    country</span>
+<span class="go">    Belgium               11.3   30510   Brussels  370.370370</span>
+<span class="go">    France                64.3  671308      Paris   95.783158</span>
+<span class="go">    Germany               81.3  357050     Berlin  227.699202</span>
+<span class="go">    Netherlands           16.9   41526  Amsterdam  406.973944</span>
+<span class="go">    United Kingdom        64.9  244820     London  265.092721</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Filter data</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">300</span><span class="p">]</span> 
+<span class="go">                 population   area    capital     density</span>
+<span class="go">    country</span>
+<span class="go">    Belgium            11.3  30510   Brussels  370.370370</span>
+<span class="go">    Netherlands        16.9  41526  Amsterdam  406.973944</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Sort data</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="go">                    population    area    capital     density</span>
+<span class="go">    country</span>
+<span class="go">    Netherlands           16.9   41526  Amsterdam  406.973944</span>
+<span class="go">    Belgium               11.3   30510   Brussels  370.370370</span>
+<span class="go">    United Kingdom        64.9  244820     London  265.092721</span>
+<span class="go">    Germany               81.3  357050     Berlin  227.699202</span>
+<span class="go">    France                64.3  671308      Paris   95.783158</span>
+
+</pre></div>
+</div>
+<p>–</p>
+<ul class="simple">
+<li><p>Statistics</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
+<span class="go">           population           area     density</span>
+<span class="go">    count    5.000000       5.000000    5.000000</span>
+<span class="go">    mean    47.740000  269042.800000  273.183879</span>
+<span class="go">    std     31.519645  264012.827994  123.440607</span>
+<span class="go">    min     11.300000   30510.000000   95.783158</span>
+<span class="go">    25%     16.900000   41526.000000  227.699202</span>
+<span class="go">    50%     64.300000  244820.000000  265.092721</span>
+<span class="go">    75%     64.900000  357050.000000  370.370370</span>
+<span class="go">    max     81.300000  671308.000000  406.973944</span>
+
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Plotting</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>  
+
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/figure_1.png"><img alt="../_images/figure_1.png" src="../_images/figure_1.png" style="height: 300px;" /></a>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>Plotting barchart</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>  
+
+
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../_images/figure_2.png"><img alt="../_images/figure_2.png" src="../_images/figure_2.png" style="height: 300px;" /></a>
+</section>
+<hr class="docutils" />
+<section id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>like numpy arrays with labels</p></li>
+<li><p>supported import/export formats: CSV, SQL, Excel…</p></li>
+<li><p>support for missing data</p></li>
+<li><p>support for heterogeneous data</p></li>
+<li><p>merging data</p></li>
+<li><p>reshaping data</p></li>
+<li><p>easy plotting</p></li>
+</ul>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./external_libraries"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="../files/talk.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">File handling</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../classes/talk.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classes</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Olav Vahtras<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
