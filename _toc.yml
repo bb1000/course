@@ -1,0 +1,16 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: introduction/talk.md
+- file: git/talk.md
+- file: testing/talk.md
+- file: files/talk.md
+- file: external_libraries/talk.md
+- file: classes/talk.md
+- file: decorators/talk.md
+- file: iterators/talk.md
+- file: profiling/talk.md
+- file: debugging/talk.md
